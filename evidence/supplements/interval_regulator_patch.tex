@@ -1,0 +1,109 @@
+% Independent audit supplement for lines 640--655 of
+% dimension_two_geometric_short_counterexample.tex.
+% Uses the unshifted interval model underlying Bunke--Tamme, Definition 2.7.
+% This is a mathematical reconstruction, not a proof-assistant certificate.
+
+\begin{lemma}[A local logarithm and the holomorphic regulator component]
+Let $N$ be a complex manifold of dimension two. Write $A^\bullet(N)$
+for complex smooth forms and
+\[
+ I(p)^k=\{\xi\in A^k([0,1]\times N):
+ \xi|_0\in (2\pi i)^pA^k_{\mathbf R}(N),\quad
+ \xi|_1\in F^pA^k(N)\}.
+\]
+Thus $H^k(I(p))=H^k_{\mathcal D,\mathrm{an}}(N,\mathbf R(p))$,
+with multiplication induced by wedge product.
+Let $g$ be a nowhere-vanishing holomorphic function with a holomorphic
+logarithm $L$, and let $z\in H^2(I(2))$. If $\xi$ is a closed
+representative of $z$, put $\omega=\xi|_1$. Then $\omega$ is a
+closed holomorphic two-form, is independent of the representative,
+and
+\[
+ r_1(g)z=[-L\omega]\quad\hbox{in}\quad
+ H^3_{\mathcal D,\mathrm{an}}(N,\mathbf R(3))
+ =H^2(N,\mathbf C)/H^2(N,\mathbf R(3)).
+\]
+Here $r_1(g)$ is the analytic Deligne first regulator of $g$, with
+the interval and cone conventions of Bunke--Tamme,
+Definition~2.7 and Proposition~2.8.
+\end{lemma}
+
+\begin{proof}
+Write $L=a+i\phi$, with $a,\phi$ real, and let $\tau$ denote the
+interval coordinate. The usual representative of $r_1(g)$ is
+\[
+ i\,d\phi+d(\tau a).
+\]
+Its difference from $d(\tau L)$ is
+$d(i(1-\tau)\phi)$. The primitive $i(1-\tau)\phi$ belongs to
+$I(1)^0$: its value at $0$ is purely imaginary, hence in
+$\mathbf R(1)$, and its value at $1$ is zero. Consequently
+$d(\tau L)$ represents $r_1(g)$ in $I(1)$.
+
+The endpoint $\omega=\xi|_1$ is closed and lies in $F^2A^2(N)$,
+so it is a closed holomorphic two-form. Changing $\xi$ by an
+$I(2)$-boundary cannot change this endpoint, because
+$F^2A^1(N)=0$.
+
+The product has representative
+\[
+ \upsilon=d(\tau L)\wedge\xi=d(\tau L\xi).
+\]
+Its endpoint at $0$ vanishes. Its endpoint at $1$ is
+$dL\wedge\omega$, which vanishes by complex dimension two.
+Thus the cone map sends its class to
+$[-\int_0^1\upsilon]$. Fiberwise Stokes gives
+\[
+ -\int_0^1\upsilon
+ =-L\omega+d_N\!\left(\int_0^1\tau L\xi\right),
+\]
+and hence gives the asserted representative. It is closed, since
+$d(L\omega)=dL\wedge\omega=0$.
+
+Finally $F^3A^\bullet(N)=0$, so the cone long exact sequence gives
+the stated quotient: the next real-to-complex cohomology map is
+injective. This proves the formula.
+\end{proof}
+
+\paragraph{The endpoint issue.}
+This proof allows $\xi|_0$ to be nonzero. It disappears from the
+product because $d(\tau L)|_0=0$. Also, $\tau L$ generally does
+not belong to $I(1)^0$, since its endpoint at $1$ is $L$ rather
+than zero. Similarly, $\tau L\xi$ need not belong to $I(3)^2$,
+since its endpoint at $1$ is $L\omega$ and $F^3A^2(N)=0$.
+Exactness in the full de Rham complex therefore does not imply
+vanishing in the interval Deligne complex.
+
+\paragraph{Application to the explicit class.}
+On an analytic neighborhood of the matching sphere from the manuscript,
+take $g=1-t$, $L=\operatorname{Log}(1-t)$, and
+$\delta=\langle X,VH(t)\rangle$.
+The relation $1-XVH(t)=t^{10}$ shows that on $X\ne0$ its
+weight-two holomorphic regulator component is
+\[
+ \omega=d\log X\wedge d\log(t^{10})
+       =10\frac{dX}{X}\wedge\frac{dt}{t}.
+\]
+It extends to the entire neighborhood as
+\[
+ \omega=-\frac{dX\wedge d(VH(t))}{t^{10}}.
+\]
+The endpoint of the regulator of $\delta$ is a holomorphic two-form,
+so agreement on the dense open $X\ne0$ identifies it with this
+extension. The lemma therefore gives
+$r_3([1-t]\delta)=[-L\omega]$.
+If $F=\operatorname{Li}_2(t)$ on the chosen neighborhood of the
+chord, then $dF=-L\,dt/t$ and
+\[
+ L\omega=10d\left(F\frac{dX}{X}\right).
+\]
+With the orientation $ds\wedge d\vartheta$, the two boundary
+circles contribute $2\pi iF(r)$ and $-2\pi iF(\bar r)$.
+The smooth caps have vanishing limiting integrals. Thus
+\[
+ \int_\Sigma r_3([1-t]\delta)
+ =-20\pi i(F(r)-F(\bar r))
+ =40\pi D_{\mathrm{BW}}(e^{i\pi/5})
+ \pmod{\mathbf R(3)},
+\]
+which is nonzero because the displayed number is positive real.

@@ -1,0 +1,28 @@
+{
+  "scope": "Native Danus whole-manuscript language-model review; not an end-to-end formal proof.",
+  "review_started_utc": "2026-10-07T23:49:43.463735+00:00",
+  "source_sha256": "4129b94964a2e5a46bdde8141aa7bf580d93e4fb869c177aea402ac919c824a2",
+  "reference_ledger_sha256": "4c3a0c083806076463035f4ec0216360232e9defb2af0a5819457efa5ceda5a1",
+  "math_ledger_sha256": "907d49703c3dc306c67f3d1b6c3c74b3f1790ec15fcf74813a9a9179e7e1732b",
+  "math_result_sha256": "319d36dda6424f5e6778062f8e62b54bdc9fe38da4d63e75f54b7c7a1ec45589",
+  "pdf": {
+    "path": "paper/gersten-counterexamples.pdf",
+    "sha256": "4d0f9f55ffff30979efd40231744bc92c79f1e3172182935aef9d1769c48deb7"
+  },
+  "modular_sources": {
+    "paper/abstract.tex": "ab4e0b182f06dc3f36f6b97daf91c03aa670c812de609d68f3e359e38c901180",
+    "paper/common-macros.tex": "555511650854d908655a28a6cbc73b8dcbcbaa8a468e490327d98aa70ecf365d",
+    "paper/core-macros.tex": "04e3a38dc1e80ad64b22947e63656f22d9f9b90ee32f4461bb3437a3296c03d0",
+    "paper/main.tex": "43d39ce00f7d1a80caedfde61aec7cc42512cced7a2af4225d76af24fca4c100",
+    "paper/preamble.tex": "cf13197e65928e1dfe00b751acae7afebb48aa8f3475051c00554e70eff45a62",
+    "paper/references.tex": "6d6f16e6b0dcb6fbb9fcfed5d9d4b573c2b170aff31c5620626ee5a41a61c7fb",
+    "paper/sections/01-introduction.tex": "70a87e11dbb9f6d9eeee92461b9b74da8ea522d8ae769df5726d7348fad990e7",
+    "paper/sections/02-explicit-three-adic.tex": "4e247d3c47f0f42ed00fcec71717157a7527ed6cf7fc22b435db5cef68366803",
+    "paper/sections/03-quartic-core.tex": "0ed53c95433acfb1c83c80a5cf4bad0ddb54251a381a44019d1eb62033f4f29f",
+    "paper/sections/04-three-dimensional-families.tex": "741fc55f12af3f1e316350fa659d9bbc7c4dffeb903bdde614987c1f0299f070",
+    "paper/sections/05-two-dimensional-families.tex": "cbac3eefab6cd13d6507d7cfc7544f46b55c342302fe3c01655a11f806ccea09",
+    "paper/sections/06-comparisons.tex": "7f792b484b0727275e689738b00a0da74ba7ae67fb4f1614777a02aaa88c8c53",
+    "paper/verification-scope.tex": "3dd0d0d5d698e82ab2757ab4fc949b9a51a1c6f77ed3b58596620c169595f71d"
+  },
+  "formal_scope": "Ten polynomial identities and two natural-number inequalities; separate from this model review."
+}

@@ -1,0 +1,64 @@
+% Audit repair, 7 October 2026. This is an independently written mathematical
+% argument, not a machine-checked proof or a Danus-verified claim.
+% Replace the attribution of the mixed HKR map in lines 2291--2304.
+
+Let $A=B_0$, and let $C_\bullet(A/W)$ denote its normalized
+Hochschild mixed complex, with operators $b$ and $B$.
+For $0\leq j\leq D$ define
+\[
+ q_j(a_0[a_1|\cdots|a_j])
+   =\frac{D!}{j!}a_0\,da_1\wedge\cdots\wedge da_j,
+\]
+and put $q_j=0$ for $j>D$. These are integral maps: $D!/j!$ is
+an integer. The commutativity of $A$ gives $q_{j-1}b=0$.
+The defining formula for Connes' operator gives
+\[
+ q_{j+1}B=dq_j.
+\]
+Indeed its $j+1$ cyclic summands have the same image after the
+Koszul signs are included, and
+$(j+1)D!/(j+1)!=D!/j!$. At $j=D$ both sides are zero since
+$\Omega^{D+1}_{A/W}=0$. Thus $q$ is a morphism of mixed
+complexes from $C_\bullet(A/W)$ to
+$(\Omega^\bullet_{A/W},0,d)$.
+
+The usual Hochschild--Kostant--Rosenberg isomorphism for an
+essentially smooth algebra is induced by antisymmetrization.
+The composite of antisymmetrization with $q_j$ is multiplication
+by $D!$. In particular $q$ induces $D!$ on
+$HH_j(A/W)=\Omega^j_{A/W}$ for $0\leq j\leq D$, and both sides
+have zero Hochschild homology in higher degrees. Since $A$ is
+$W$-flat and $\Omega^j_{A/W}$ is finite projective over $A$,
+multiplication by $D!$ is injective on every form module.
+The homotopy groups of the cone of $q$ are therefore the
+cokernels $\Omega^j_{A/W}/D!$ in degrees $0,\ldots,D$;
+there is no additional top kernel in degree $D+1$.
+
+View this cone as an object with circle action. Its equivariant
+Postnikov filtration has $D+1$ nonzero layers. Each layer is a
+shifted ordinary module with trivial circle action and is killed
+by $p^{v_p(D!)}$, because all primes other than $p$ are units in
+$W$. The elementary extension argument therefore kills the
+entire equivariant cone by $p^{(D+1)v_p(D!)}$. Applying derived
+$p$-completion, circle homotopy orbits, homotopy fixed points,
+or Tate constructions preserves this scalar null-homotopy.
+After rationalization, $q/D!$ consequently gives the required
+continuous mixed-HKR comparison.
+
+In the present applications $p=5$ and $D=2$ or $3$.
+Then $D!$ is already a unit in $W$, so $q/D!$ is an integral
+mixed-complex quasi-isomorphism. Its formula is
+$a_0[a_1|\cdots|a_j]\mapsto a_0da_1\wedge\cdots\wedge da_j/j!$.
+The shuffle product becomes exterior multiplication. The
+cyclic-shuffle term involving a coefficient from the relative
+base has zero image, since that coefficient occurs in a
+normalized bar slot, or equivalently has zero relative
+differential. These facts give the precise product formula
+used for the scalar point coefficient and the rank-zero line
+character.
+
+% Citation correction:
+% Bokstedt--Ottosen, Def. 2.1, Rem. 2.2, Prop. 2.3 support the
+% cyclic-complex definitions and shuffle/module formulas, not the
+% mixed-HKR map displayed above. The paragraph now proves that map
+% directly and uses ordinary HKR only for an essentially smooth algebra.

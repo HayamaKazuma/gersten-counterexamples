@@ -1,0 +1,24 @@
+# The byline is a user-requested AI-preparation attribution; see README.md.
+cff-version: 1.2.0
+message: "Please cite the accompanying article and repository revision. The OpenAI byline attributes preparation with ChatGPT/Codex at the user's request; it is not an official OpenAI publication or institutional endorsement."
+title: "Rational Gersten kernels in ramified regular local rings"
+type: software
+repository-code: "https://github.com/HayamaKazuma/gersten-counterexamples"
+version: "2026-10-08"
+date-released: "2026-10-08"
+authors:
+  - name: "OpenAI"
+keywords:
+  - algebraic K-theory
+  - Gersten conjecture
+  - regular local rings
+  - mixed characteristic
+  - regulators
+preferred-citation:
+  type: unpublished
+  url: "https://github.com/HayamaKazuma/gersten-counterexamples/blob/main/paper/gersten-counterexamples.pdf"
+  title: "Rational Gersten kernels in ramified regular local rings"
+  authors:
+    - name: "OpenAI"
+  year: 2026
+  notes: "User-requested attribution to preparation with ChatGPT/Codex; not an official OpenAI publication or institutional endorsement."

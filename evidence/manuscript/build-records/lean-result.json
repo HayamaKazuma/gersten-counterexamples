@@ -1,0 +1,9 @@
+{
+  "version": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "source": "formal/GerstenAudit.lean",
+  "source_sha256": "4d9554e8938dfa181446991d1d13411da962863a6fabf44d310ab7e734ae29c1",
+  "exit_code": 0,
+  "theorems": 12,
+  "scope": "Polynomial identities and two natural-number inequalities only.",
+  "end_to_end_K_theory_formalization": false
+}

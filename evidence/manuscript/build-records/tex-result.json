@@ -1,0 +1,10 @@
+{
+  "pages": 121,
+  "pdf_sha256": "4d0f9f55ffff30979efd40231744bc92c79f1e3172182935aef9d1769c48deb7",
+  "overfull_boxes": 0,
+  "underfull_boxes": 2,
+  "undefined_references_or_citations": false,
+  "missing_characters": 0,
+  "compiler": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "hosted_github_actions_run": false
+}

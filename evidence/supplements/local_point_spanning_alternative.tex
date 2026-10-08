@@ -1,0 +1,43 @@
+% Independent source-audit alternative for Lemma 13.10.
+% It uses Lemma 12.3 and the independently proved factorization Lemma 13.20.
+% No identification of the AMMN regulator with the old syntomic regulator is used.
+% This is a mathematical argument, not a proof-assistant certificate.
+
+Let $d=[E:\mathbf Q_p]$ and put
+$V=\pi_3K(\mathcal O_E;\mathbf Q_p)$.
+The point comparison of AMMN identifies $V$ with $E$, so
+$\dim_{\mathbf Q_p}V=d$. Independently, the Bloch--Kato exponential
+identifies $H^1(E,\mathbf Q_p(2))$ with $E$, also of dimension $d$.
+The finite-coefficient Chern construction gives a natural linear map
+\[
+ \widetilde c_{2,E}:V\longrightarrow H^1(E,\mathbf Q_p(2))
+\]
+through which the Chern map on actual $K_3(\mathcal O_E)$ factors.
+This is the case $n=2$ of Lemma~\ref{lem:cherncompletionfactor};
+its proof uses only finite-coefficient Chern additivity,
+coefficient compatibility, and the canonical map from the homotopy
+limit to the limit of homotopy groups.
+
+By Lemma~\ref{lem:actuallocal}, whose proof uses Levine's
+finite-coefficient theorem, Milnor $K_3$-divisibility, the
+Moore--Merkurjev description of $K_2(E)$, and localization,
+the actual Chern values span $H^1(E,\mathbf Q_p(2))$.
+Let $V_{\rm act}$ be the span in $V$ of the images of actual classes.
+Then $\widetilde c_{2,E}(V_{\rm act})=H^1(E,\mathbf Q_p(2))$.
+Both ambient vector spaces have dimension $d$, whence
+$V_{\rm act}=V$ and $\widetilde c_{2,E}$ is an isomorphism.
+Thus the actual AMMN point values span $E$.
+
+All maps are natural for finite extensions of local fields.
+For a quadratic $E/F$, apply $1-\sigma$ to actual integral classes.
+Their images span $E^-$ since $(1-\sigma)E=E^-$ as
+$\mathbf Q_p$-vector spaces. This argument divides by no integer
+inside actual integral $K$-theory, and applies equally at $p=2$.
+
+% Dependency graph (acyclic):
+% Levine + Moore--Merkurjev + Milnor divisibility + localization --> 12.3.
+% Weibel 2.4, 2.8 + continuous H^1 coefficient sequence --> 13.20.
+% AMMN point comparison --> dim(V)=d.
+% Bloch--Kato --> dim(H^1)=d.
+% Those four independent inputs --> 13.10.
+% Neither 12.3 nor 13.20 uses Lemma 13.10 or a coefficient-cup theorem.

@@ -1,0 +1,11 @@
+{
+  "fact_id": "32e8bb926907031c",
+  "record_id": "4bcd66287e3d3c1d",
+  "timestamp_utc": "2026-10-07T14:01:43.871379+00:00",
+  "verdict": "correct",
+  "summary": "Verified sequentially with no critical errors or gaps. The statement is self-contained. The displayed splittings establish admissible exact sequences, and the complete arrow checks establish that X_1 and X_t are upper triangular S_2 objects. The components of F are invertible, lower triangular chain maps satisfying every naturality equation. For each assignment, the image objects are valid split S_2 diagrams and every component image is an isomorphism. Nevertheless, the square for beta would require id_H = (1/4)id_H, which fails because 3/4 is nonzero in Z_(3). After arXiv theorem search returned unrelated results, the block conventions, triangular restrictions, assignments and claimed simplicial functors were verified directly against [arXiv:1503.07966v8, Conventions 11, Definition 12 and Lemma 13(III)](https://arxiv.org/html/1503.07966v8). The counterexample therefore establishes the claimed failure of both strict degree-two functor assignments. It does not establish that Theorem 5 is false. No hard-prohibition violation or internal fact dependency was found.",
+  "critical_errors": [],
+  "gaps": [],
+  "verification_kind": "independent language-model review",
+  "source_verification_file_sha256": "e85ec124ce834b6915d14a9cb2eda892443fa975a5e6adc5ba9d76f7f9882a2a"
+}

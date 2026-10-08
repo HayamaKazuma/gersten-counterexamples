@@ -1,0 +1,33 @@
+--- reviewed/paper/main.tex
++++ publication/paper/main.tex
+@@ -2,6 +2,8 @@
+ \input{preamble.tex}
+ 
+ \title[Rational Gersten kernels]{Rational Gersten kernels in ramified regular local rings}
++\author{OpenAI}
++\thanks{The OpenAI byline is a user-requested attribution to preparation with ChatGPT/Codex; this is not an official OpenAI publication or institutional endorsement.}
+ \date{8 October 2026}
+ \keywords{Algebraic K-theory, Gersten conjecture, ramified regular local rings, regulators, continuous cyclic homology}
+ 
+--- reviewed/paper/preamble.tex
++++ publication/paper/preamble.tex
+@@ -4,7 +4,7 @@
+ \usepackage{amsmath,amssymb,amscd,mathtools,mathrsfs}
+ \usepackage{xcolor,enumitem,array,booktabs,longtable}
+ \usepackage[colorlinks=true,linkcolor=blue!35!black,citecolor=blue!35!black,urlcolor=blue!35!black]{hyperref}
+-\hypersetup{pdftitle={Rational Gersten kernels in ramified regular local rings},pdfauthor={},pdfsubject={Algebraic K-theory and rational Gersten kernels}}
++\hypersetup{pdftitle={Rational Gersten kernels in ramified regular local rings},pdfauthor={OpenAI},pdfsubject={Algebraic K-theory and rational Gersten kernels}}
+ \definecolor{EditorialBlue}{rgb}{0.05,0.20,0.65}
+ \definecolor{EditorialRed}{rgb}{0.65,0.08,0.08}
+ \definecolor{EditorialPurple}{rgb}{0.45,0.10,0.55}
+--- reviewed/paper/verification-scope.tex
++++ publication/paper/verification-scope.tex
+@@ -1,4 +1,8 @@
+ \section*{Authoring and verification}
++The OpenAI byline was requested by the user to attribute the preparation
++of this consolidated article to ChatGPT/Codex. It does not identify an
++official OpenAI publication or institutional endorsement.
++
+ This article consolidates the source manuscripts and the subsequent proof
+ audit with assistance from ChatGPT and Codex. The accompanying source
+ repository records the statements, proofs, and outcomes of independent

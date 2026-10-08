@@ -1,0 +1,11 @@
+{
+  "fact_id": "868cb19bf6a0a52c",
+  "record_id": "12e36faae5d3cb51",
+  "timestamp_utc": "2026-10-07T13:41:11.658919+00:00",
+  "verdict": "correct",
+  "summary": "The proof is correct. Checked sequentially, the localization and integral intersection are valid; the integral Taylor operators establish that the continuous constants of F are exactly K; and the pole-order argument, followed by p-adic induction, proves scalar pole removal without assuming W-linearity of Frobenius. In Step 4, smoothness makes the completed differential module finite projective, so its map to the differential module over C is injective; consequently the descended primitive makes omega exact already over Dhat[1/p]. After querying arXiv theorem search, the external references were verified in the primary text: [Caro–D'Addezio, Theorems 3.2.1 and 2.1.2, Corollary 2.1.10, and Section 7.1](https://carod.users.lmno.cnrs.fr/Injectivity.pdf). The degree-one injectivity theorem applies to the smooth affine curve U with constant Frobenius coefficient, and the cohomology descriptions use ordinary differential images, with separated quotients defined separately. Thus the constructed primitive contradicts the nonzero rigid class. No critical errors, gaps, or hard-prohibition violations were found.",
+  "critical_errors": [],
+  "gaps": [],
+  "verification_kind": "independent language-model review",
+  "source_verification_file_sha256": "e85ec124ce834b6915d14a9cb2eda892443fa975a5e6adc5ba9d76f7f9882a2a"
+}

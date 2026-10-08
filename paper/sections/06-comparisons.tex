@@ -1,0 +1,243 @@
+\section{Low degrees and comparison with other Gersten statements}\label{d3:sec:comparisons}
+We use the arithmetic-quadric notation of Section~\ref{d3:sec:geometry} in this appendix.
+
+\subsection{A low-degree stress test}
+The analogous $K_1$ construction does not supply a counterexample.
+Its product regulator would have degree three and twist two.
+Here the filtration is the analytic truncation of the holomorphic
+de Rham complex, which need not vanish in filtration degree two
+on a complex surface.
+
+For a smooth affine complex surface $U$, write $X=U^{\mathrm{an}}$.
+An affine embedding realizes $X$ as a closed complex submanifold
+of $\C^N$. Coordinate functions separate points and give local
+coordinates. They bound the holomorphic hull of each compact set
+inside a compact coordinate polydisc; the hull is closed there
+and hence compact. Together with second countability, these
+properties make $X$ Stein.
+Cartan's theorem~B
+\cite[\S5, proof of Theorem~B, pp.~19-14--19-15]{CartanStein1952}
+gives $H^q(X,\Omega_X^a)=0$ for every $q>0$.
+The holomorphic Poincar\'e lemma follows on coordinate balls by
+radial integration and identifies $\C_X$ with the holomorphic
+de Rham complex. Its hypercohomology is therefore computed by
+global holomorphic forms, in degrees zero through two. Thus
+\[
+ H^2(X,\C)=\Gamma(X,\Omega_X^2)/d\Gamma(X,\Omega_X^1),
+ \qquad H^3(X,\C)=0.
+\]
+For
+$F^2_{\mathrm{an}}\Omega_X^\bullet=\Omega_X^{\ge2}
+=\Omega_X^2[-2]$, the map from degree-two hypercohomology to
+$H^2(X,\C)$ is the displayed quotient map and is surjective.
+Moreover,
+$\mathbb H^3(X,F^2_{\mathrm{an}}\Omega_X^\bullet)
+=H^1(X,\Omega_X^2)=0$.
+The constant real sheaf $\R(2)$ is a direct summand of the
+underlying real sheaf $\C$, so $H^3(X,\R(2))=0$ as well.
+The analytic Deligne cone sequence contains
+\[
+\begin{split}
+ H^2(X,\R(2))\oplus
+ \mathbb H^2(X,F^2_{\mathrm{an}}\Omega_X^\bullet)
+ &\longrightarrow H^2(X,\C)\longrightarrow\HD^3(X,\R(2))\\
+ &\longrightarrow H^3(X,\R(2))\oplus
+ \mathbb H^3(X,F^2_{\mathrm{an}}\Omega_X^\bullet).
+\end{split}
+\]
+Its first arrow is surjective and its final group is zero.
+Hence $\HD^3(U,\R(2))=0$.
+This calculation uses the analytic truncation just defined;
+it makes no corresponding assertion about the logarithmic
+mixed-Hodge filtration.
+The elementary quotient in Lemma~\ref{d3:lem:Deligne} is
+unavailable in twist two. This agrees with the fact that $K_1$
+of a commutative local ring is its unit group and injects into
+the fraction field.
+
+There is also an explicit algebraic version of this test. On the split quadric in coordinates
+\[
+uv=t(1-t),
+\]
+the matrix
+\[
+e=\begin{pmatrix}t&u\\v&1-t\end{pmatrix}
+\]
+is a rank-one idempotent. Up to choosing the ruling, its image is the line bundle $P=\OO(D_+)$. For $\alpha\in E^\times$, $\alpha\neq1$, the determinant-one matrix
+\[
+M=\begin{pmatrix}\alpha^{-1}&0\\0&1\end{pmatrix}
+\bigl(I+(\alpha-1)e\bigr)
+\]
+represents $\alpha([P]-1)$ in $K_1$. Its upper-left entry is $s/\alpha$ with $s=1+(\alpha-1)t$. On $D(s)$ Gaussian elimination makes $M$ elementary. The removed curve has
+\[
+t=-\frac1{\alpha-1},\qquad uv=-\frac{\alpha}{(\alpha-1)^2}\neq0,
+\]
+so it is a geometrically irreducible principal curve isomorphic to $\mathbb G_m$. Hence ordinary Betti injectivity alone cannot protect a $K_1$ product. The condition $3>\dim_{\C}U=2$ in the main proof is essential.
+
+\subsection{Equal characteristic and other localizations}
+Replacing the arithmetic DVR by $k[t]_{(t)}$ and adjoining $u$
+with $u^2=-t$ does not reproduce the same coefficient class.
+For every field $k$, restriction gives an isomorphism
+\[
+ K_3(k)_{\Q}^{(2)}
+       \xrightarrow{\sim}K_3(k(u))_{\Q}^{(2)}.
+\]
+To prove this, put $F=k(u)$ and compare the Milnor and Quillen
+rational-function residue sequences
+\cite[III, Theorem~7.4; V, Corollary~6.7.1]{Weibel}.
+They have respective kernels $K_3^M(k)$ and $K_3(k)$ and
+surjective residue maps to
+$\bigoplus_P K_2^M(k[u]/P)$ and
+$\bigoplus_P K_2(k[u]/P)$, where $P$ runs over monic
+irreducible polynomials.
+The right-hand terms agree by Matsumoto's theorem
+\cite[III, Theorem~6.1]{Weibel}.
+
+Their residue maps are compatible with the symbol maps.
+At each polynomial valuation, a product of unit classes extends
+over the valuation ring and has zero boundary, while for a
+uniformizer $\pi$ and units $a,b$ the boundary-product formula gives
+\[
+ \partial\{\pi,a,b\}=\{\bar a,\bar b\}.
+\]
+Multilinearity and $\{\pi,\pi\}=\{-1,\pi\}$ reduce every Milnor
+symbol to unit symbols and symbols with exactly one uniformizer.
+These formulas therefore give its tame residue
+\cite[III, Theorem~7.3; V, equation~(6.1.1),
+Example~6.1.2, and Lemma~6.7.3]{Weibel}.
+
+Given $z\in K_3(F)$, surjectivity of the Milnor residue map
+supplies an image $m$ of $K_3^M(F)$ with the same residues as
+$z$. Exactness of the Quillen sequence gives
+$z=\operatorname{res}(\beta)+m$ for some $\beta\in K_3(k)$.
+The rational Milnor image has pure Adams weight three
+\cite[IV, Example~5.9.1]{Weibel}.
+Naturality of the rational Adams decomposition
+\cite[IV, Theorem~5.11]{Weibel} therefore makes projection
+to weight two surjective from $K_3(k)_{\Q}^{(2)}$.
+Injectivity follows from the injective constant-field map in
+the Quillen sequence, proving the displayed isomorphism.
+The involution $u\mapsto-u$ fixes $k$ and hence acts trivially
+on this space; in characteristic two it is already the identity.
+Thus the needed rational weight-two anti-invariant regulator
+source is absent. The arithmetic number-field class is an
+essential ingredient.
+
+The scheme $T$ is regular and contains a field, but it is not semilocal: its nonzero Picard group already rules that out. Local Gersten theorems over fields therefore do not give an injection $K_3(T)\to K_3(\Frac T)$ for this global scheme.
+
+Sections~\ref{d3:sec:node}--\ref{d3:sec:Delignedetection} prove persistence for the precise noncomplete localization; they do not by themselves justify completion. Section~\ref{d3:sec:completed} supplies a separate arithmetic $p$-adic proof for completed examples. Propositions~\ref{d3:prop:explicitcomplete}, \ref{d3:prop:explicittwocomplete}, and \ref{d3:prop:explicitoddcomplete} verify that the particular explicit classes at every residue prime survive both completion and henselization. These arguments use arithmetic detectors after completion.
+
+\subsection{The distinction between the generic fiber and the fraction field}
+The rings considered here are regular and flat over $\Z$, and are consequently $F$-smooth in the sense relevant to \cite{BouisMotivic}. Corollaries~5.12--5.13 of that reference apply to them: in degree $i$, the motivic comparison with $\Z/p^\nu(i)$-coefficients injects into the cohomology of the entire generic fiber $A[1/p]$. This is compatible with the construction here, whose nonzero classes are detected on that generic fiber and become zero only after a further restriction to the fraction field. The generic fiber has positive dimension and cannot be replaced by its generic point in that statement.
+
+The special fiber $A/(p)$ of the basic examples is the singular domain $k[x,y,z]/(xy+z^2)$, or its corresponding completion. Thus these maps are not smooth over their coefficient DVR. They cannot become smooth through a different local DVR coefficient presentation either: primality of $(p)$ forces the base uniformizer to be associated to $p$, and the same singular special fiber remains. Absolute purity also does not assert that a principal-divisor Gysin map in higher $K$-theory is zero; triviality of the normal bundle gives the weaker self-intersection identity $i^*i_*=0$.
+
+\subsection{Rational and finite coefficients}
+The regulator proves that the kernel contains an element of infinite order. It does not by itself prove that any fixed finite-coefficient Gersten map fails. In the explicit $p=3$ case, Section~\ref{d3:sec:modthree} supplies a separate algebraic proof for $\Z/3$-coefficients. That coefficient characteristic equals the residue characteristic; no prime-to-residue-characteristic conclusion is asserted here. A rationally nonzero class can otherwise become divisible in a sufficiently large group. In particular, one may not interchange a filtered colimit over shrinking opens with an inverse limit over coefficient exponents without a separate argument.
+
+Feld's Theorem~1.1 \cite{FeldFiniteGersten2026} constructs a nonzero
+generic-kernel class in $K_2(A_{\mathrm F};\mathbb{Z}/3)$, where
+$A_{\mathrm F}=V[[x,y]]/(3+x^2-y^3)$ and $V$ is a complete mixed-characteristic
+$(0,3)$ discrete valuation ring with uniformizer $3$.
+In that example, an integral lift acquires divisibility by three over
+the fraction field while the integral $K_2$ restriction is injective
+\cite[Corollary~5.1]{FeldFiniteGersten2026}.
+
+\subsection{An explicit number-field source when the prime is three}
+Let $u^2=-3$ and $\zeta=(1+u)/2$. Then $\zeta=e^{i\pi/3}$ at the chosen embedding and
+\[
+1-\zeta=\zeta^{-1}.
+\]
+Thus the pre-Bloch symbol $[\zeta]$ has zero wedge boundary. Its Bloch--Wigner dilogarithm is positive, since
+\[
+D(e^{i\pi/3})=-\int_0^{\pi/3}\log\bigl(2\sin(t/2)\bigr)\,dt>0.
+\]
+The rational Bloch-group description of $K_3^{\mathrm{ind}}(E)$ \cite[VI, Theorem~5.2]{Weibel} supplies an explicit possible rational source class. The main proof does not require fixing this comparison or its integral normalization: Borel's theorem and Lemma~\ref{d3:lem:beta} already produce an integral anti-invariant source with nonzero regulator.
+
+\section{A mixed-square obstruction to a simplicial-functor construction}
+\label{d3:sec:mochizukisquare}
+
+Theorem~5 of \cite{MochizukiParameters} asserts that, for a noetherian
+local ring $B$ and a non-zero-divisor $g$, the functor
+$\mathcal P_{B/gB}\to\mathcal M_B(1)$ induces the zero map on
+$K$-theory. Its application to $B=A$ and $g=x$ would kill the supported
+class used above. We therefore examine a specific step in its proof.
+The following calculation concerns Lemma~13(III) as written; it does
+not, by itself, establish that Theorem~5 is false.
+
+Let $B$ be a local ring, let $g$ be a non-zero-divisor in its maximal
+ideal, and put $t=(1+g)^{-1}$. Write
+\[
+G=\operatorname{Typ}(g)=[B\xrightarrow{g}B],\qquad
+I=\operatorname{Typ}(1)=[B\xrightarrow{1}B],\qquad M=G\oplus I,
+\]
+with complexes in homological degrees $1,0$. These are respectively
+the objects $(1,0)_B$, $(0,1)_B$, and $(1,1)_B$ of the category $\mathcal C$
+in \cite[Definition~9]{MochizukiParameters}. For $b\in B$ define
+chain maps $\alpha_b:I\to M$ and $\beta_b:M\to G$ by
+\begin{align*}
+(\alpha_b)_1&=\binom{b}{1},&
+(\alpha_b)_0&=\binom{gb}{1},\\
+(\beta_b)_1&=\begin{pmatrix}1&-b\end{pmatrix},&
+(\beta_b)_0&=\begin{pmatrix}1&-gb\end{pmatrix}.
+\end{align*}
+They give a split short exact sequence of complexes
+\[
+\mathcal S_b:\qquad 0\longrightarrow I\xrightarrow{\alpha_b}
+M\xrightarrow{\beta_b}G\longrightarrow0.
+\]
+Indeed $s:G\to M$, given by $\binom10$ in both degrees, is a
+chain section of $\beta_b$, while $r:M\to I$, given by
+$\begin{pmatrix}0&1\end{pmatrix}$ in both degrees, satisfies
+$r\alpha_b=1$ and $\alpha_b r+s\beta_b=1$. In the block notation
+of \cite[Conventions~11]{MochizukiParameters}, the arrows are
+$\binom b1$ and $\begin{pmatrix}1&-b\end{pmatrix}$, respectively.
+Both are upper triangular. Thus $\mathcal S_b$ is an object of
+$S_2^{\triangle}\mathcal C$ in that paper's notation.
+
+There is an isomorphism of short exact sequences
+$\mathcal S_1\to\mathcal S_t$ whose components on $I,M,G$ are,
+respectively,
+\[
+\ell=(1+g)\operatorname{id}_I,\qquad
+v_1=\begin{pmatrix}1&0\\g&1\end{pmatrix},\quad
+v_0=\begin{pmatrix}1&0\\1&1\end{pmatrix},\qquad
+q=t\operatorname{id}_G.
+\]
+The relation $\operatorname{diag}(g,1)v_1
+=v_0\operatorname{diag}(g,1)$ verifies that $v$ is a chain map.
+All three components are isomorphisms. The four naturality equations
+can be checked without the block convention:
+\begin{align*}
+v_1\binom11&=\binom{1}{1+g}
+             =\binom t1(1+g),&
+v_0\binom g1&=\binom{g}{1+g}
+             =\binom{gt}{1}(1+g),\\
+\begin{pmatrix}1&-t\end{pmatrix}v_1
+ &=\begin{pmatrix}t&-t\end{pmatrix},&
+\begin{pmatrix}1&-gt\end{pmatrix}v_0
+ &=\begin{pmatrix}t&-gt\end{pmatrix}.
+\end{align*}
+In the paper's block notation $v$ is
+$\begin{pmatrix}1&0\\1&1\end{pmatrix}$, so every component is
+lower triangular. This is therefore a morphism in
+$i_{\mathrm{lower}}S_2^{\triangle}\mathcal C$.
+
+The assignments $\mu'_1,\mu'_2$ preceding Definition~12 take an
+object $(n,m)_B$ to $\operatorname{Typ}(g)^{\oplus n}$ or
+$\operatorname{Typ}(1)^{\oplus n}$, and a morphism to its upper-left
+$n'\times n$ block in both degrees. Each $\beta_b$ consequently
+maps to the identity of $\operatorname{Typ}(g)$ or
+$\operatorname{Typ}(1)$. The component $v$ maps to the identity,
+whereas $q$ maps to multiplication by $t$. Naturality of the
+resulting right-hand square would require $1=t$. This is false,
+since $1-t=g/(1+g)\ne0$. The assignments thus fail to send this
+morphism of $S_2$-objects to a morphism, contrary to
+\cite[Lemma~13(III)]{MochizukiParameters}.
+
+The failure already occurs with $B=\Z_{(3)}$, $g=3$, and $t=1/4$.
+The calculation uses a regular DVR with regular quotient. It identifies
+a failure of the stated simplicial-functor construction used in the
+subsequent additivity argument.
+
+

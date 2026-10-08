@@ -1,0 +1,15 @@
+*.tex text eol=lf
+*.bib text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.lean text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.cff text eol=lf
+CITATION.cff.template text eol=lf
+Makefile text eol=lf
+lean-toolchain text eol=lf
+# Preserve the historical archive exactly, including any original line endings.
+archive/original/* -text
+*.pdf binary

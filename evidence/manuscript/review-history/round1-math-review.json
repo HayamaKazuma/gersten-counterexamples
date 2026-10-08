@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "units_total": 1,
+  "correct": 1,
+  "wrong": 0,
+  "verdict": "correct",
+  "repair_hints": "",
+  "must_fix": 0,
+  "ignorable": 0,
+  "ignorable_findings": "",
+  "body_chars": 477097,
+  "deliver_ok": true,
+  "blockers": []
+}

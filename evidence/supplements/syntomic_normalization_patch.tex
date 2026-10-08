@@ -1,0 +1,29 @@
+% Replacement for the point-normalization passage at lines 2953--2962.
+To compare the normalizations, put $q=p^f=|k_E|$, let $E_0$ be the
+maximal unramified subfield of $E$, and write $\sigma$ for its Frobenius.
+Set
+\[
+ A=1-p^{-n}\sigma,\qquad
+ N=\sum_{j=0}^{f-1}p^{-nj}\sigma^j,\qquad P=1-q^{-n}.
+\]
+Then $NA=AN=P$.  The point syntomic complex of
+\cite[Example~2.2.4]{HuberKings} is
+$[E_0\longrightarrow E\oplus E_0]$, with
+$c\mapsto(c,Ac)$, and its canonical $E$-coordinate is
+$\eta([a,b])=a-A^{-1}b$.
+The comparison of \cite[Proposition~8.6(2)--(3)]{BesserRegulators}
+uses $N$ to pass from the semilinear $p$-Frobenius to the linear
+$q$-Frobenius.  On the point the latter acts as the identity on $E$,
+and the raw modified-cone coordinate is
+\[
+ \epsilon=Pa-Nb=P\eta([a,b]).
+\]
+Definition~4.6 of \cite{BesserDeJeu} sends this coordinate to
+$(1-\varphi_q^*/q^n)^{-1}\epsilon=P^{-1}\epsilon=\eta([a,b])$.
+Thus \cite[Corollary~9.10 and Proposition~9.11]{BesserRegulators},
+or equivalently \cite[Proposition~2.3.4]{HuberKings}, identifies the
+normalized regulator with the Chern-compatible Bloch--Kato
+exponential.  This proves \eqref{eq:highercyclotomicregulator};
+the only remaining constant is the fixed rational symbol normalization
+in Theorem~1.12 and Remark~1.7 of \cite{BesserDeJeu}.
+The calculation applies to arbitrary ramification and to $p=2$.

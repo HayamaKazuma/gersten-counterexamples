@@ -1,0 +1,11 @@
+{
+  "source_delta": "Only the two-sentence native-revised Feld context paragraph and its native-verified bibliography entry were added after the first passing whole-paper review. Removing exactly these insertions restores the previously reviewed source byte for byte.",
+  "old_sha256": "f836fb60d14c585f05aa8867b8c1fa63ccba7bf7faefdde56f5b633da381fd80",
+  "new_sha256": "c9a62527699740774c4e3cde106c50dc42dc430170620ab8aac4a22884ab0b96",
+  "added_characters": 772,
+  "all_existing_proofs_unchanged": true,
+  "result_environments": 100,
+  "proof_environments": 96,
+  "labels": 286,
+  "bibliography_entries": 49
+}

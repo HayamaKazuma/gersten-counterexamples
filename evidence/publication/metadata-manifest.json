@@ -1,0 +1,58 @@
+{
+  "scope": "User-requested byline and publication metadata only; mathematical source modules are unchanged.",
+  "historical_manifest_sha256": "7796124fec2f43cb87fb9cf28c8bf2705d8ce4a6b80faf4473943b92f1334d45",
+  "historical_snapshot_files": {
+    "evidence/manuscript/REFERENCE_LEDGER.md": "4c3a0c083806076463035f4ec0216360232e9defb2af0a5819457efa5ceda5a1",
+    "evidence/manuscript/VERIFY_LEDGER.md": "907d49703c3dc306c67f3d1b6c3c74b3f1790ec15fcf74813a9a9179e7e1732b",
+    "evidence/manuscript/build-records/lean-output.txt": "e6e45f46cc321063e8745046417c7bff7c396cb85b192fc8f2c468862dc086f5",
+    "evidence/manuscript/build-records/lean-result.json": "1e7591eb0f5a2fa56935b3d2b2fae9560c211c01673b50c64b0d71e9198f23f2",
+    "evidence/manuscript/build-records/tex-result.json": "7de41259a167fc0ab02a4ef0f262db917fcdc6e3ff7640ff34dc71844a155e1d",
+    "evidence/manuscript/layout-review.md": "32f6786ca75e598d7e87b1f790d69c7c22fbcfa0403820fb32e99bb46ec40566",
+    "evidence/manuscript/math-review.json": "319d36dda6424f5e6778062f8e62b54bdc9fe38da4d63e75f54b7c7a1ec45589",
+    "evidence/manuscript/repair-record.md": "b7e612f8ea9b8ddfd59aa090eac5fe3ecc318243ad97b168507b78c78621ae54",
+    "evidence/manuscript/review-history/context-addition.json": "729446cfcd0bd3bc514cdb7bbdc85f1862c343e8c77bdaa346f47e98501d3cbf",
+    "evidence/manuscript/review-history/round1-VERIFY_LEDGER.md": "717727cc3a02a20f412583ef898f822c0f4ccb685c3ebb21d1ba7de446adb2f1",
+    "evidence/manuscript/review-history/round1-input.json": "42b06f72d7b2fc4969901c30ffcab8b277fb9a7a8b6894b81c845575f9c96100",
+    "evidence/manuscript/review-history/round1-math-review.json": "c791be134145b41f75059f8384c07da7721aae0b10a5b27608aa6f7d23b35d1e",
+    "evidence/manuscript/review-history/round1-reviewed.tex": "f836fb60d14c585f05aa8867b8c1fa63ccba7bf7faefdde56f5b633da381fd80",
+    "evidence/manuscript/review-history/round2-REFERENCE_LEDGER.md": "fbce55889efc50a77728e6d75d2b3702ea8731adfdde1de0f2b7d90dc962e810",
+    "evidence/manuscript/review-history/round2-VERIFY_LEDGER.md": "8c268263c2de6f267789aea4ce8df7fa9d61a56715e6f60620632140c3b4937f",
+    "evidence/manuscript/review-history/round2-input.json": "b1b4896624cdea0bf559100f4f6cf3822349faba7e6cfbb7870228fe58fd4634",
+    "evidence/manuscript/review-history/round2-math-review.json": "5e69f8f762ee7698cbc42c6787eb1f5322ec33c1a012e5dae954d88d34c04e84",
+    "evidence/manuscript/review-history/round2-reviewed.tex": "c9a62527699740774c4e3cde106c50dc42dc430170620ab8aac4a22884ab0b96",
+    "evidence/manuscript/review-manifest.json": "7796124fec2f43cb87fb9cf28c8bf2705d8ce4a6b80faf4473943b92f1334d45",
+    "evidence/manuscript/reviewed.tex": "4129b94964a2e5a46bdde8141aa7bf580d93e4fb869c177aea402ac919c824a2",
+    "evidence/manuscript/source-preservation-review.md": "b5cdd1962c9f2e27491b71a195f986f3f9be00930b1ce8d9a62f701068fac1c0"
+  },
+  "historical_pdf_path": "evidence/manuscript/reviewed.pdf",
+  "current_source_path": "evidence/publication/publication.tex",
+  "current_pdf_path": "paper/gersten-counterexamples.pdf",
+  "changed_modules": {
+    "paper/main.tex": {
+      "before_sha256": "43d39ce00f7d1a80caedfde61aec7cc42512cced7a2af4225d76af24fca4c100",
+      "after_sha256": "1cabd665705580b3df47187bc77a153e15d34625eb45132e8d61a345e5478068"
+    },
+    "paper/preamble.tex": {
+      "before_sha256": "cf13197e65928e1dfe00b751acae7afebb48aa8f3475051c00554e70eff45a62",
+      "after_sha256": "1a0d51c875ee0e370e80d35e2fead7cb011e30bdb21f19bc2b835140844016a0"
+    },
+    "paper/verification-scope.tex": {
+      "before_sha256": "3dd0d0d5d698e82ab2757ab4fc949b9a51a1c6f77ed3b58596620c169595f71d",
+      "after_sha256": "2d08c2f9a3ff7a322a4842d3c4cc124d90b506ee82916af62f9f6a4751bc6a31"
+    }
+  },
+  "unchanged_modules": {
+    "paper/abstract.tex": "ab4e0b182f06dc3f36f6b97daf91c03aa670c812de609d68f3e359e38c901180",
+    "paper/common-macros.tex": "555511650854d908655a28a6cbc73b8dcbcbaa8a468e490327d98aa70ecf365d",
+    "paper/core-macros.tex": "04e3a38dc1e80ad64b22947e63656f22d9f9b90ee32f4461bb3437a3296c03d0",
+    "paper/references.tex": "6d6f16e6b0dcb6fbb9fcfed5d9d4b573c2b170aff31c5620626ee5a41a61c7fb",
+    "paper/sections/01-introduction.tex": "70a87e11dbb9f6d9eeee92461b9b74da8ea522d8ae769df5726d7348fad990e7",
+    "paper/sections/02-explicit-three-adic.tex": "4e247d3c47f0f42ed00fcec71717157a7527ed6cf7fc22b435db5cef68366803",
+    "paper/sections/03-quartic-core.tex": "0ed53c95433acfb1c83c80a5cf4bad0ddb54251a381a44019d1eb62033f4f29f",
+    "paper/sections/04-three-dimensional-families.tex": "741fc55f12af3f1e316350fa659d9bbc7c4dffeb903bdde614987c1f0299f070",
+    "paper/sections/05-two-dimensional-families.tex": "cbac3eefab6cd13d6507d7cfc7544f46b55c342302fe3c01655a11f806ccea09",
+    "paper/sections/06-comparisons.tex": "7f792b484b0727275e689738b00a0da74ba7ae67fb4f1614777a02aaa88c8c53"
+  },
+  "current_source_sha256": "c42054adfc6ccc386c1311566e5c6cc70bb710d76068c62bd60fe64c7da37ca8",
+  "current_pdf_sha256": "f1ad73741d0a2cd1580cb338a8478294124653f34228277fa1dd278a45d981f6"
+}

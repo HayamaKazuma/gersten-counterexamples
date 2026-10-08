@@ -1,0 +1,18 @@
+{
+  "audit_date": "2026-10-07",
+  "packaged_at_utc": "2026-10-07T14:34:36.822247+00:00",
+  "input_archive_sha256": "45be52c79544b9d493ce27a1b1da973ad7f489e9b367bca635b8108dde73439a",
+  "danus_source_commit": "6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c",
+  "danus_worker_model": "gpt-6-astra",
+  "danus_worker_effort": "xhigh",
+  "danus_verifier_model": "gpt-6-astra",
+  "danus_verifier_effort": "ultra",
+  "accepted_fact_count": 12,
+  "fact_graph_acyclic": true,
+  "all_predecessors_exported": true,
+  "lean_version": "v4.34.1",
+  "lean_theorems": 12,
+  "lean_exit_code": 0,
+  "end_to_end_K_theory_formalization": false,
+  "export_policy": "Mathematical fact proofs retain their original bytes; verdicts retain mathematical evaluation fields; internal worker assignments, process states and private local memory are excluded."
+}

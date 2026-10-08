@@ -1,0 +1,171 @@
+[
+  {
+    "project": "gersten-package-audit",
+    "fact_id": "1e514828f5fb6c04",
+    "statement": "Weighted quartic root Chern classes remain nonzero after Cohen completion. Let k be an algebraic closure of F_5, W=W(k), rho a primitive fifth root of unity, pi=rho−1, R=W[rho], and V=lim_n W[T]_(5)/5^n. There exists a finite unramified extension C/V arising from the generic-special completion of a smooth affine W-curve etale over an open of the T-line, with the following property. Put C'=C⊗_W R and B=C'〈X,Y〉/(X^4+Phi_5(1+pi Y)/pi^4+TXY^3), where angle brackets denote restricted power series and Phi_5(z)=z^4+z^3+z^2+z+1. For g in G=F_5^× set a_g=(rho^g−1)/pi, J_g=(X,Y−a_g)⊂B, and gamma_g=−c_1^dR(J_g). These ideals are invertible. Let E=Q_5(rho), sigma_g(rho)=rho^g, omega_T:G→Z_5^× the Teichmuller character, and e_r=(1/4)sum_g omega_T(g)^(-r)sigma_g for r=1,3. For every b in E with sigma_(-1)b=−b and both e_1b,e_3b nonzero, sum_g sigma_g(b)gamma_g is nonzero in Omega^2_(B/R)[1/5]/d Omega^1_(B/R)[1/5]. The forms are continuous relative to R, retaining dT, and the quotient uses the ordinary differential image.",
+    "predecessors": [
+      "d8c925bb8cff43ee",
+      "50b9a29bc7dc842b",
+      "868cb19bf6a0a52c"
+    ],
+    "timestamp_utc": "2026-10-07T14:15:53.695450+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/1e514828f5fb6c04.md",
+    "sha256": "c1ca630113c0e38083c3204da1369c70e737734909a9fc1e7d75cf172114cb09",
+    "verification": "evidence/danus/verdicts/1e514828f5fb6c04.json"
+  },
+  {
+    "project": "gersten-package-audit",
+    "fact_id": "32e8bb926907031c",
+    "statement": "Counterexample to the strict simplicial-functor assignments of Satoshi Mochizuki, Local Gersten's conjecture for regular system of parameters, arXiv:1503.07966v8 (6 August 2020), Lemma 13(III). Use the following local notation. Let B=Z_(3), g=3, t=1/4, and let C be the exact category of two-term complexes of finite free B-modules in homological degrees 1,0 with injective differential and g-annihilated cokernel, with its inherited exact sequences. Write (n,m)_B for the complex with differential diag(g id_n,id_m), where n,m are nonnegative integers. A block symbol [[a,b],[c,d]] denotes the chain map whose degree-one and degree-zero matrices are [[a,b],[gc,d]] and [[a,gb],[c,d]], respectively. Upper triangular means c=0, lower triangular means b=0. Let S_2^upper C consist of the usual exact Ar[2] diagrams with zero diagonal whose every structure map is upper triangular; Ar[2] consists of the pairs (i,j), 0<=i<=j<=2, ordered componentwise. Let i_lower S_2^upper C have these objects and natural isomorphisms with lower triangular components. Let Bcal be the exact category of two-term complexes of finite B-modules of projective dimension at most one. Define assignments mu'_1 and mu'_2 by (n,m)_B -> [B --g--> B]^n and (n,m)_B -> [B --1--> B]^n, respectively, and by sending the block symbol [[a,b],[c,d]] to a in both degrees. There exist objects X_1,X_t of S_2^upper C and a morphism F:X_1->X_t in i_lower S_2^upper C such that each mu'_i sends both objects to valid S_2 Bcal diagrams and every component of F to an isomorphism, but the componentwise image of F is not a natural transformation, for each i=1,2. Consequently these assignments do not induce the degree-two functors, and hence not the simplicial functors, claimed in Lemma 13(III). This statement does not assert that Theorem 5 of that paper is false.",
+    "predecessors": [],
+    "timestamp_utc": "2026-10-07T14:01:43.871379+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/32e8bb926907031c.md",
+    "sha256": "f203882e2a49f46e7e662f4aa2930617fc886b6478091b4b1ff690a2302d417e",
+    "verification": "evidence/danus/verdicts/32e8bb926907031c.json"
+  },
+  {
+    "project": "gersten-package-audit",
+    "fact_id": "3bd2401d20c8d7de",
+    "statement": "Put A_2=(Z_(5)[T,x,y]/(Phi_5(1+y)+x^4+Txy^3))_(5,x,y), where Z_(5) is the localization of the integers at (5), T,x,y are indeterminates, and Phi_5(z)=z^4+z^3+z^2+z+1. Let Ahat_2 be the (x,y)-adic completion of A_2. Both are regular local domains of dimension two, with maximal ideal (x,y) and residue field F_5(T). There is an actual class c in Quillen K_3(A_2) such that its image chat in K_3(Ahat_2) has infinite order, and c|_(Frac A_2)=0 and chat|_(Frac Ahat_2)=0 integrally. In particular both rational generic maps K_3(A_2)⊗Q→K_3(Frac A_2)⊗Q and K_3(Ahat_2)⊗Q→K_3(Frac Ahat_2)⊗Q have nonzero kernel.",
+    "predecessors": [
+      "7aedefba09125cf6",
+      "1e514828f5fb6c04",
+      "47409d3a276b6039"
+    ],
+    "timestamp_utc": "2026-10-07T14:32:40.499033+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/3bd2401d20c8d7de.md",
+    "sha256": "d102df2faf7470f5189009a5fb9d52807686909eb6ccd7bc0b630792267a872e",
+    "verification": "evidence/danus/verdicts/3bd2401d20c8d7de.json"
+  },
+  {
+    "project": "gersten-package-audit",
+    "fact_id": "3d341b9a1d18342e",
+    "statement": "The ring A=(Z_(5)[T,x,y]/(Phi_5(1+y)+x^4+Txy^3))_(5,x,y), where Phi_5(z)=z^4+z^3+z^2+z+1, is a regular local ring of dimension two with residue field F_5(T). There is an actual infinite-order class c∈K_3(A) whose image in K_3(Frac A) is zero. Here Z_(5) is the localization of the integers at the prime (5), T,x,y are indeterminates, Frac denotes the fraction field, and K_3 denotes Quillen algebraic K-theory.",
+    "predecessors": [
+      "9a4571503438e4d4"
+    ],
+    "timestamp_utc": "2026-10-07T13:43:57.025618+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/3d341b9a1d18342e.md",
+    "sha256": "add61e55162e34ed5c5e00c4d3ac20b81b54e530e7a34ca0107543010ccf1f7c",
+    "verification": "evidence/danus/verdicts/3d341b9a1d18342e.json"
+  },
+  {
+    "project": "gersten-package-audit",
+    "fact_id": "47409d3a276b6039",
+    "statement": "Relative cyclic detection for an essentially smooth completed surface. Let k be an algebraic closure of F_5, let W_0=W(k), and let R be the ring of integers in a finite totally ramified extension of W_0[1/5], with uniformizer pi and fraction field E. Let B_0 be a localization of a smooth R-algebra with relative cotangent module finite projective of constant rank two, and put B=lim_n B_0/5^nB_0. Suppose B is nonzero. For a ring T and ideal I, let K(T,I) be the homotopy fiber of K(T)→K(T/I), and write mathcalK(T,I)=K(T,I)^wedge_5[1/5] for spectral completion followed by inversion of 5. There is a natural equivalence mathcalK(B,pi B)≃Sigma HC^cts(B/R;Q_5), compatible with the K(B)-module action through the negative cyclic Chern character. The degree-two cyclic group has a canonical top-form summand Omega^2_(B/R)[1/5]/d Omega^1_(B/R)[1/5], with continuous relative forms and ordinary differential image. If beta is an actual element of K_3(R,pi R), its relative point coordinate b lies in E under mathcalK(R,pi R)≃Sigma HC^cts(R/R;Q_5). For every invertible B-module J, the top-form component of beta_B·(1-[J]) is -b c_1^dR(J). Thus nonvanishing of that form, or of a finite sum of such forms, proves nonvanishing of the corresponding actual relative K-class after rationalized spectral 5-completion. This does not assert any injection of actual K-theory into its completion.",
+    "predecessors": [],
+    "timestamp_utc": "2026-10-07T13:57:21.593852+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/47409d3a276b6039.md",
+    "sha256": "475e9d77ace280a7ace5fcba7631d0d4b2aec82794bab85fea428aa60d6fdf38",
+    "verification": "evidence/danus/verdicts/47409d3a276b6039.json"
+  },
+  {
+    "project": "gersten-package-audit",
+    "fact_id": "50b9a29bc7dc842b",
+    "statement": "Bounded elliptic contraction and a split injection after generic Cohen completion. Let k be an algebraic closure of F_5, W=W(k), K=W[1/5], E_0/k the elliptic curve v^2=z^3+z with origin O, and E_0^circ=E_0\\{O,(0,0)}. Let A be the coordinate ring of the same affine curve lifted over W and Ahat its 5-adic completion. Choose rational dagger one-forms omega and eta on A representing respectively nonzero generators of the slope-one and slope-zero lines in proper crystalline H^1(E_0/W)[1/5], restricted to E_0^circ. Let D be any smooth affine W-algebra of relative dimension one with connected nonempty special fiber, let C be the 5-adic completion of its localization at the generic special point, and set B=(Ahat⊗_W C)^wedge_5. All forms on completed rings below are continuous, and all cohomology quotients use ordinary images of differentials. There is a bounded K-linear functional ell:Omega^1_(Ahat/W)[1/5]→K with ell(omega)=1, ell(eta)=0, and ell(dAhat[1/5])=0. It induces a continuous degree-minus-one chain operator L:Omega^bullet_(B/W)[1/5]→Omega^bullet_(C/W)[1/5][-1] satisfying L_2(alpha∧gamma)=ell(alpha)gamma for an elliptic one-form alpha and a base one-form gamma. The homomorphism J:H^1_dR(C/W)[1/5]→H^2_dR(B/W)[1/5], [gamma]↦[omega∧gamma], is split injective with left inverse induced by L. In particular a two-form whose class has a representative omega∧gamma+eta∧delta is nonzero whenever [gamma] is nonzero in Omega^1_(C/W)[1/5]/d(C[1/5]).",
+    "predecessors": [],
+    "timestamp_utc": "2026-10-07T13:47:08.575713+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/50b9a29bc7dc842b.md",
+    "sha256": "48c5ddf176fe4b078b524644a56a8629e71d5e3ce29d5fd16f7d5d45bfcbfb01",
+    "verification": "evidence/danus/verdicts/50b9a29bc7dc842b.json"
+  },
+  {
+    "project": "gersten-package-audit",
+    "fact_id": "7aedefba09125cf6",
+    "statement": "An actual cyclotomic K_3 coefficient with both odd point-character components nonzero. Fix a primitive fifth root of unity rho, set W_ar=Z_(5)[rho], W_E=Z_5[rho], E=Q_5(rho), and pi=rho−1. For g in G=(Z/5Z)^× let sigma_g(rho)=rho^g, and let omega:G→Z_5^× be the Teichmuller character. Let mathcalK(T)=K(T)^wedge_5[1/5]. Define r_E:K_3(W_E)→E by passage to pi_3 mathcalK(W_E), the canonical inverse of pi_3 mathcalK(W_E,(pi))→pi_3 mathcalK(W_E), and the AMMN relative point equivalence with HC_2^cts(W_E/W_E;Q_5)=E. For r=1,3 write e_r=(1/4)sum_(g in G)omega(g)^(-r)sigma_g, acting only on Q_5-vector-space targets. There is an actual beta in K_3(W_ar) of the form beta=(1−sigma_(-1))beta_0 such that its reduction in K_3(F_5) is zero, sigma_(-1)beta=−beta integrally, and b=r_E(beta|_(W_E)) satisfies e_1b≠0 and e_3b≠0. No Q_5-linear projector is applied to an actual rational K-group.",
+    "predecessors": [],
+    "timestamp_utc": "2026-10-07T14:10:03.689267+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/7aedefba09125cf6.md",
+    "sha256": "820936e0779663ee00103b32dd120a1df3c7dbbb95e6aeca84bf0fd7bb4b9215",
+    "verification": "evidence/danus/verdicts/7aedefba09125cf6.json"
+  },
+  {
+    "project": "gersten-package-audit",
+    "fact_id": "868cb19bf6a0a52c",
+    "statement": "Scalar Frobenius classes survive generic Cohen completion. Let p be a prime, k an algebraic closure of F_p, W=W(k) the Witt ring, K=W[1/p], and D a smooth affine W-algebra of relative dimension one whose special fiber D_0=D/pD is connected and nonempty. Put U=Spec(D_0), S={s in D: s mod p is nonzero}, Dhat=lim_n D/p^nD, C=lim_n S^(-1)D/p^nD, and F=C[1/p]. Write Ddagger for the weak p-adic completion of D and use continuous differential forms on the completed rings. Let d>=1, q=p^d, and let phi:Ddagger→Ddagger be an integral Frobenius lift restricting to the d-th Witt Frobenius on W and reducing to the q-th power map on D_0. If omega in Omega^1_(Ddagger/W)[1/p] has nonzero class in H^1_rig(U/K) and phi^*omega-a omega=dh for some a in W and h in Ddagger[1/p], then the image of omega in Omega^1_(C/W)[1/p]/dF is nonzero. The quotient is by the ordinary image dF, without topological closure.",
+    "predecessors": [],
+    "timestamp_utc": "2026-10-07T13:41:11.658919+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/868cb19bf6a0a52c.md",
+    "sha256": "438625652d3c7d4b27b46a2f82dd4f78630b5e96ca6c1a09a0ff4b2e10117a5c",
+    "verification": "evidence/danus/verdicts/868cb19bf6a0a52c.json"
+  },
+  {
+    "project": "gersten-package-audit",
+    "fact_id": "9a4571503438e4d4",
+    "statement": "Let P(y)=5+10y+10y^2+5y^3+y^4, F=P(y)+x^4+Txy^3, R_0=Z_(5)[T,x,y]/(F), m=(5,x,y)⊂R_0, A=(R_0)_m, and S=R_0\\m. Fix a primitive fifth root of unity rho, put E=Q(rho), W=Z_(5)[rho], u=rho−1, B=A⊗_(Z_(5))W, and mathcal T=Spec B[1/u,1/y]. For g∈{1,2,3,4}, put a_g=rho^g−1. Set Qcal=Spec E[T,x,y,y^(-1)]/(F), D_g=V(x,y−a_g)⊂Qcal, and Qcal_s=D(s)⊂Qcal for each s∈S. Then Qcal is a smooth geometrically integral surface, mathcal T=Spec S^(-1)O(Qcal), and Pic(Qcal)=Z^4/Z(1,1,1,1), with standard basis mapping to O(D_g). This Picard calculation persists under every coefficient field extension of E, and Pic(Qcal)→Pic(mathcal T) is injective. For every fixed embedding E→C, the classes e_g=c_1^top(O(D_g)) in H^2(Qcal(C),R) have exactly the real diagonal relation. Moreover, for every s∈S, restriction H^2(Qcal(C),R)→H^2(Qcal_s(C),R) is injective. Here Pic is the group of line bundles and H^2 is singular cohomology.",
+    "predecessors": [],
+    "timestamp_utc": "2026-10-07T13:34:47.653956+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/9a4571503438e4d4.md",
+    "sha256": "8e54d3fb8d3b84e861eeddfe2220a9a37e43d1d7287055147996a5bea1ec39d8",
+    "verification": "evidence/danus/verdicts/9a4571503438e4d4.json"
+  },
+  {
+    "project": "gersten-package-audit",
+    "fact_id": "d8c925bb8cff43ee",
+    "statement": "Nonconstant elliptic graph divisors survive generic Cohen completion. Let k be an algebraic closure of F_5, W=W(k), K=W[1/5], and let mathcalE/W be the smooth elliptic curve v^2=z^3+z with origin O. Put mathcalE^circ=mathcalE\\{O,(0,0)}, E_0=mathcalE⊗_W k, and A=Gamma(mathcalE^circ,O). Let D be a smooth affine W-algebra of relative dimension one with connected nonempty special fiber U=Spec(D/5D), and suppose a W-morphism Qtilde:Spec D→mathcalE^circ has nonconstant special fiber Q:U→E_0^circ. Let C be the 5-adic completion of D localized at the generic point of its special fiber, F=C[1/5], Ahat the 5-adic completion of A, and B=(Ahat⊗_W C)^wedge_5. Let mathcalL_Q be the pullback to Spec B of the line bundle O(Gamma_Qtilde−Gamma_(-Qtilde)) on mathcalE^circ×_W Spec D. Then c_1^dR(mathcalL_Q) is nonzero in Omega^2_(B/W)[1/5]/d Omega^1_(B/W)[1/5]. The forms are continuous and the quotient uses the ordinary image, not its closure. Nonvanishing persists after any finite extension of the constant field K, using the corresponding finite extension of W and continuous relative forms over that extension.",
+    "predecessors": [
+      "868cb19bf6a0a52c",
+      "50b9a29bc7dc842b"
+    ],
+    "timestamp_utc": "2026-10-07T13:59:49.062048+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/d8c925bb8cff43ee.md",
+    "sha256": "56d70ec6801e7af335b48167be11376c08840319f3402548a8b33f4380f0c9ce",
+    "verification": "evidence/danus/verdicts/d8c925bb8cff43ee.json"
+  },
+  {
+    "project": "gersten-triadic-audit",
+    "fact_id": "59cdde297e2a4505",
+    "statement": "Let A=(Z_(3)[x,y,z]/(3+xy+z^2))_(x,y,z), and let Ahat=Z_3[[x,y,z]]/(3+xy+z^2) be its maximal-ideal completion. These are ramified regular local domains of dimension three. For either R=A or R=Ahat, write {b1,b2,b3}=[b1][b2][b3] for the product of the three unit classes in actual Quillen algebraic K-theory. Then c_R=2{(1+z)/2,1+x,1+(1+x)y/4} in K_3(R) has infinite order and maps to zero in K_3(R[1/x]) integrally. Consequently K_3(R) tensor Q -> K_3(Frac(R)) tensor Q is not injective.",
+    "predecessors": [],
+    "timestamp_utc": "2026-10-07T13:50:20.913259+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/59cdde297e2a4505.md",
+    "sha256": "2e1929917c77062f78cba65de379f385d1bf192576e473a06d516648cbb0f146",
+    "verification": "evidence/danus/verdicts/59cdde297e2a4505.json"
+  },
+  {
+    "project": "gersten-triadic-audit",
+    "fact_id": "b8a51f30155aa32f",
+    "statement": "Let p be a prime, W_0=W(overline{F}_p), and W_ram a finite totally ramified extension of the complete discrete valuation ring W_0, with uniformizer pi and fraction field E_ram=W_ram[1/p]. Let B_alg=S^{-1}A_sm, where A_sm is a smooth commutative W_ram-algebra and S is an arbitrary multiplicative subset. Assume Omega^1_{B_alg/W_ram} is finite projective of constant rank d_rel, a finite nonnegative integer. Put B_cmp=lim_r B_alg/p^r B_alg and define Omega_cmp^j=lim_r(Omega^j_{B_alg/W_ram}/p^r), placed in homological degree j; set Omega_cmp^j=0 for j outside [0,d_rel]. The de Rham differential extends continuously to these modules.\n\nWrite K(B_cmp,pi B_cmp)=fib(K(B_cmp)->K(B_cmp/pi B_cmp)) for actual relative algebraic K-theory. A superscript wedge_p means derived spectrum p-completion; [1/p] means inverting p after that completion, not tensoring actual K-groups with Q_p. For F=HH,HC,HC^-,HP define F^cts(B_cmp/W_ram;Q_p)=(Rlim_r F((B_cmp/p^r)/W_ram))^wedge_p[1/p], with Hochschild and cyclic theories derived over W_ram.\n\nThere is a natural character\nchi_cmp: K(B_cmp,pi B_cmp) -> Sigma HC^cts(B_cmp/W_ram;Q_p)\nwhose factorization through the canonical actual-to-completed-and-rationalized map has second arrow an equivalence:\nK(B_cmp,pi B_cmp)^wedge_p[1/p] ≃ Sigma HC^cts(B_cmp/W_ram;Q_p).\nThis equivalence and chi_cmp are K(B_cmp)-linear, where the target action is restricted along the canonical negative-cyclic character K(B_cmp)->HC^{-,cts}(B_cmp/W_ram;Q_p).\n\nThe target is calculated by the finite mixed complex (Omega_cmp^*,0,d)[1/p]. Explicitly, if h has homological degree -2, its cyclic complex is\nCC^+(Omega_cmp)=((W_ram[h,h^{-1}]/hW_ram[h]) tensor_{W_ram} Omega_cmp^*, h d),\nand HC^cts(B_cmp/W_ram;Q_p) ≃ CC^+(Omega_cmp)[1/p].\nThe corresponding negative and periodic total complexes of this same mixed complex compute HC^{-,cts} and HP^cts. Every total degree has only finitely many form summands. All homology is ordinary algebraic homology; differential images are not replaced by their topological closures. These conclusions allow arbitrary S and arbitrary p relative to d_rel.",
+    "predecessors": [],
+    "timestamp_utc": "2026-10-07T14:15:31.490266+00:00",
+    "verdict": "correct",
+    "critical_errors": [],
+    "gaps": [],
+    "proof": "evidence/danus/facts/b8a51f30155aa32f.md",
+    "sha256": "a6d1cdb7d57edf25ee8604b8a9a0d491c29abb281941340509fad1b195dd310f",
+    "verification": "evidence/danus/verdicts/b8a51f30155aa32f.json"
+  }
+]

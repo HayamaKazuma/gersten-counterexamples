@@ -1,0 +1,14 @@
+# Supporting-input repairs after the second whole-paper review
+
+The first full mathematical review returned no findings. After the addition of a two-sentence literature comparison, a second full review identified six missing advanced inputs or normalization justifications in the pre-existing argument. Its exact source and negative verdict are retained under `review-history/`. The repairs below address those findings; the release verdict is recorded separately in `math-review.json`.
+
+| Finding | Repair in the manuscript |
+| --- | --- |
+| Divisor supports and the support-to-ordinary map | The quartic geometry proof gives the finite-point removal isomorphisms, the oriented normal-fiber calculation and gluing, and the canonical divisor section's identification with the global first Chern class. The three-dimensional Betti proof cites that calculation. |
+| Negative-cyclic normalization | The auxiliary product formula retains the raw point coordinate and includes the common nonzero factor supplied by AMMN Proposition 4.12. The proof connects the periodic comparison to the rank-two negative-cyclic action and descends line bundles to finite formal models. The factor is propagated through the completed and higher-degree detector images; it preserves all nonvanishing and rank conclusions. |
+| Restriction from proper curves in rigid cohomology | Petrequin Theorem 1.1 and Proposition 1.3 give support vanishing and localization directly, replacing the unsupported appeal to a Gysin term. |
+| Étale projective-line splitting | The map is explicitly defined by pullback and cup product with the Kummer class. Milne's proper base change and geometric-fiber calculation prove it over the arbitrary characteristic-zero fields used in the paper, before derived inverse limits. |
+| The low-degree analytic stress test | Cartan B and the holomorphic Poincaré lemma compute global de Rham cohomology on the Stein surface. The argument proves both the required surjectivity and the two vanishings on the right of the Deligne cone sequence. It explicitly uses the analytic truncation, without asserting the same statement for the logarithmic mixed-Hodge filtration. |
+| Rational weight-two classes over a rational function field | Comparison of the Milnor and Quillen residue sequences expresses every class as a constant plus a Milnor-symbol image. Matsumoto and the pure Adams weight of the Milnor image yield the weight-two isomorphism, without assuming a general Adams–Riemann–Roch compatibility formula. |
+
+The source's result and proof environment counts measure coverage, not independent certification. These paper-level repairs do not create new accepted facts in the original Danus fact graph or expand the twelve-lemma Lean development. The original five manuscripts remain unchanged in the archive.

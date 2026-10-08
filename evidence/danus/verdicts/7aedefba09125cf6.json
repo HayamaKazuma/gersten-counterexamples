@@ -1,0 +1,11 @@
+{
+  "fact_id": "7aedefba09125cf6",
+  "record_id": "17af1652be544cac",
+  "timestamp_utc": "2026-10-07T14:10:03.689267+00:00",
+  "verdict": "correct",
+  "summary": "The proof passes sequential verification. Step 1 correctly computes the Gauss-sum valuations, justifies uniform convergence and analytic continuation, and obtains nonzero residues 2 and 1 for the two normalized projections; the continuation domain matches [Besser–de Jeu, Theorem 2.7(3)](https://research.vu.nl/ws/portalfiles/portal/2459860/220267.pdf). Step 2 satisfies the special-unit and cocycle conditions in [Besser–de Jeu, Theorems 1.6 and 1.10](https://arxiv.org/pdf/math/0110334). Clearing denominators and applying 1−sigma_(-1) produce an actual integral class with the asserted reduction and antisymmetry. Step 3 uses a comparison valid without a ramification restriction in [Huber–Kings, Section 2](https://arxiv.org/pdf/math/0612611). The finite-coefficient construction is additive, natural and compatible with reduction and transitions by [Weibel, Section 2](https://sites.math.rutgers.edu/~weibel/archive/papers-dir/chernclass.pdf); the inverse-limit argument establishes the required Q_5-linear map without assuming surjectivity from actual K-theory. Step 4 correctly applies the finite-field vanishing and [AMMN, Theorem A, Corollary 3.8 and Proposition 4.10](https://arxiv.org/pdf/2003.12541). The resulting equivariant comparison transfers both nonvanishing conclusions to b. All projectors act on Q_5-vector-space targets. No critical error, proof gap or hard-prohibition violation was found.",
+  "critical_errors": [],
+  "gaps": [],
+  "verification_kind": "independent language-model review",
+  "source_verification_file_sha256": "e85ec124ce834b6915d14a9cb2eda892443fa975a5e6adc5ba9d76f7f9882a2a"
+}

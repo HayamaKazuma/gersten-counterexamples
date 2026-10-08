@@ -1,0 +1,11 @@
+{
+  "fact_id": "9a4571503438e4d4",
+  "record_id": "93397e3d1e09dbc5",
+  "timestamp_utc": "2026-10-07T13:34:47.653956+00:00",
+  "verdict": "correct",
+  "summary": "The proof passes sequential verification in all five steps. The ring identifications, regularity and normality arguments, blowup charts, and transverse intersections with the exceptional curve are valid. The auxiliary surface has the stated Picard lattice; its integral, reduced fibers are principal divisors, so localization to the generic fiber preserves that lattice and proves the required diagonal relation. Restriction to the exceptional curve then establishes the arithmetic Picard injection. The characteristic-zero Picard calculation persists under every coefficient field extension. The Thom boundary map gives exactly the real diagonal relation among the four Chern classes. Finally, Galois transitivity and the torsion-free geometric Picard group show that every geometric component removed by an allowed localization has zero divisor class; the cohomology-with-supports argument therefore proves injectivity on all of H^2. The cited blowup identities and their conventions were confirmed in [Stacks Project, Section 31.33, Lemmas 31.33.2 and 31.33.4](https://stacks.math.columbia.edu/tag/01OF), following the required arXiv-first reference search. The statement is self-contained, and no hard-prohibition violations were found.",
+  "critical_errors": [],
+  "gaps": [],
+  "verification_kind": "independent language-model review",
+  "source_verification_file_sha256": "e85ec124ce834b6915d14a9cb2eda892443fa975a5e6adc5ba9d76f7f9882a2a"
+}

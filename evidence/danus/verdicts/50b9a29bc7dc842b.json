@@ -1,0 +1,11 @@
+{
+  "fact_id": "50b9a29bc7dc842b",
+  "record_id": "e19dcf2d9149e2b7",
+  "timestamp_utc": "2026-10-07T13:47:08.575713+00:00",
+  "verdict": "correct",
+  "summary": "The proof passes sequential verification. After arXiv theorem search returned no matching entries, the references were checked directly in [Caro–D'Addezio, arXiv:2511.11444](https://arxiv.org/html/2511.11444). Theorems 7.3.1, 7.3.6, and 7.2.1 apply with constant coefficients and establish the asserted separation of the slope-one class and vanishing of the slope-zero class in the separated quotient; Definition 7.1.1 supplies exactly the topology used. The discrete quotient norm and lifted residue-field basis justify the bounded functional. The finite-precision tensor constructions extend it continuously to the completed differential modules, including those of the generic-special-point completion. The chain identity has the correct sign for the shift [-1], so it induces a left inverse to J on ordinary cohomology and proves the final nonvanishing assertion. No critical errors, gaps, or hard-prohibition violations were found.",
+  "critical_errors": [],
+  "gaps": [],
+  "verification_kind": "independent language-model review",
+  "source_verification_file_sha256": "e85ec124ce834b6915d14a9cb2eda892443fa975a5e6adc5ba9d76f7f9882a2a"
+}

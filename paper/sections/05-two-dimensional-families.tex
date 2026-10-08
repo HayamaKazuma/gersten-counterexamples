@@ -1,0 +1,1575 @@
+\section{Higher odd degrees for the arithmetic quartic}
+\label{d2ext:higher-odd-quartic}
+
+The arithmetic root lattice also detects coefficients in every higher
+odd degree. In this section write $A_2=A$ for the quartic ring of
+Theorem~\ref{d2:thm:geometric}, let
+$W_{\mathrm{ar}}=\mathbf Z_{(5)}[\rho]$ and
+$E_{\mathrm{ar}}=\mathbf Q(\rho)$, and let
+$i:V(x)\hookrightarrow\operatorname{Spec}A_2$ be its regular divisor.
+We retain the root classes $\eta_g$ and their real Chern classes $e_g$
+on the split affine surface $\mathcal Q$. Throughout this section
+$g\in\mathbf F_5^\times$, and $\sigma_g$ sends $\rho$ to $\rho^g$.
+
+\begin{theorem}
+\label{d2ext:twodimalloddgeometric}
+For the quartic arithmetic local ring $A_2$ and every $n\ge2$, the kernel of
+$K_{2n-1}(A_2)\to K_{2n-1}(\Frac A_2)$ contains an actual infinite-order
+class. The rational kernel has dimension at least two for even $n$
+and at least one for odd $n$.
+\end{theorem}
+\begin{proof}
+Borel's theorem gives $\dim_{\Q}K_{2n-1}(E_{\mathrm{ar}})_{\Q}=2$ and
+$\dim_{\Q}K_{2n-1}(\Q)_{\Q}=0$ for even $n$, respectively $1$
+for odd $n$ \cite[Proposition~12.2]{Borel}. Denote restriction and transfer by $\operatorname{res}$
+and $\operatorname{Tr}$, respectively; they satisfy
+$\operatorname{res}\operatorname{Tr}=\sum_g\sigma_g$ and
+$\operatorname{Tr}\operatorname{res}=4$. Thus the invariant subspace
+is exactly the restriction from $\Q$, and its trace-zero complement
+$V_n$ has the asserted dimension. Quillen localization \cite{Quillen,Weibel} gives
+$K_{2n-1}(W_{\mathrm{ar}})_{\Q}\simeq K_{2n-1}(E_{\mathrm{ar}})_{\Q}$.
+Choose an actual $\gamma\in K_{2n-1}(W_{\mathrm{ar}})$ with noninvariant Borel
+image and put $\beta_n=4\gamma-\sum_g\sigma_g\gamma$.
+Its regulator is nonzero and its Galois sum is zero exactly.
+
+Set $c_n=i_*\beta_n$. Flat base change again identifies its image
+on $\mathcal T$ with $\sum_g(\sigma_g\beta_n|_{E_{\mathrm{ar}}})\eta_g$.
+At a complex embedding, represent the point regulators
+$b_g\in\C/\R(n)$ in the complementary real line $i\R(n)$
+\cite[Section~6]{BunkeTamme}.
+They form a nonzero vector with sum zero, hence a nonconstant vector.
+For each finite open $U=\mathcal Q_s$, the product regulator is
+represented by $2\pi i\sum_gb_ge_g$ in
+\[
+ \HD^3(U,\R(n+1))=H^2(U,\C)/H^2(U,\R(n+1)),
+ \qquad n+1\ge3.
+\]
+Multiplication by $2\pi i$ induces an isomorphism
+$\C/\R(n)\simeq\C/\R(n+1)$. The root lattice and
+Proposition~\ref{d2:prop:geometry} therefore make this class
+nonzero. If an integer killed $c_n$, continuity for the filtered
+arithmetic localization would make that equality hold on some
+$\mathcal Q_s$, contradicting the regulator. Localization at the
+source divisor gives integral vanishing on $A_2[1/x]$.
+Applying the argument to every nonzero vector of $V_n$ proves
+injectivity on $V_n$ and gives the asserted rank bounds.
+\end{proof}
+
+The restriction $n\ge2$ is essential here: at $n=1$, the target
+twist is two and $F^2$ on a complex affine surface is not zero.
+The displayed quotient formula cannot be used in that degree.
+
+\section{An explicit product of three units}
+\label{d2ext:sec-explicit-triple}
+
+Retain $A_2=A$ from Setup~\ref{d2:setup:ring} and its
+completion $\widehat A_2=\widehat A$ from Theorem~\ref{d2:thm:completed}.
+We identify an explicit product of three units with the weighted
+root class after pullback to the split surface and the completed test algebra.
+
+Let $N$ be a complex manifold of dimension two. Write $A^\bullet(N)$
+for complex smooth forms and
+\[
+ I(p)^k=\{\xi\in A^k([0,1]\times N):
+ \xi|_0\in (2\pi i)^pA^k_{\mathbf R}(N),\quad
+ \xi|_1\in F^pA^k(N)\}.
+\]
+Thus $H^k(I(p))=H^k_{\mathcal D,\mathrm{an}}(N,\mathbf R(p))$,
+with multiplication induced by wedge product.
+
+\begin{lemma}\label{d2ext:interval-product}
+Let $g$ be a nowhere-vanishing holomorphic function with a holomorphic
+logarithm $L$, and let $z\in H^2(I(2))$. If $\xi$ is a closed
+representative of $z$, put $\omega=\xi|_1$. Then $\omega$ is a
+closed holomorphic two-form, is independent of the representative,
+and
+\[
+ r_1(g)z=[-L\omega]\quad\hbox{in}\quad
+ H^3_{\mathcal D,\mathrm{an}}(N,\mathbf R(3))
+ =H^2(N,\mathbf C)/H^2(N,\mathbf R(3)).
+\]
+Here $r_1(g)$ is the analytic Deligne first regulator of $g$, with
+the interval and cone conventions of
+\cite[Definition~2.7 and Proposition~2.8]{BunkeTamme}.
+\end{lemma}
+
+\begin{proof}
+Write $L=a+i\phi$, with $a,\phi$ real, and let $\tau$ denote the
+interval coordinate. The usual representative of $r_1(g)$ is
+\[
+ i\,d\phi+d(\tau a).
+\]
+Its difference from $d(\tau L)$ is
+$d(i(1-\tau)\phi)$. The primitive $i(1-\tau)\phi$ belongs to
+$I(1)^0$: its value at $0$ is purely imaginary, hence in
+$\mathbf R(1)$, and its value at $1$ is zero. Consequently
+$d(\tau L)$ represents $r_1(g)$ in $I(1)$.
+
+The endpoint $\omega=\xi|_1$ is closed and lies in $F^2A^2(N)$,
+so it is a closed holomorphic two-form. Changing $\xi$ by an
+$I(2)$-boundary cannot change this endpoint, because
+$F^2A^1(N)=0$.
+
+The product has representative
+\[
+ \upsilon=d(\tau L)\wedge\xi=d(\tau L\xi).
+\]
+Its endpoint at $0$ vanishes. Its endpoint at $1$ is
+$dL\wedge\omega$, which vanishes by complex dimension two.
+Thus the cone map sends its class to
+$[-\int_0^1\upsilon]$. Fiberwise Stokes gives
+\[
+ -\int_0^1\upsilon
+ =-L\omega+d_N\!\left(\int_0^1\tau L\xi\right),
+\]
+and hence gives the asserted representative. It is closed, since
+$d(L\omega)=dL\wedge\omega=0$. The primitive $\tau L\xi$
+has endpoint $L\omega$ at $1$; as $F^3A^2(N)=0$, it generally
+does not belong to $I(3)^2$.
+
+Finally $F^3A^\bullet(N)=0$, so the cone long exact sequence gives
+the stated quotient: the next real-to-complex cohomology map is
+injective. This proves the formula.
+\end{proof}
+
+\begin{proposition}
+\label{d2ext:dimtwoExplicitTriple}
+The triple
+\begin{equation}\label{d2ext:eq-explicit-triple}
+ c_{\rm exp}=\left\{2+y,\ 1-x,\
+ 1+(1-x)(x^3+Ty^3)y\bigl((1+y)^5+1\bigr)\right\}\in K_3(A_2)
+\end{equation}
+has infinite order in $A_2$ and in $\widehat A_2$, and its
+restriction to the localization at $x$ is zero integrally in both cases.
+\end{proposition}
+
+\begin{proof}
+\emph{Integral vanishing.}
+Put $t=-1-y$, $v=x^3+Ty^3$, and
+\[
+ H(t)=\frac{t^{10}-1}{\Phi_{10}(t)}=(t^5-1)(t+1)
+      =y\bigl((1+y)^5+1\bigr),\quad b=vH(t).
+\]
+Then $xv=-\Phi_{10}(t)$, so $1-xb=t^{10}$.
+Set $g=1-t$, $\lambda=1-x$, and $\mu=1+\lambda b$.
+These are units: their residues are $2,1,1$ respectively, and
+$t$ is also a unit. In the convention
+$\langle r,s\rangle=\{r,1-rs\}$ when $r$ is a unit, the
+Dennis--Stein relations give
+\[
+ \delta=\langle x,b\rangle
+ =\langle x,b+1-xb\rangle=\langle x,\mu\rangle
+ =\{\lambda t^{10},\mu\}.
+\]
+Here $\langle x,1\rangle=0$ and $1-x\mu=\lambda t^{10}$;
+see \cite[Chapter~III, Definition~5.11 and relations (D1)--(D3)]{Weibel}.
+Since $\{g,t^{10}\}=10\{1-t,t\}=0$, multiplication gives
+\begin{equation}\label{d2ext:dimtwoDSidentity}
+ [g]\delta=\{g,\lambda,\mu\}=c_{\rm exp},\qquad
+ [g]\delta|_{D(x)}=\{g,x,t^{10}\}=0.
+\end{equation}
+All identities are integral and persist under every ring map in use.
+
+\emph{The universal supported coefficients.}
+Write $E_{\mathrm{ar}}=\mathbf Q(\rho)$, where $\rho$ is primitive of order five,
+and $t_g=-\rho^g$ for $g\in\mathbf F_5^\times$. On the smooth surface
+\[
+ Q^0=\operatorname{Spec}E_{\mathrm{ar}}[X,V,t]/(XV+\Phi_{10}(t)),\qquad
+ U=Q^0[1/(t(1-t))],
+\]
+the class $\alpha=[1-t]\langle X,VH(t)\rangle$ is defined and
+vanishes on $U[1/X]$. The entire divisor $D=V(X)$ is contained
+in $U$. Localization and d\'evissage therefore give an actual
+supported lift $\kappa\in K_3(Q^0)$ of $\alpha$.
+Put $\eta_g=1-[(X,t-t_g)]$. Since the four components of $D$
+are affine lines, $\kappa=\sum_g\gamma_g\eta_g$ with
+$\gamma_g\in K_3(E_{\mathrm{ar}})$, and $\sum_g\eta_g=0$.
+
+\emph{Independence of the supported lift.}
+This lift is unique rationally as a class on $Q^0$.
+Here is a direct $K$-theoretic check, independent of its periods,
+using localization and the Laurent fundamental theorem \cite{Weibel}.
+Put $Z=\mathbf A^1_{E_{\mathrm{ar}}}\setminus\{0,1\}$.  Then
+$U[1/X]\simeq\mathbf G_m\times Z$, and localization on the
+affine line, split by the units $t$ and $1-t$, gives
+\[
+ K_r(Z)\simeq K_r(E_{\mathrm{ar}})\oplus
+       K_{r-1}(E_{\mathrm{ar}})[t]\oplus K_{r-1}(E_{\mathrm{ar}})[1-t].
+\]
+Together with the Laurent fundamental theorem this gives
+\[
+\begin{split}
+ K_4(U[1/X])\simeq{}&
+ K_4(E_{\mathrm{ar}})\oplus K_3(E_{\mathrm{ar}})[t]\oplus K_3(E_{\mathrm{ar}})[1-t]\\
+ &{}\oplus K_3(E_{\mathrm{ar}})[X]
+ \oplus K_2(E_{\mathrm{ar}})[X][t]\oplus K_2(E_{\mathrm{ar}})[X][1-t].
+\end{split}
+\]
+The first three summands extend to $U$, so their boundary in
+$K_3(D)=K_3(E_{\mathrm{ar}})^4$ is zero.  For a number field,
+$K_2(E_{\mathrm{ar}})_{\mathbf Q}=K_4(E_{\mathrm{ar}})_{\mathbf Q}=0$: localization
+reduces this to the rational even $K$-group vanishing for its
+number ring \cite[Proposition~12.2]{Borel} and the torsion odd
+$K$-groups of finite fields
+\cite{QuillenFinite}\cite[IV, Corollary~1.13]{Weibel}.
+The only remaining boundary is that of
+$\beta[X]$, namely the diagonal tuple
+$\pm(\beta,\beta,\beta,\beta)$ with a common convention-dependent
+sign, since $X$ has order one on each root component. Localization therefore
+identifies the kernel as
+\[
+ \ker\bigl(K_3(D)_{\mathbf Q}\longrightarrow K_3(U)_{\mathbf Q}\bigr)
+       =\Delta K_3(E_{\mathrm{ar}})_{\mathbf Q}.
+\]
+The diagonal pushes forward to zero on $Q^0$, by the
+length-one free resolution of the principal divisor $X=0$.
+Consequently any two actual supported lifts of $\alpha$ give
+the same class in $K_3(Q^0)_{\mathbf Q}$.
+Moreover, since
+$Q^0[1/X]\simeq\mathbf G_m\times\mathbf A^1_{E_{\mathrm{ar}}}$, the same
+Laurent calculation gives
+$\ker(K_3(D)\to K_3(Q^0))=\Delta K_3(E_{\mathrm{ar}})$ already integrally.
+Thus its supported coefficients are unique modulo the diagonal.
+
+Write $\operatorname{bl}$ for the Bloch-symbol map to algebraic
+$K_3$ in \cite[Theorem~4.9]{BunkeTamme}. For a root $a$ of order ten define
+$\beta_{\rm BT}(a)=\frac1{10}\operatorname{bl}(10[a])$
+using \cite[Theorem~4.9 and (4.8)]{BunkeTamme}. Both $a$ and
+$1-a$ are global units, and $10[a]$ has zero wedge boundary.
+The normalization at every complex embedding $\sigma$ is
+$r_2(\beta_{\rm BT}(a))_\sigma=-iD_{\rm BW}(\sigma a)$.
+We claim the exact rational identity
+\begin{equation}\label{d2ext:dimtwoUniversalCoefficients}
+ \kappa=-10\sum_g\beta_{\rm BT}(t_g)\eta_g
+          \quad\hbox{in }K_3(Q^0)_{\mathbf Q}.
+\end{equation}
+
+\emph{Determination of the supported coefficients.}
+Fix a complex embedding $\sigma:E_{\mathrm{ar}}\hookrightarrow\mathbf C$ and
+write $a_g=\sigma t_g$. The four roots are
+$e^{\pm i\pi/5}$ and $e^{\pm3i\pi/5}$. For any distinct pair
+$a_i,a_j$, their chord avoids $0$, $1$, and the other roots. Choose
+one neighborhood of the chord on which the logarithm
+$L=\operatorname{Log}(1-t)$ and the classical dilogarithm
+$F=\operatorname{Li}_2(t)$ are single-valued. We use the branches
+continued from their power series on the open unit disc; they satisfy
+$dF=-L\,dt/t$.
+
+Over this chord the matching sphere is parametrized by
+\[
+ X=\sqrt{|\Phi_{10}(t)|}\,e^{i\vartheta},\qquad
+ V=-\frac{\Phi_{10}(t)}{|\Phi_{10}(t)|}\,\overline X,
+\]
+with $X=V=0$ at the two endpoints. This parametrization satisfies
+$XV=-\Phi_{10}(t)$ and is smooth at each pole: $|X|^2$ is a
+smooth positive multiple of the distance to that endpoint along
+the chord. Orient the sphere by $ds\wedge d\vartheta$, where $s$
+increases from $a_i$ to $a_j$.
+
+On $X\ne0$, the weight-two holomorphic endpoint of the regulator
+of $\delta=\langle X,VH(t)\rangle$ is
+\[
+ \omega=10\frac{dX}{X}\wedge\frac{dt}{t}
+        =-\frac{dX\wedge d(VH(t))}{t^{10}}.
+\]
+The last expression extends holomorphically across both poles.
+It therefore identifies the endpoint on the entire neighborhood.
+Lemma~\ref{d2ext:interval-product} now gives
+$r_3(\alpha)=[-L\omega]$. In particular this calculation retains
+the full interval regulator, including its real endpoint.
+On the punctured sphere,
+$L\omega=10d(F\,dX/X)$. The boundary circles at the two poles
+contribute $2\pi iF(a_j)$ and $-2\pi iF(a_i)$, and the integrals
+over shrinking smooth caps tend to zero. The resulting period is
+\begin{equation}\label{d2ext:matching-period}
+ \int_{\Sigma_{ij}}r_3(\alpha)
+   =-20\pi i\bigl(F(a_j)-F(a_i)\bigr)
+       \pmod{\mathbf R(3)}.
+\end{equation}
+Since $|a_i|=|a_j|=1$, the real part is
+$20\pi(D_{\rm BW}(a_j)-D_{\rm BW}(a_i))$.
+The root divisor has local normal coordinate $X$. Its intersection
+numbers with the oriented sphere are $+1$ at the initial pole
+and $-1$ at the terminal pole. Thus the Chern periods of
+$\eta_i$ and $\eta_j$ are $2\pi i$ and $-2\pi i$, respectively.
+Multiplicativity gives, for every $\sigma$,
+\[
+ r_2(\gamma_i-\gamma_j)_\sigma
+   =-10r_2\bigl(\beta_{\rm BT}(t_i)-\beta_{\rm BT}(t_j)\bigr)_\sigma.
+\]
+Borel injectivity \cite[Section~6]{BunkeTamme}, applied to all
+embeddings, proves equality in $K_3(E_{\mathrm{ar}})_{\mathbf Q}$. The remaining coefficient is common to
+all four components and contributes zero because $\sum_g\eta_g=0$.
+This proves \eqref{d2ext:dimtwoUniversalCoefficients}.
+
+\emph{Comparison with the actual cyclotomic coefficient.}
+Write $\beta_{\rm BDJ}(a)$ for the field class supplied by the
+symbol map of \cite[Theorem~1.10(1)--(2) and Remark~1.7]{BesserDeJeu}.
+The complex formula of \cite[Proposition~4.1 and Remark~5.2]{DeJeuWedge}
+compares its regulator with that of $\beta_{\rm BT}(a)$ by one
+nonzero real scalar, independent of the field, root, and embedding.
+This scalar is rational. Indeed, take $a=\zeta_6$ in
+$L=\mathbf Q(\sqrt{-3})$ and put
+$\beta_{\rm BT}(a)=\frac16\operatorname{bl}(6[a])$.
+Both classes belong to the one-dimensional rational vector space
+$K_3(L)_{\mathbf Q}$ \cite[Proposition~12.2]{Borel}
+and are nonzero, since $D_{\rm BW}(\zeta_6)>0$. Consequently
+$\beta_{\rm BDJ}(\zeta_6)=s\beta_{\rm BT}(\zeta_6)$ for a
+unique $s\in\mathbf Q^\times$. Taking the complex regulator
+identifies $s$ with the universal real scalar. Borel injectivity
+at all embeddings \cite[Section~6]{BunkeTamme} then yields
+\[
+ \beta_{\rm BDJ}(a)=s\beta_{\rm BT}(a)
+\]
+for every root in use. The same field symbol map occurs in the
+complex and $p$-adic formulas of the cited theorem.
+Finite-residue localization identifies
+$K_3(W_{\rm ar})_{\mathbf Q}$ with $K_3(E_{\mathrm{ar}})_{\mathbf Q}$,
+so this comparison also holds before local completion.
+Consequently the coefficient and character argument of
+Proposition~\ref{d2:prop:coefficient} applies to
+\[
+ \Gamma=\operatorname{bl}(10[-\rho])\in K_3(\mathcal O_{E_{\mathrm{ar}}}),
+ \qquad \beta=\Gamma-\sigma_{-1}\Gamma\in K_3(W_{\rm ar}).
+\]
+This is an actual integral antisymmetrization. Its residue class
+vanishes because $\sigma_{-1}$ acts trivially on the residue field.
+The identities $D_{\rm BW}(a^{-1})=-D_{\rm BW}(a)$ at every
+embedding and Borel injectivity \cite[Section~6]{BunkeTamme} give
+\[
+ \beta_{\mathbf Q}=20\beta_{\rm BT}(-\rho)
+                  =\frac{20}{s}\beta_{\rm BDJ}(-\rho).
+\]
+The syntomic symbol formula therefore makes the point regulator
+of $\beta$ a common nonzero rational multiple of
+$\operatorname{Li}_2(-\rho)$. The two congruences in
+the proof of Proposition~\ref{d2:prop:coefficient} imply that its $e_1$ and
+$e_3$ components are nonzero. The finite Chern factorization and
+point comparison in Proposition~\ref{d2:prop:coefficient}
+transfer this statement to its AMMN point coordinates.
+Equation~\eqref{d2ext:dimtwoUniversalCoefficients} becomes
+\begin{equation}\label{d2ext:dimtwoExactHalf}
+ \kappa=-\frac12\sum_g\sigma_g(\beta)\eta_g.
+\end{equation}
+
+\emph{Detection on the arithmetic ring.}
+On the chord $e^{-i\pi/5}\to e^{i\pi/5}$, the real period in \eqref{d2ext:matching-period} is
+\[
+ 40\pi D_{\rm BW}(e^{i\pi/5})>0.
+\]
+The inequality follows from
+$D_{\rm BW}(e^{i\theta})=-\int_0^\theta
+\log(2\sin(v/2))\,dv$ for $0<\theta<\pi/3$.
+This sphere lies in $Q^0[1/(t+1)]$, identified with $\mathcal Q$
+by $X=x$, $V=x^3+Ty^3$, and $t=-1-y$.
+The supported expression for $\kappa$ makes its regulator a real
+root class. Proposition~\ref{d2:prop:geometry} keeps this class
+nonzero on every permitted finite localization. If a nonzero
+integer killed $c_{\rm exp}$, continuity would realize that
+vanishing at one such finite localization, contradicting its
+regulator. This proves infinite order in $A_2$ directly.
+
+\emph{Detection after completion.}
+The same substitutions define a ring map
+$\mathcal O(Q^0)\to B[1/\pi]$,
+with $X\mapsto\pi X$, $t\mapsto-1-\pi Y$.
+Both $t$ and $1-t$ are units already in $B$, and the root line
+$(X,t-t_g)$ pulls back to $J_g[1/\pi]$.
+The denominator and completion maps of
+Section~\ref{d2:sec:assembly} therefore give
+\[
+ c_{\rm exp}|_{B[1/\pi]}
+ =\widehat c_{\rm exp}|_{B[1/\pi]}
+ =-\frac12\sum_g\sigma_g(\beta)(1-[J_g])\big|_{B[1/\pi]}.
+\]
+Proposition~\ref{d2:prop:weighted} and the actual assembly
+detect the right side as nonzero in rationalized completed
+$K$-theory. Thus both actual source classes have infinite order.
+The equality used here is on the split surface and its test pullback.
+\end{proof}
+
+\begin{corollary}
+\label{d2ext:twodimexplicitMilnor}
+For either $A=A_2$ or $A=\widehat A_2$, the ordinary Milnor symbol
+\[
+ m=\left\{2+y,\ 1-x,\
+ 1+(1-x)(x^3+Ty^3)y\bigl((1+y)^5+1\bigr)\right\}
+       \in K_3^M(A)
+\]
+has infinite order and has zero image in
+$K_3^M(\Frac A)$, integrally. In particular the ordinary
+Milnor Gersten augmentation also fails after rationalization.
+\end{corollary}
+
+\begin{proof}
+Write
+\begin{align*}
+ t&=-1-y,\qquad g=1-t,\qquad \lambda=1-x,\qquad q=t^{10},\\
+ b&=(x^3+Ty^3)y\bigl((1+y)^5+1\bigr),\qquad \mu=1+\lambda b.
+\end{align*}
+The defining equation gives $1-xb=q$ and hence
+$1-x\mu=\lambda q$. The elements $g,\lambda,\mu,q$
+are units in $A$: their residues are respectively $2,1,1,1$.
+In its fraction field, $x$ and $x\mu$ are also nonzero.
+The two Steinberg relations and skew-symmetry in field
+Milnor $K$-theory give
+\begin{align*}
+ 0&=\{x\mu,\lambda q\},\qquad \{x,\lambda\}=0,\\
+ \{x,q\}&=-\{\mu,\lambda\}-\{\mu,q\}
+            =\{\lambda q,\mu\}.
+\end{align*}
+Furthermore $\{g,q\}=10\{1-t,t\}=0$. Therefore, without
+rationalizing,
+\[
+ m=\{g,\lambda,\mu\}
+   =\{g,\lambda q,\mu\}
+   =\{g,x,q\}
+   =-\{g,q,x\}=0
+       \quad\text{in }K_3^M(\Frac A).
+\]
+The natural homomorphism $K_3^M(A)\to K_3(A)$ induced
+by products of units sends $m$ to the already detected
+infinite-order class $c_{\rm exp}$. Thus no nonzero integer
+can kill $m$. 
+\end{proof}
+
+\section{A tame family at every residue prime}
+\label{d2ext:sec-tame-family}
+
+\begin{theorem}
+\label{d2ext:twodimtamefamily}
+Let $p$ be any prime and let $d\ge3$ satisfy $p\nmid d$. Put
+\[
+ A_{p,d}=\left(\Z_{(p)}[T,x,y]/
+       (p+x^d+y^d+Txy^{d-1})\right)_{(p,x,y)}.
+\]
+This is a regular local ring of dimension two, with residue field
+$\F_p(T)$, and
+\[
+ \dim_{\Q}\ker\bigl(K_3(A_{p,d})_{\Q}
+       \longrightarrow K_3(\Frac A_{p,d})_{\Q}\bigr)
+       \ \ge\ \lfloor d/2\rfloor.
+\]
+In particular these dimensions are unbounded with the residue
+prime and local dimension fixed. The theorem concerns the
+uncompleted rings displayed above.
+\end{theorem}
+
+\begin{proof}
+\emph{The actual source and the flat splitting ring.}
+Write $A=A_{p,d}$. Its regular ambient local ring has parameters
+$p,x,y$, and its defining equation has linear term $p$.
+Thus $A$ is regular of dimension two with maximal ideal $(x,y)$.
+Solving the equation for $T$ gives $\Frac A=\Q(x,y)$.
+
+Choose $\theta^d=-p$ and set
+\[
+ K=\Q(\theta),\qquad W_0=\Z_{(p)}[\theta],\qquad
+ A/(x)=W_0[T]_{(\theta)}.
+\]
+Eisenstein's criterion gives $[K:\Q]=d$; $W_0$ is a DVR with
+uniformizer $\theta$ and residue field $\F_p$.
+Quillen localization gives
+$K_3(W_0)_{\Q}\simeq K_3(K)_{\Q}$, and every actual
+$K_3(K)$ class lifts to $K_3(W_0)$, since $K_2(\F_p)=0$.
+Pull back such a coefficient $\beta$ to $A/(x)$ and push it
+forward to obtain $c_\beta\in K_3(A)$. Its restriction to
+$A[1/x]$ is zero. We will prove that the resulting rational map
+$K_3(K)_{\Q}\to K_3(A)_{\Q}$ is injective.
+
+Let $E=K(\mu_d)$ and choose a prime $\mathfrak P$ above $p$.
+Put $W=(\mathcal O_E)_{\mathfrak P}$ and let $k$ be its finite
+residue field. The completion of $E$ at this prime is
+$\Q_p(\mu_d,\theta)$. Since $p\nmid d$, adjoining $\mu_d$
+is unramified, and $Z^d+p$ remains Eisenstein over that
+unramified extension. Consequently $\theta$ is a uniformizer
+of $W$, and the $d$ roots of unity $(\zeta_i)_{i=1}^d$ in $W$ have distinct
+reductions in $k$.
+The ring $W$ is flat over $\Z_{(p)}$, but need not be finite.
+Use the explicit local ring
+\[
+ B=(A\otimes_{\Z_{(p)}}W)_{(\theta,x,y)}
+  =\left(V[x,y]/
+      (x^d+y^d+Txy^{d-1}-\theta^d)\right)_{(\theta,x,y)},
+ \qquad V=W[T]_{(\theta)}.
+\]
+The ideal indicated is maximal with residue field $k(T)$, and
+$A\to B$ is flat by tensor product followed by localization.
+
+\emph{The exceptional curve and its root points.}
+The projectivized tangent cone of $B$ is
+\[
+ C:\ X^d+Y^d+TXY^{d-1}=U^d
+       \subset\mathbf P^2_{k(T)}.
+\]
+It is geometrically smooth. A singular point must have $U=0$;
+then $Y\ne0$ and $q(s)=s^d+Ts+1$ would have a multiple root.
+The identity $dq-sq'=(d-1)Ts+d$ shows this can occur only at
+finitely many algebraic values of $T$, or never if $p\mid d-1$.
+Thus it cannot occur over $k(T)$.
+
+The smooth plane curve $C$ is geometrically integral, so the
+associated graded ring of $B$ is a domain. Krull intersection
+then shows that $B$ is a domain. The blow-up
+$\mathcal Y=\operatorname{Bl}_{(\theta,x,y)}\Spec B$
+is regular and has the single reduced exceptional curve $C$.
+Here are the local details needed for this assertion. Its
+$\theta$-chart has equation
+$X^d+Y^d+TXY^{d-1}=1$, with $x=\theta X$, $y=\theta Y$;
+the other two strict-transform charts reduce to the corresponding
+charts of the smooth $C$. A nonzero differential tangent to
+the ambient exceptional plane therefore proves regularity at
+every point of $C$. The nonregular locus is closed by excellence.
+Its proper image in the local scheme $\Spec B$, if nonempty,
+would contain the closed point, a contradiction. This proves
+regularity everywhere.
+Off the closed point the blow-up is an isomorphism; the
+hypersurface $S_2$ property then also shows $B$ is normal.
+
+The tautological ideal gives
+$\mathcal O_{\mathcal Y}(C)|_C=\mathcal O_C(-1)$.
+The root primes $(x,y-\theta\zeta_i)$ have strict transforms
+meeting $C$ at $P_i=[1:0:\bar\zeta_i]$, each with multiplicity
+one. Indeed, on the $\theta$-chart the $Y$-derivative is a unit
+at $X=0,Y=\zeta_i$, and the two regular parameters there are
+$\theta,X$.
+
+\emph{The exceptional Picard lattice.}
+On $C^*=C\cap\{UY\ne0\}$ the root-point classes have only
+the diagonal relation. To prove this, extend $k$ to $\bar k$ and
+consider
+\[
+ M=\Spec\bar k[X,Z,Y^{\pm1}]/(XZ-(1-Y^d)),\qquad
+ T=(Z-X^{d-1})/Y^{d-1}.
+\]
+On inverting $X$ its ring is the Laurent UFD
+$\bar k[X^{\pm1},Y^{\pm1}]$. Divisor localization and its units
+$cX^aY^b$ give
+$\Pic(M)=\Z^d/\Z(1,\ldots,1)$, generated by
+$(X,Y-\bar\zeta_i)$.
+
+Every finite fiber $T=t$ is geometrically integral. Under
+$s=X/Y$, $w=1/Y$ it is
+$w^d=s^d+ts+1$, $w\ne0$.
+The polynomial $q_t=s^d+ts+1$ has $\deg\gcd(q_t,q_t')\le1$
+by $dq_t-sq_t'=(d-1)ts+d$ and $d\ne0$ in $\bar k$.
+If it were an $\ell$th power for a prime $\ell\mid d$,
+that degree would be at least $d-d/\ell\ge2$, a contradiction.
+A rational-function power would already be a polynomial power.
+Since $\bar k$ contains $\mu_d$ and $p\nmid d$, this also
+proves irreducibility of $w^d-q_t$: the root extension is
+cyclic, and a proper degree would express $q_t$ as such a power.
+Each removed $T$-fiber is therefore one principal prime divisor,
+of multiplicity one. Divisor localization gives
+$\Pic(M)\simeq\Pic(M_{\bar k(T)})$.
+The generic fiber of $M$ is $C^*_{\bar k(T)}$, proving the root-point
+assertion.
+
+\emph{Arithmetic Picard and Betti persistence.}
+The generic affine surface and test localization are
+\begin{align*}
+ Q&=\Spec E[T,x,y,y^{-1}]/(p+x^d+y^d+Txy^{d-1})\\
+  &\simeq\Spec E[x,v,y^{\pm1}]/(xv+y^d+p),\qquad
+ \mathcal T=\Spec B[1/\theta,1/y],
+\end{align*}
+where $v=x^{d-1}+Ty^{d-1}$. Inverting $x$ again gives a
+Laurent UFD. Thus $\Pic(Q)=\Z^d/\Z(1,\ldots,1)$, generated
+by $D_i=(x,y-\theta\zeta_i)$; this remains true after every
+coefficient field extension.
+The map $\Pic(Q)\to\Pic(\mathcal T)$ is injective.
+Indeed, a root combination made principal on $\mathcal T$
+can acquire on $\mathcal Y$ only strict divisors over $\theta=0$
+or $y=0$, and a multiple of $C$. The former miss $C^*$ and
+$\mathcal O_C(-1)$ is trivial on $U\ne0$.
+Restriction to $C^*$ gives the same combination of the $P_i$,
+so all coefficients are equal, which was already the zero
+relation on $Q$.
+
+Write $\mathcal O(\mathcal T)=\varinjlim_s\mathcal O(Q_s)$,
+where $s$ runs over the permitted arithmetic denominators.
+Each $E$-prime divisor removed by such an $s$ has zero Picard
+class by the injection just proved. Its geometric components
+are one Galois orbit. The absolute Galois group over $E$ acts trivially on the torsion-free
+root Picard lattice, so each geometric component also has zero
+class. The degree-two support sequence consequently gives
+\[
+ H^2(Q(\C),\R)\lhook\joinrel\longrightarrow
+ H^2(Q_s(\C),\R)\qquad\text{for every permitted }s.
+\]
+The root Chern classes $e_i$ span an injected copy of
+$\R^d/\R(1,\ldots,1)$: in the Gysin sequence of the $D_i$,
+the angular class of $x$ has residue the diagonal and that of
+$y$ has residue zero. This proves precisely the needed real
+root-class persistence.
+
+\emph{Detection of every nonzero coefficient.}
+Let $\iota_i:K\hookrightarrow E$ send $\theta$ to
+$\theta\zeta_i$, and put $\eta_i=1-[\mathcal O_Q(-D_i)]$.
+Flat base change for the actual Gysin class and the projection
+formula, followed by restriction to the regular $\mathcal T$,
+give
+\[
+ c_\beta|_{\mathcal T}
+    =\left.\sum_i\iota_i(\beta)\eta_i\right|_{\mathcal T}.
+\]
+At one complex embedding of $E$, the point regulators
+$b_i\in\C/\R(2)$ run through all embeddings of $K$.
+Choose their representatives in $i\R$. If $\beta\ne0$ in
+$K_3(K)_{\Q}$, Borel injectivity \cite[Section~6]{BunkeTamme}
+makes this vector nonzero.
+Conjugate embeddings have opposite coefficients and real
+embeddings have coefficient zero, so it is not diagonal.
+
+The absolute multiplicative regulator of Bunke--Tamme
+\cite[Theorem~2.31]{BunkeTamme} of the supported sum
+is the real root class $2\pi i\sum_i b_i e_i$, modulo
+$H^2(Q_s(\C),\R(3))$. It is nonzero on every permitted finite
+open by the preceding injection. Here the analytic Deligne
+target is $H^2(Q_s,\C)/H^2(Q_s,\R(3))$ because its complex
+dimension is two and $F^3=0$; a nonzero real class survives this
+quotient. Each individual regulator calculation spreads to a
+regular finite type arithmetic model after inverting one
+integer. The standard continuity
+$K_3(\mathcal T)=\varinjlim_s K_3(Q_s)$ now rules out any
+nonzero rational coefficient in the kernel of the Gysin map.
+
+Finally $Z^d+p$ has one real root when $d$ is odd and none
+when $d$ is even. Borel's rank calculation
+\cite[Proposition~12.2]{Borel} therefore gives
+$\dim_{\Q}K_3(K)_{\Q}=r_2(K)=\lfloor d/2\rfloor$.
+Choosing actual lifts of a rational basis yields the asserted
+number of independent classes of infinite order in the generic kernel.
+All uses of localization, base change and regulators are the
+standard inputs cited above \cite{Quillen,QuillenFinite,Borel,BunkeTamme,Weibel}.
+\end{proof}
+
+For example, $(p,d)=(2,3)$ gives
+$\bigl(\Z_{(2)}[T,x,y]/(2+x^3+y^3+Txy^2)\bigr)_{(2,x,y)}$.
+For any fixed $p$, arbitrarily large odd $d$ prime to $p$ give
+the unbounded rank assertion without enlarging the residue
+field $\F_p(T)$. 
+
+\begin{remark}
+The condition $d\ge3$ is used in the vertical-fiber calculation.
+When $d=2$ and $p\ne2$, the fiber at $t=2$ has
+$s^2+2s+1=(s+1)^2$, so the Kummer irreducibility argument is
+unavailable and the vertical fiber splits. Localization can then
+kill a root divisor difference. The proof therefore supplies no
+degree-two analogue of the displayed tame family.
+\end{remark}
+
+\begin{corollary}
+\label{d2ext:twodimtameallodd}
+For $A_{p,d}$ as in Theorem~\ref{d2ext:twodimtamefamily} and every
+$n\ge2$, the rational kernel of
+$K_{2n-1}(A_{p,d})\to K_{2n-1}(\Frac A_{p,d})$ has dimension at least
+\[
+ \begin{cases}
+ \lfloor d/2\rfloor,&n\text{ even},\\
+ \lceil d/2\rceil-1,&n\text{ odd}.
+ \end{cases}
+\]
+These bounds are realized by actual classes of infinite order.
+For odd $d$ the bound is $(d-1)/2$ in every odd $K$-degree at least three.
+\end{corollary}
+
+\begin{proof}
+Retain $K=\Q(\theta)$, $W_0$, the splitting field $E$, and the
+$d$ embeddings $\iota_i:K\hookrightarrow E$ from the theorem.
+Use the specified rational coefficient space
+\[
+ V_n=\ker\left(\operatorname{Tr}_{K/\Q}:
+       K_{2n-1}(K)_{\Q}\longrightarrow K_{2n-1}(\Q)_{\Q}\right).
+\]
+For an actual $\gamma\in K_{2n-1}(K)$ set
+$\beta=d\gamma-\operatorname{res}_{K/\Q}
+                 \operatorname{Tr}_{K/\Q}\gamma$.
+The identity $\operatorname{Tr}\operatorname{res}=d$ shows
+that $\operatorname{Tr}\beta=0$ integrally. These actual
+classes span $V_n$ rationally, because the displayed operator
+acts as multiplication by $d$ on $V_n$.
+Each $\beta$ lifts to $K_{2n-1}(W_0)$, since
+$K_{2n-2}(\F_p)=0$. Localization, flat base change and the
+projection formula give an actual class vanishing generically whose
+test image is $\sum_i\iota_i(\beta)\eta_i$.
+
+At a fixed complex embedding of $E$ let $b_i$ be the point
+regulators, represented in the complementary real line
+$i\R(n)$ to $\R(n)$ in $\C$. Base change for field transfer
+gives $\sum_i\iota_i(\beta)=
+\operatorname{res}_{E/\Q}\operatorname{Tr}_{K/\Q}\beta=0$;
+therefore $\sum_i b_i=0$. If $\beta$ is nonzero rationally,
+Borel injectivity \cite[Section~6]{BunkeTamme} makes the vector
+$(b_i)$ nonzero and hence nondiagonal. Its line-bundle product is
+$2\pi i\sum_i b_i e_i$. The preceding Betti persistence
+keeps this root class nonzero on every permitted finite open.
+The relevant analytic Deligne group is
+\[
+ H^3_{\mathcal D,\mathrm{an}}(Q_s,\R(n+1))
+   =H^2(Q_s,\C)/H^2(Q_s,\R(n+1)),
+\]
+because $n+1\ge3$ and $Q_s(\C)$ is a surface.
+Multiplication by $2\pi i$ identifies
+$\C/\R(n)$ with $\C/\R(n+1)$, so the product regulator
+is nonzero. The same continuity argument proves injectivity
+of the supported map on $V_n$; applying it to every rational
+relation gives independent actual representatives.
+
+Rational transfer is surjective, since its composition with
+restriction is multiplication by $d$. Borel's ranks
+\cite[Proposition~12.2]{Borel} give
+\[
+ \dim V_n=
+ \begin{cases}
+ r_2(K),&n\text{ even},\\
+ r_1(K)+r_2(K)-1,&n\text{ odd}.
+ \end{cases}
+\]
+Here $r_2(K)=\lfloor d/2\rfloor$, while $r_1(K)$ is one for odd $d$ and zero for even $d$; the bounds follow.
+\end{proof}
+
+\section{A fixed arithmetic ring with infinite rank}
+\label{d2ext:sec-strict-coefficients}
+
+\begin{theorem}
+\label{d2ext:twodimstrictcoefficientinfinite}
+Fix a prime $p$ and an integer $d\ge3$ prime to $p$. Let
+$V=\Z_{(p)}^{\mathrm{sh}}$, with residue field $\overline{\F}_p$,
+and put
+\[
+ R=\left(V[T,x,y]/(p+x^d+y^d+Txy^{d-1})\right)_{(p,x,y)}.
+\]
+Then $R$ is a Noetherian regular local ring of dimension two,
+with residue field $\overline{\F}_p(T)$. For every $n\ge2$,
+\[
+ \dim_{\Q}\ker\!\left(K_{2n-1}(R)_{\Q}
+       \longrightarrow K_{2n-1}(\Frac R)_{\Q}\right)=\infty.
+\]
+The coefficient DVR $V$ is strictly henselian; no henselianity
+of the displayed $R$ is asserted. This theorem concerns this
+single uncompleted ring.
+\end{theorem}
+
+\begin{proof}
+\emph{The coefficient and splitting rings.}
+The strict henselization $V$ is a DVR with uniformizer $p$,
+and $F=\Frac V$ is algebraic over $\Q$; see the Stacks Project,
+\href{https://stacks.math.columbia.edu/tag/0AP3}{Tag 0AP3}
+and the proof of
+\href{https://stacks.math.columbia.edu/tag/09ET}{Tag 09ET}.
+It is excellent because it is a DVR of fraction characteristic
+zero
+(\href{https://stacks.math.columbia.edu/tag/07QW}{Tag 07QW(4)}).
+The simple roots of $Z^N-1$ in $\overline{\F}_p$ lift by
+Hensel's lemma whenever $p\nmid N$, so $\mu_N\subset V$.
+The ambient local ring defining $R$ has parameters $p,x,y$,
+and the defining equation has initial term $p$. Thus $R$ has
+the stated regularity, dimension and residue field.
+
+Choose $\theta^d=-p$ and set
+\[
+ W=V[\theta],\qquad E_\infty=F(\theta),\qquad
+ G=\operatorname{Gal}(E_\infty/F)=\{\sigma_\zeta:\zeta\in\mu_d\},
+ \quad \sigma_\zeta(\theta)=\zeta\theta .
+\]
+Eisenstein shows that $W$ is a finite free DVR extension of
+$V$, with uniformizer $\theta$, residue field $\overline{\F}_p$,
+and degree $d$. Its displayed Galois action preserves $W$.
+Moreover
+\[
+ D=\Spec(R/(x))=\Spec W[T]_{(\theta)}
+\]
+is regular. Pullback to $D$ followed by its Gysin map
+$i_*:K_{2n-1}(D)\to K_{2n-1}(R)$ therefore constructs
+actual classes vanishing on $R[1/x]$.
+
+\emph{The geometric detector over $E_\infty$.}
+Use the flat splitting map to
+\[
+ B=(R\otimes_VW)_{(\theta,x,y)},\qquad
+ \mathcal T=\Spec B[1/\theta,1/y],
+\]
+and the smooth surface
+\[
+ Q=\Spec E_\infty[x,v,y^{\pm1}]/(xv+y^d+p),
+ \qquad v=x^{d-1}+Ty^{d-1}.
+\]
+The geometric proof of Theorem~\ref{d2ext:twodimtamefamily}
+applies over these coefficient rings. The required geometric calculations are as follows.
+The blow-up still has the single smooth exceptional curve
+\[
+ C:\ X^d+Y^d+TXY^{d-1}=U^d
+       \subset\mathbf P^2_{\overline{\F}_p(T)}.
+\]
+The same three charts prove its regularity along $C$, and
+excellence and properness prove regularity everywhere. The
+root strict transforms meet it transversely at
+$[1:0:\bar\zeta]$. On $C\cap\{UY\ne0\}$ their Picard
+classes have the lattice $\Z^d/\Z(1,\ldots,1)$:
+the auxiliary surface
+$XZ=1-Y^d$, $Y\ne0$, has that lattice, and every finite
+$T=(Z-X^{d-1})/Y^{d-1}$ fiber is integral by the
+$dq-sq'$ argument. These calculations already take place
+over $\overline{\F}_p$ and do not require finite residue
+constants.
+
+Consequently, restriction of divisors to this exceptional open
+gives
+\[
+ \Pic(Q)=\Z^d/\Z(1,\ldots,1)
+       \lhook\joinrel\longrightarrow\Pic(\mathcal T),
+\]
+with generators $D_\zeta=(x,y-\zeta\theta)$.
+The Picard calculation is unchanged by coefficient field
+extension. Each $E_\infty$-prime divisor removed by a permitted
+finite localization $Q_s$ has zero Picard class. Its geometric
+components form one Galois orbit and all have the same class,
+since the absolute Galois group over $E_\infty$ fixes its root
+generators and the lattice is
+torsion-free. Each component class is therefore zero.
+The support sequence gives, for every embedding
+$\jmath:E_\infty\hookrightarrow\C$,
+\begin{equation}
+ H^2(Q_\jmath(\C),\R)
+      \lhook\joinrel\longrightarrow H^2((Q_s)_\jmath(\C),\R).
+ \label{d2ext:strictcoefficientbetti}
+\end{equation}
+The Gysin sequence with complement $(\mathbf G_m)^2$ identifies
+the root subspace with $\R^d/\R(1,\ldots,1)$, since the
+angular classes of $x$ and $y$ have residues respectively the
+diagonal vector and zero. This argument uses no regulator on
+an infinite arithmetic base.
+
+\emph{Finite actual coefficient spaces of unbounded rank.}
+For $N>2$ divisible by $d$ and prime to $p$, choose compatible
+roots of unity in $V$ and set
+\[
+ L_N=\Q(\mu_N)\subset F,\qquad K_N=L_N(\theta)\subset E_\infty .
+\]
+The chosen $p$-adic place of $L_N$ is unramified over $\Q_p$.
+Eisenstein there gives $[K_N:L_N]=d$, and
+$\operatorname{Gal}(K_N/L_N)$ is the restriction of $G$. Both fields
+are totally imaginary. For fixed $n\ge2$, Borel's ranks
+\cite[Proposition~12.2]{Borel} and restriction--transfer identities give
+\begin{equation}
+ V_{N,n}=
+ \ker\!\left(\sum_{\sigma\in G}\sigma:
+       K_{2n-1}(K_N)_{\Q}\to K_{2n-1}(K_N)_{\Q}\right),
+ \qquad
+ \dim_{\Q}V_{N,n}=\frac{(d-1)\varphi(N)}2.
+ \label{d2ext:strictcoefficientrank}
+\end{equation}
+Indeed, the invariant subspace is exactly the restriction of
+$K_{2n-1}(L_N)_{\Q}$, because
+$\operatorname{res}\operatorname{Tr}=\sum_\sigma\sigma$ and
+$\operatorname{Tr}\operatorname{res}=d$.
+The two Borel ranks are $d\varphi(N)/2$ and $\varphi(N)/2$
+in every degree under consideration.
+
+Let $W_N=(\mathcal O_{K_N})_{\mathfrak P_N}$ be the DVR
+at the prime induced by $W$. It maps to $W$, and $G$ preserves
+it: above the chosen $L_N$ place the extension is totally
+ramified and has a unique prime. Finite-field localization
+gives
+\[
+ K_{2n-1}(W_N)_{\Q}\simeq K_{2n-1}(K_N)_{\Q},
+\]
+as well as actual surjectivity to the field, since
+$K_{2n-2}$ of the finite residue field is zero.
+Thus $V_{N,n}$ defines a rational linear map into
+$K_{2n-1}(R)_{\Q}$ by coefficient pullback and $i_*$.
+Every element of $V_{N,n}$ has an actual representative after clearing
+denominators. If exact integral trace zero is wanted, replace
+an actual lift $\gamma$ by
+$d\gamma-\sum_{\sigma\in G}\sigma\gamma$; this operation
+acts as multiplication by $d$ on $V_{N,n}$.
+
+\emph{Detection, with both continuity passages explicit.}
+Suppose $0\ne\beta\in V_{N,n}$ mapped to zero in
+$K_{2n-1}(R)_{\Q}$. Borel injectivity \cite[Section~6]{BunkeTamme} supplies an embedding
+$j_0:K_N\hookrightarrow\C$ at which its point regulator
+is nonzero. Extend $j_0$ to an embedding
+$\jmath:E_\infty\hookrightarrow\C$, using that
+$E_\infty/K_N$ is algebraic.
+For $\sigma\in G$, let $b_\sigma$ denote the point regulator
+at $j_0\sigma$, represented in the complementary real line
+$i\R(n)$ to $\R(n)$ in $\C$. These coefficients satisfy
+\[
+ b_1\ne0,\qquad \sum_{\sigma\in G}b_\sigma=0,
+\]
+so this vector is not diagonal. The detecting embedding is
+chosen for this coefficient; no single embedding is required
+to detect every element of $V_{N,n}$.
+
+Put $\eta_\zeta=1-[\mathcal O_Q(-D_\zeta)]$. Flat Gysin
+base change and the projection formula identify the image of
+the supported class on $\mathcal T$ with the restriction of
+\[
+ \alpha=\sum_{\zeta\in\mu_d}(\sigma_\zeta\beta)\eta_\zeta
+       \in K_{2n-1}(Q)_{\Q}.
+\]
+The assumed vanishing therefore makes $\alpha$ zero on
+$\mathcal T$. First, $K$-theory continuity for the filtered
+localization
+$\mathcal O(\mathcal T)=\varinjlim_s\mathcal O(Q_s)$
+gives a finite permitted denominator set $s$ for which
+$\alpha|_{Q_s}=0$ rationally.
+Second, $E_\infty$ is a filtered union of number fields.
+All coefficients of these finitely many denominators, the
+root ideals, and the chosen $K$-classes descend to a number
+field $E_{\mathrm{ar}}\subset E_\infty$ containing $K_N$.
+Continuity for this filtered coefficient extension implies
+that the asserted vanishing already holds on the corresponding
+finite open over some larger number field
+$E_1\subset E_\infty$.
+
+Apply the published absolute multiplicative regulator to that
+finite stage, after spreading it to a regular finite-type
+arithmetic model by inverting one integer. Evaluate at
+$\jmath|_{E_1}$. The complex open of this finite model is exactly
+$(Q_s)_\jmath$, and naturality gives the product class
+\[
+ 2\pi i\sum_{\zeta\in\mu_d}b_{\sigma_\zeta}e_\zeta
+ \quad\text{in}\quad
+ H^3_{\mathcal D,\mathrm{an}}((Q_s)_\jmath,\R(n+1))
+ =\frac{H^2((Q_s)_\jmath,\C)}
+        {H^2((Q_s)_\jmath,\R(n+1))}.
+\]
+The equality holds because $n+1\ge3$ and the complex
+dimension is two. Multiplication by $2\pi i$ identifies
+$\C/\R(n)$ with $\C/\R(n+1)$. The non-diagonal root
+vector and \eqref{d2ext:strictcoefficientbetti} make this
+regulator nonzero, contradicting the finite-stage vanishing.
+This proves injectivity on every $V_{N,n}$.
+No commutation of analytic cohomology with an infinite
+coefficient colimit has been used.
+
+Finally, take for example $N=d^a$ as $a\to\infty$.
+The dimensions in \eqref{d2ext:strictcoefficientrank} are
+unbounded, while $R$ remains fixed. This proves infinite
+rational rank in every degree $2n-1\ge3$.
+All coefficient lifts, transfers and products used above are
+actual Quillen $K$-theory operations
+\cite{Quillen,QuillenFinite,Weibel,Borel,BunkeTamme}.
+\end{proof}
+
+For each $p$ one may fix $d=3$ if $p\ne3$, and $d=4$
+if $p=3$. This gives one ring at each residue prime
+with the stated infinite-rank conclusion in all higher odd
+degrees. The construction here uses the displayed arithmetic local ring;
+the complete rings considered below use a separate continuous detector.
+
+\section{Visible coefficient rank and all higher odd degrees}
+\label{d2ext:dimtwoVisibleHigherRank}
+
+The elliptic contraction detects the $e_3$-component of the point
+coefficient. We construct arbitrarily large families whose projections
+to this component are $\mathbf Q_5$-linearly independent, and then use
+them on a single complete local ring.
+We write $\mathcal K(-)=K(-)^\wedge_5[1/5]$ for spectral
+$5$-completion followed by inversion of $5$.
+
+For the continuous detector, write $W'=W(\overline{\mathbf F}_5)[\rho]$
+for the coefficient ring denoted by $R$ in
+Proposition~\ref{d2:prop:weighted}, and put $E_\infty=W'[1/5]$.
+The automorphisms $\sigma_g$ fix $W(\overline{\mathbf F}_5)$.
+We use the normalization of \eqref{d2:eq:linear-weight}: the bounded
+functional has $\ell(\omega)=1$, and the polarization fixes the common
+sign. Trace, contraction, and formal replacement are $E_\infty$-linear
+on the differential quotients. The same four-term calculation therefore
+gives, for every $b\in E_\infty$ with $\sigma_{-1}b=-b$,
+\[
+ L\operatorname{Tr}_h\left(\sum_{g\in\mathbf F_5^\times}
+                  \sigma_g(b)\gamma_g\right)
+       =4e_3(b)[\widetilde Q^*\eta].
+\]
+Here the operators on the scaled model are transported by formal
+replacement, as in the proof of Proposition~\ref{d2:prop:weighted}.
+The vector $[\widetilde Q^*\eta]$ is nonzero in the ordinary Cohen
+quotient by Proposition~\ref{d2:prop:graph}. This formula applies to
+coefficients in the finite local fields below and requires only their
+$e_3$-projections. It uses the linear operators over the fixed scalar
+field, with no passage to a colimit of completed $K$-theory.
+
+For each complete coefficient discrete valuation ring $O$ below and
+$n\geq2$, let $r_{n,O}(\beta)$ denote the scalar whose AMMN point
+character is $t^{1-n}r_{n,O}(\beta)$, with $|t|=-2$, using the point
+comparison in Lemma~\ref{d3:lem:formalhigherTCcup}.
+
+\begin{lemma}
+\label{d2ext:dimtwoVisibleHigherCoefficientRank}
+Fix $n\geq2$ and $m\geq2$. Put
+\[
+ V_m=W(\mathbf F_{5^m}),\quad F_m=V_m[1/5],\quad
+ O_m=V_m[\rho],\quad E_m=F_m(\rho),\quad \pi=\rho-1,
+\]
+where $\rho$ is a primitive fifth root of unity.
+Let $\sigma_g$ fix $F_m$ and send $\rho$ to $\rho^g$.
+Let $\omega_T:\mathbf F_5^\times\to\mathbf Z_5^\times$ be the
+Teichm\"uller character, and put
+\[
+ e_3=\frac14\sum_{g=1}^4\omega_T(g)^{-3}\sigma_g,\qquad
+ \tau_3=\sum_{g=1}^4\omega_T(g)^{-3}\rho^g.
+\]
+There are actual classes
+$\beta_j\in K_{2n-1}(O_m)$, indexed by $1\leq j\leq m-1$, each of the form
+$(1-\sigma_{-1})\beta_{0,j}$, with the following properties:
+their reductions in $K_{2n-1}(\mathbf F_{5^m})$ vanish integrally,
+and their AMMN point coordinates $b_j=r_{n,O_m}(\beta_j)\in E_m$
+have $\mathbf Q_5$-linearly independent projections $e_3b_j$.
+\end{lemma}
+
+\begin{proof}
+Define
+$S_j(z)=(z\,d/dz)^j(1-z)^{-1}\in\mathbf Z[z,(1-z)^{-1}]$.
+The expansion and continuation argument in
+the proof of Proposition~\ref{d2:prop:coefficient}, now with
+$\binom{n+j-1}{j}$ in place of $j+1$, gives
+\[
+ F_n(z)\coloneqq \operatorname{Li}_n(z)-5^{-n}\operatorname{Li}_n(z^5)
+ =\sum_{j\geq0}(-1)^j\binom{n+j-1}{j}5^j S_j(z^5)
+             \sum_{a=1}^4\frac{z^a}{a^{n+j}}.
+\]
+The series is uniformly convergent on $|z|\leq1$,
+$|1-z^5|=1$, and agrees there with Coleman continuation by
+\cite[Theorem~2.7(3)]{BesserDeJeuAlgorithm}.
+The fifth power acts on the polylogarithm variable.
+
+For a Teichm\"uller root
+$\zeta\in\mu_{5^m-1}(V_m)\setminus\{1\}$, the value
+$(\zeta\rho)^5=\zeta^5$ is fixed by every $\sigma_g$.
+The exact Gauss identity
+$e_3(\rho^a)=\frac14\omega_T(a)^3\tau_3$ therefore gives
+\begin{equation}
+\label{d2ext:dimtwoVisibleHigherDepletion}
+\begin{split}
+ U_n(\zeta)
+ &\coloneqq \frac{4e_3\operatorname{Li}_n(\zeta\rho)}{\tau_3}\\
+ &=\sum_{j\geq0}(-1)^j\binom{n+j-1}{j}5^j S_j(\zeta^5)
+        \sum_{a=1}^4\frac{\zeta^a\omega_T(a)^3}{a^{n+j}}
+       \in V_m.
+\end{split}
+\end{equation}
+The terms with $j\geq1$ belong to $5V_m$.  Thus, writing
+$t=\overline\zeta$, its reduction is
+\[
+ h_{3,n}(t)
+   =\frac{P_n(t)}{1-t^5},\qquad
+ P_n(t)=\sum_{a=1}^4a^{3-n}t^a\in\mathbf F_5[t],
+ \qquad t\in\mathbf F_{5^m}^{\times}\setminus\{1\}.
+\]
+The polynomial $P_n$ is nonzero, has coefficient one at $t$,
+and has degree four.  Hence $h_{3,n}$ is nonconstant and has
+rational-map degree at most five.  Every finite fiber has at most
+five elements, so
+\[
+ \#h_{3,n}\bigl(\mathbf F_{5^m}^{\times}\setminus\{1\}\bigr)
+ \geq\left\lceil\frac{5^m-2}{5}\right\rceil=5^{m-1}.
+\]
+Its $\mathbf F_5$-span has dimension at least $m-1$.
+Choose $m-1$ independent image values and corresponding
+Teichm\"uller roots $\zeta_j$.  Reduction of a normalized
+$\mathbf Q_5$-linear relation shows that the $U_n(\zeta_j)$
+are $\mathbf Q_5$-independent.  Since $\tau_3\ne0$, the values
+$e_3\operatorname{Li}_n(\zeta_j\rho)$ are independent as well.
+
+These are regulators of actual rational number-field classes.
+Indeed, all $\zeta_j\rho$ lie in
+$L=\mathbf Q(\mu_{5^m-1},\rho)$ and are roots of unity.
+At the chosen prime above $5$ they and their complements are
+units, since $\overline\zeta_j\ne1$.  The rational symbols
+$[\zeta_j\rho]_n$ are cycles, and
+\cite[Theorem~1.10(2)]{BesserDeJeu} maps them to a common
+nonzero rational multiple of
+$L_{\mathrm{mod},n}(\zeta_j\rho)
+ =\operatorname{Li}_n(\zeta_j\rho)$.
+The point normalization in \eqref{d3:eq:pointnormalization}
+identifies the normalized Besser--de Jeu coordinate with the
+ordinary syntomic coordinate, so the scalar is common to the
+chosen roots. The number-field case of the cited theorem applies
+unconditionally. The local completion at the chosen prime is $E_m$.
+
+Localization at that coefficient prime lifts these rational
+classes to its integer ring, since
+$K_{2n-2}(\mathbf F_{5^m})=0$.
+Clear one common integer denominator and then form the actual
+differences
+$\beta_j=(1-\sigma_{-1})\beta_{0,j}$, mapping them to $K_{2n-1}(O_m)$.
+Their residue reductions are zero because $\sigma_{-1}$ fixes
+the residue field.  Applying $e_3$ to their syntomic regulators
+multiplies each of the preceding values by the same nonzero
+rational scalar, including the factor two from the difference.
+
+The ramified point comparison
+\cite[Example~2.2.4 and Propositions~2.2.7, 2.2.9, 2.3.4]{HuberKings}
+is Galois-equivariant and identifies syntomic and \'etale point
+cohomology in every twist $n\geq2$.  Thus the $e_3$-projections
+of the \'etale Chern values are $\mathbf Q_5$-independent.
+Lemma~\ref{d3:lem:cherncompletionfactor} gives a natural
+Galois-equivariant $\mathbf Q_5$-linear map
+\[
+ \pi_{2n-1}\bigl(K(O_m)^\wedge_5[1/5]\bigr)
+       \longrightarrow H^1(E_m,\mathbf Q_5(n))
+\]
+through which the actual Chern class factors. The finite Chern
+maps are applied over $E_m$, where $5$ is invertible, after the
+canonical projections to $K_{2n-1}(O_m;\mathbf Z/5^\nu)$ and
+restriction to the field. Compatibility with reduction gives the
+map to the inverse limit of $H^1$. The finite $H^0$ groups are
+Mittag--Leffler, identifying this target with continuous cohomology.
+This construction uses the canonical source projections and
+allows a nonzero source $\lim^1$.
+
+The point case of the AMMN comparison identifies the source with
+$t^{1-n}E_m$, naturally under $\sigma_g$.  A relation among the
+$e_3b_j$ would therefore induce the same relation among the
+independent projected Chern values.  This proves the claim
+without identifying the AMMN and polylogarithm coordinates.
+\end{proof}
+
+\begin{remark}
+The rational-map degree bound cannot uniformly be replaced by four.
+When $n\equiv3\pmod4$ one has
+\[
+ h_{3,n}(t)=(t-1)^{-5}-(t-1)^{-1}.
+\]
+Its image lies in the trace-zero hyperplane of
+$\mathbf F_{5^m}/\mathbf F_5$.  The lower bound $m-1$ accommodates
+this actual loss of one dimension.
+\end{remark}
+
+Put
+\[
+ k=\overline{\mathbf F}_5,\qquad W=W(k),\qquad
+ V=\widehat{W[T]_{(5)}}^{\,(5)},\qquad
+ R=V[[x,y]]/(\Phi_5(1+y)+x^4+Txy^3).
+\]
+
+\begin{theorem}
+\label{d2ext:dimtwoCompleteAllOddInfiniteRank}
+The ring $R$ is a complete regular local domain of dimension two,
+with maximal ideal $(x,y)$ and residue field $k(T)$.
+For every $n\geq2$,
+\[
+ \dim_{\mathbf Q}\ker\left(
+ K_{2n-1}(R)_{\mathbf Q}\longrightarrow
+ K_{2n-1}(\operatorname{Frac}R)_{\mathbf Q}\right)=\infty.
+\]
+For each fixed $n,m\geq2$, the kernel contains $m-1$ independent
+classes represented by actual integral classes that vanish on
+$R[1/x]$ integrally.  The ring $R$ is independent of $n,m$.
+\end{theorem}
+
+\begin{proof}
+The regularity argument is the same linear-term calculation as in
+Section~\ref{d2:sec:preliminaries}.
+Set $W'=W[\rho]$ and $E_\infty=W'[1/5]$.
+For fixed $n,m$, take the actual coefficients of
+Lemma~\ref{d2ext:dimtwoVisibleHigherCoefficientRank}.
+Naturality of the AMMN point calculation sends their coordinates
+under $E_m\hookrightarrow E_\infty$; hence their visible
+projections remain $\mathbf Q_5$-independent.
+
+Use the same finite parameter cover and scaled formal test ring
+$B$ as in \eqref{d2:eq:test-algebra}, now over $V$.
+It is the completion of an essentially smooth $W'$-algebra
+of relative dimension two.  The spectrum comparison underlying
+Lemma~\ref{d3:lem:essentiallysmoothAMMN} gives, for each fixed $n$,
+the relative character to $HC_{2n-2}^{\mathrm{cts}}(B/W';\mathbf Q_5)$.
+In its finite mixed-HKR model the top-form summand is
+\begin{equation}
+\label{d2ext:dimtwoHigherTopColumn}
+ t^{2-n}\left(
+ \Omega^2_{B/W'}[1/5]/d\Omega^1_{B/W'}[1/5]\right).
+\end{equation}
+Indeed its cycles in this summand are all two-forms, and its
+boundaries are precisely $t^{2-n}d\Omega^1$; form degrees above
+two vanish.
+
+The zero residue reductions of the coefficients provide actual
+relative lifts at the point. Pull them to $B$ and multiply by
+$\eta_g=1-[J_g]$.
+With the common scalar $\lambda_{W'}\in E_\infty^\times$ of
+Proposition~\ref{d2:prop:cyclic}, the negative-cyclic module product is
+\[
+ (t^{1-n}\sigma_g(b_j))\,(\lambda_{W'}t\gamma_g)
+       =\lambda_{W'}t^{2-n}\sigma_g(b_j)\gamma_g.
+\]
+Rank zero removes the scalar term, higher Chern forms vanish in
+dimension two, and the cyclic-shuffle terms vanish because the
+point coefficient is a scalar relative to $W'$.
+The scalar-bar calculation applies in every cyclic column, including
+the negative columns that occur for $n>2$.
+The scalar occurs to the first power because it belongs to the
+first Chern component.
+
+Trace and contraction in Proposition~\ref{d2:prop:weighted} are
+$E_\infty$-linear. They send the coefficient of
+\eqref{d2ext:dimtwoHigherTopColumn} to
+\[
+ 4\lambda_{W'}e_3(b_j)[\widetilde Q^*\eta].
+\]
+The fixed vector $[\widetilde Q^*\eta]$ is nonzero over $E_\infty$
+after the generic Cohen completion, by
+Lemma~\ref{d2:lem:scalar} and Proposition~\ref{d2:prop:graph}.
+Multiplication by the common nonzero $\lambda_{W'}$ is an
+injective $\mathbf Q_5$-linear map on this coefficient field.
+Thus these character images are $\mathbf Q_5$-independent,
+without any rationality or Galois-invariance assumption on
+$\lambda_{W'}$.
+
+Write $C=B/\pi$.  As before, $C$ is a filtered colimit of smooth
+affine surfaces over $k$.  By
+\cite[Theorem~8.4]{GeisserLevineCharP},
+$\pi_q\mathcal K(C)=0$ for every $q\geq3$.
+The relative and regular-divisor localization sequences therefore
+give, in the present degree,
+\[
+ \pi_{2n-1}\mathcal K(B,(\pi))
+ \hookrightarrow\pi_{2n-1}\mathcal K(B)
+ \hookrightarrow\pi_{2n-1}\mathcal K(B[1/\pi]).
+\]
+These use the vanishings in degrees $2n$ and $2n-1$, respectively.
+These are vanishings of the rationalized completed spectrum.
+
+The source divisor $x=0$ has ring $V[\rho]$.
+Pull each $\beta_j$ to that divisor and push forward to define
+$c_j\in K_{2n-1}(R)$.  Localization gives $c_j|_{R[1/x]}=0$
+integrally.  Finite flat coefficient extension $V\to V[\rho]$,
+followed by inversion of $5$, splits the divisor into the four
+root components with coefficients $\sigma_g(\beta_j)$.
+Pullback of their line-bundle classes under the scaled map gives
+\[
+ c_j|_{B[1/\pi]}
+   =\sum_g\sigma_g(\beta_j)(1-[J_g])\big|_{B[1/\pi]}.
+\]
+This is exactly the actual product detected above; the scaled map
+itself is not required to be flat.
+Consequently the $c_j$ are rationally independent.
+Since $m$ is arbitrary while $R$ is fixed, the kernel has infinite
+dimension for this $n$.  Applying the argument separately to each
+$n\geq2$ proves the theorem.
+\end{proof}
+
+\section{One complete two-dimensional ring in every degree at least three}
+\label{d2ext:dimtwoAllDegreesFixedRing}
+
+The additional parameter below is a unit of the source ring.
+Its logarithmic differential raises the degree of the detected
+class by one.  Detecting the even products also proves independence
+of their odd factors, including degree three.
+
+\begin{lemma}
+\label{d2ext:dimtwoFullCohenLaurentResidue}
+Let $W'$ be the coefficient discrete valuation ring, with
+uniformizer $\pi$, used in the quartic construction.  Let $D_0$
+be a smooth affine $W'$-curve whose special fiber is integral,
+and put
+\[
+ A_T=\widehat{(D_0)_{(\pi)}}^{\,(\pi)},\qquad
+ A_{TS}=\widehat{(D_0[S])_{(\pi)}}^{\,(\pi)}.
+\]
+Here localization at $(\pi)$ inverts every element with nonzero
+reduction.  Let $B_T$ be the $\pi$-adic completion of a smooth
+affine relative curve over $A_T$, defined by a model over $D_0$,
+and let $B_{TS}$ be the corresponding completed model over
+$A_{TS}$.  Suppose their continuous differentials over $W'$
+are finite projective of ranks two and three, respectively.
+There is a $W'$-linear operator
+\[
+ \operatorname{Res}_S:
+ \Omega^{r,\mathrm{cts}}_{B_{TS}/W'}
+       \longrightarrow \Omega^{r-1,\mathrm{cts}}_{B_T/W'}
+\]
+which is integral and $\pi$-adically continuous and satisfies
+\[
+ \operatorname{Res}_S(d\alpha)=-d\operatorname{Res}_S(\alpha),
+ \qquad
+ \operatorname{Res}_S(\theta\wedge d\log S)=\theta
+       \quad\text{for every }\theta\in\Omega^2_{B_T/W'}.
+\]
+In particular it sends actual exact three-forms to actual exact
+two-forms. The induced map
+\[
+ \frac{\Omega^2_{B_T/W'}[1/5]}
+      {d\Omega^1_{B_T/W'}[1/5]}
+ \longrightarrow
+ \frac{\Omega^3_{B_{TS}/W'}[1/5]}
+      {d\Omega^2_{B_{TS}/W'}[1/5]},
+ \qquad [\theta]\longmapsto[\theta\wedge d\log S],
+\]
+is injective; these are ordinary continuous quotients.
+\end{lemma}
+
+\begin{proof}
+For every $a\geq1$ there is a compatible ring map
+\[
+ B_{TS}/\pi^a
+       \longrightarrow (B_T/\pi^a)((S)).
+\]
+Indeed, if $g\in D_0[S]$ has nonzero reduction, its image modulo
+$\pi$ is a nonzero polynomial over the field
+$\operatorname{Frac}(D_0/\pi)$.  It is therefore a unit in that
+field's Laurent series ring.  The ideal generated by $\pi$ in
+$(B_T/\pi^a)((S))$ is nilpotent, so this inverse lifts.  This
+argument applies to every primitive denominator, including
+denominators whose literal lowest coefficient is not a unit.
+The lifts of the inverses are unique and commute with reduction
+in $a$.  The maps extend to the completed algebra because the
+inverse-limit target is complete.  Thus the relevant target is
+\[
+ \mathcal L=\varprojlim_a(B_T/\pi^a)((S)).
+\]
+The negative Laurent bound may depend on $a$, which is why this
+inverse-limit target is used.
+
+Use Laurent series of continuous base forms, with differential
+defined coefficientwise and with the usual $S$-derivative.
+These operations are compatible modulo $\pi^a$ and preserve
+the $\pi$-adic filtration.  The universal continuous derivation
+of $B_{TS}$ therefore gives a map into this Laurent differential
+complex.  Finite projectivity of the source form modules
+justifies extension to their completions and exterior powers.
+
+Write a form of degree $r$ in the target as
+$\alpha(S)+\beta(S)\wedge dS$, with base-form degrees $r$
+and $r-1$.  Define
+\[
+ \operatorname{Res}_{S,r}
+       \bigl(\alpha(S)+\beta(S)\wedge dS\bigr)
+      =(-1)^{r-1}[S^{-1}]\beta(S).
+\]
+Coefficient extraction is compatible with reduction and is
+integral.  The coefficient of $S^{-1}$ in the derivative of a
+Laurent series is zero.  It follows directly that
+$\operatorname{Res}_{S,r+1}d=-d\operatorname{Res}_{S,r}$.
+For $r=3$ its sign is positive, which gives the second displayed
+identity.  Inverting $5$ preserves these identities.  All
+quotients in the conclusion use the ordinary image of the
+differential.
+\end{proof}
+
+Put
+\[
+ k=\overline{\mathbf F}_5,\qquad W_0=W(k),\qquad
+ V_{TS}=\widehat{W_0[T,S]_{(5)}}^{\,(5)},
+\]
+and
+\[
+ R_{TS}=V_{TS}[[x,y]]/
+       \bigl(\Phi_5(1+y)+x^4+Txy^3\bigr).
+\]
+
+\begin{theorem}
+\label{d2ext:dimtwoCompleteAllDegreesInfiniteRank}
+The ring $R_{TS}$ is a complete regular local domain of dimension
+two, with maximal ideal $(x,y)$ and residue field $k(T,S)$.
+For every integer $j\geq3$,
+\[
+ \dim_{\mathbf Q}\ker\!\left(
+ K_j(R_{TS})_{\mathbf Q}\longrightarrow
+ K_j(\operatorname{Frac}R_{TS})_{\mathbf Q}\right)=\infty.
+\]
+For every $n,m\geq2$, the odd degree $2n-1$ and the even degree
+$2n$ kernels contain $m-1$ independent classes represented by
+actual integral classes which vanish on $R_{TS}[1/x]$ integrally.
+The ring $R_{TS}$ is independent of $n$ and $m$.
+\end{theorem}
+
+\begin{proof}
+The ring $W_0[T,S]_{(5)}$ is a discrete valuation ring with
+uniformizer $5$ and residue field $k(T,S)$.  Its completion
+$V_{TS}$ has the same properties.  The defining equation of
+$R_{TS}$ is congruent to $5$ modulo $(5,x,y)^2$ in the regular
+local ambient ring of dimension three.  Its quotient is
+therefore regular of dimension two, and is complete with
+maximal ideal $(x,y)$.  In particular it is a domain.
+The element $S$ is a unit of $R_{TS}$.
+
+Set $W'=W_0[\rho]$, $\pi=\rho-1$, and
+$E_\infty=W'[1/5]$.  Fix $n,m\geq2$, and take the $m-1$
+actual coefficients $\beta_j$ from
+Lemma~\ref{d2ext:dimtwoVisibleHigherCoefficientRank}.
+Map them to $K_{2n-1}(W')$ and write $b_j\in E_\infty$
+for their natural AMMN point coordinates.  Their visible
+projections $e_3b_j$ remain $\mathbf Q_5$-independent.
+Their reductions vanish integrally, since each coefficient
+is an actual difference $(1-\sigma_{-1})\beta_{0,j}$.
+
+Choose the same finite parameter cover, independent of $S$,
+as in the one-parameter quartic detector.  In the notation of
+Lemma~\ref{d2ext:dimtwoFullCohenLaurentResidue}, it gives the old
+coefficient ring $A_T$ and the new one $A_{TS}$.  The latter
+receives $V_{TS}[\rho]$: every primitive polynomial in $T,S$
+has nonzero image in $k(U)(S)$, and hence is a unit.  Completion
+extends this map.  Put
+\[
+ B_{TS}=A_{TS}\langle X,Y\rangle/
+ \left(X^4+\frac{\Phi_5(1+\pi Y)}{\pi^4}+TXY^3\right),
+ \qquad C_{TS}=B_{TS}/\pi.
+\]
+The old algebra $B_T$ is given by the same formula over $A_T$.
+They are the completions of essentially smooth $W'$-algebras
+of relative dimensions three and two, respectively.
+Smoothness holds near the entire special fiber; localizing a
+model at an element congruent to one modulo $\pi$ leaves the
+completion unchanged.  In particular $B_{TS}$ and $C_{TS}$
+are regular and $\pi$ is a non-zero-divisor.
+
+For $g\in\mathbf F_5^\times$, let
+\[
+ a_g=\frac{\rho^g-1}{\pi},\qquad
+ J_g=(X,Y-a_g),\qquad
+ \eta_g=1-[J_g],\qquad \gamma_g=-c_1(J_g).
+\]
+These invertible ideals are pulled from $B_T$.  We can therefore
+represent their Chern classes by two-forms pulled from the old
+continuous complex, independently of $S$.
+
+The actual residue sequence at the point supplies actual
+relative lifts of all $\beta_j$; here
+$K_{2n}(k)=0$ by Quillen's finite-field computation and filtered
+colimits.  Pull these lifts to $B_{TS}$ and form their relative
+products
+\[
+ \xi_j=\sum_g\sigma_g(\beta_j)\eta_g[S]
+       \quad\text{in }K_{2n}(B_{TS},(\pi)),
+\]
+where the coefficient symbols in this formula denote the
+specified relative lifts.
+
+Apply the essentially smooth relative fiber comparison of
+Lemma~\ref{d3:lem:essentiallysmoothAMMN} in each fixed degree.
+Its $K(B_{TS})$-module compatibility gives the negative-cyclic
+action on the ordinary cyclic target.  In relative dimension
+three the normalized finite mixed-HKR map uses only the
+denominators $2$ and $6$, both units at $5$.
+Let $\lambda_{W'}\in E_\infty^\times$ be the common scalar of
+Proposition~\ref{d2:prop:cyclic}.
+The line bundles are pulled from the rank-two algebra $B_T$,
+so naturality pulls back their negative-cyclic characters
+$\lambda_{W'}t\gamma_g$.
+The point coefficient is $t^{1-n}\sigma_g(b_j)$, and the
+unit character starts with $d\log S$.
+The top character component is
+\[
+ \chi_{B_{TS}}(\xi_j)_{\mathrm{top}}
+    =\lambda_{W'}t^{2-n}
+       \sum_g\sigma_g(b_j)\gamma_g\wedge d\log S
+       \quad\text{in }HC^{\mathrm{cts}}_{2n-1}(B_{TS}/W';
+                                                    \mathbf Q_5).
+\]
+Here $|t|=-2$.  This formula also holds when the initial cyclic
+column is negative.  To check it at chain level, the rank-zero
+line has underlying Hochschild degrees at least two; the
+lowest unit term has degree one.  Every higher line or unit
+term, or cyclic-shuffle correction in their product, has final
+Hochschild degree at least five, and is killed by the
+dimension-three HKR map.  The scalar point cup has no
+cyclic-shuffle correction because its scalar lies in the
+relative base.  Thus precisely the displayed ordinary
+shuffle survives.
+
+The top-form summand is
+\[
+ t^{2-n}\bigl(
+ \Omega^3_{B_{TS}/W'}[1/5]/
+                  d\Omega^2_{B_{TS}/W'}[1/5]\bigr).
+\]
+All its three-forms are cycles, and its boundaries are precisely
+the indicated ordinary exact forms.  Apply
+Lemma~\ref{d2ext:dimtwoFullCohenLaurentResidue} to their coefficients.
+It recovers
+$\lambda_{W'}\sum_g\sigma_g(b_j)\gamma_g$ on $B_T$.
+The weighted trace and elliptic contraction of
+Proposition~\ref{d2:prop:weighted} are $E_\infty$-linear and send
+these classes to
+\[
+ 4\lambda_{W'}e_3(b_j)[\widetilde Q^*\eta].
+\]
+The fixed base vector $[\widetilde Q^*\eta]$ survives the old generic
+Cohen completion by Lemma~\ref{d2:lem:scalar}, and remains
+nonzero after the finite constant extension adjoining $\rho$ by
+Proposition~\ref{d2:prop:graph}.
+Multiplication by the common nonzero $\lambda_{W'}$ preserves
+$\mathbf Q_5$-linear independence.
+Consequently the characters of the $\xi_j$ are
+$\mathbf Q_5$-independent.
+
+The special fiber $C_{TS}$ is a filtered colimit of smooth
+affine threefolds over the perfect field $k$.  Geisser--Levine
+\cite[Theorem~8.4]{GeisserLevineCharP} gives
+\[
+ K_q(C_{TS};\mathbf Z/5^\nu)=0
+      \quad(q>3,\ \nu\geq1).
+\]
+The Milnor sequence for spectral completion, using degrees
+$q$ and $q+1$, therefore gives
+$\pi_q\mathcal K(C_{TS})=0$ for $q\geq4$.
+For the even degree under consideration the relative and
+regular-divisor localization sequences give
+\[
+ \pi_{2n}\mathcal K(B_{TS},(\pi))
+   \hookrightarrow\pi_{2n}\mathcal K(B_{TS})
+   \hookrightarrow\pi_{2n}\mathcal K(B_{TS}[1/\pi]).
+\]
+The first injection uses the vanishing in degree $2n+1$,
+and the second that in degree $2n$; both are valid for $n\geq2$.
+Here $\mathcal K=K^\wedge_5[1/5]$ denotes the rationalized
+spectrally completed $K$-theory.
+
+It remains to match these detected even classes with actual
+classes of the fixed source.  Its regular Cartier divisor
+$i:x=0\hookrightarrow\operatorname{Spec}R_{TS}$ has ring
+$V_{TS}[\rho]$.  Pull the coefficients to this divisor and set
+\[
+ c_{n,j}=i_*(\beta_j)\in K_{2n-1}(R_{TS}),\qquad
+ a_{n,j}=c_{n,j}[S]\in K_{2n}(R_{TS}).
+\]
+Both classes vanish on $R_{TS}[1/x]$ integrally.
+Make the finite flat coefficient extension
+$V_{TS}\to V_{TS}[\rho]$, and then invert $5$.
+The divisor $x=0$ splits into its four root components with
+coefficients $\sigma_g(\beta_j)$.
+Their length-one Cartier resolutions and the projection
+formula express the resulting odd class as
+$\sum_g\sigma_g(\beta_j)(1-[I_g])$, where
+$I_g=(x,y-(\rho^g-1))$.
+Apply the continuous scaling
+\[
+ x\longmapsto\pi X,\qquad y\longmapsto\pi Y,\qquad
+ R_{TS}\longrightarrow B_{TS}.
+\]
+It exists because the defining equation maps to $\pi^4$ times
+the test equation and the maximal ideal maps into $(\pi)$.
+After inverting $\pi$, pullback of the invertible ideals $I_g$
+gives $J_g$. The resulting actual class is
+\[
+ a_{n,j}|_{B_{TS}[1/\pi]}
+   =\sum_g\sigma_g(\beta_j)\eta_g[S]\big|_{B_{TS}[1/\pi]}
+       \quad\text{in actual }K_{2n}.
+\]
+Only the initial coefficient extension is asserted to be flat;
+the subsequent substitution pulls back line bundles.
+This equality and the two completed injections prove that
+the actual classes $a_{n,j}$ are rationally independent.
+
+Finally, a rational relation among the actual odd classes
+$c_{n,j}$ would, after multiplication by the same actual unit
+class $[S]$ in the same ring, give a relation among the
+$a_{n,j}$.  Thus the odd classes are independent as well.
+This argument includes $n=2$ and requires no vanishing of
+$\pi_3\mathcal K(C_{TS})$.
+Letting $m$ grow proves infinite rank separately in degrees
+$2n-1$ and $2n$.  These pairs cover every $j\geq3$.
+\end{proof}
+
+\begin{remark}
+No general injectivity of multiplication by $[S]$ is used:
+it is proved only on the displayed finite spans by detecting
+their products.  In particular the odd degree-three conclusion
+does not use a degree-three generic-localization injection for
+the new special fiber.  The residue field in this fixed-ring
+statement is $\overline{\mathbf F}_5(T,S)$.
+\end{remark}
+

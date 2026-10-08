@@ -1,0 +1,32 @@
+{
+  "archive_name": "gersten_research_package.zip",
+  "archive_sha256": "45be52c79544b9d493ce27a1b1da973ad7f489e9b367bca635b8108dde73439a",
+  "included_files": [
+    {
+      "path": "archive/original/dimension_two_geometric_short_counterexample.tex",
+      "original_name": "dimension_two_geometric_short_counterexample.tex",
+      "sha256": "fc55c897740e19ce5232930765ea4fcff3f4bb8b422ca31ed1993b0aad2a6ea0"
+    },
+    {
+      "path": "archive/original/geometric_short_counterexample.tex",
+      "original_name": "geometric_short_counterexample.tex",
+      "sha256": "7e843d3233f6f8bebb76dacade225062dac2abe74376996f8e74bd44ad8d1e6a"
+    },
+    {
+      "path": "archive/original/gersten_dimension_two_research_manuscript.tex",
+      "original_name": "gersten_dimension_two_research_manuscript.tex",
+      "sha256": "f2a72f94bfd07faf403c36ecfc1829631d0534d1513b22c331e90a45feaa5a34"
+    },
+    {
+      "path": "archive/original/gersten_explicit_short_proof.tex",
+      "original_name": "gersten_explicit_short_proof.tex",
+      "sha256": "2119f476ddadb087220746949d070d5f4ecad9d5a860242b017f940ddcb3650f"
+    },
+    {
+      "path": "archive/original/gersten_quadric_research_manuscript.tex",
+      "original_name": "gersten_quadric_research_manuscript.tex",
+      "sha256": "3274ad941c8fcbefe5a5db3e96a709a4eb95c37ed181ff939c660c78623c3384"
+    }
+  ],
+  "omitted": "The five original PDFs duplicate these TeX sources. The original README and internal audit runtime files are omitted."
+}

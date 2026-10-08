@@ -1,0 +1,11 @@
+{
+  "fact_id": "3d341b9a1d18342e",
+  "record_id": "cee1cbc56e2b2df2",
+  "timestamp_utc": "2026-10-07T13:43:57.025618+00:00",
+  "verdict": "correct",
+  "summary": "The proof passes sequential verification. The statement is self-contained, and fact 9a4571503438e4d4 supplies precisely the divisor-class relations and restriction injectivity used, without a prohibited conditional premise. Section 1 establishes regularity, dimension, residue field, and an actual supported Quillen K_3 class with zero generic image. The transfer, projection formula, and filtered-colimit inputs agree with [Weibel, IV.6.4 and V.3](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf). The number-field rank input agrees with [Borel, Proposition 12.2](https://www.numdam.org/article/ASENS_1974_4_7_2_235_0.pdf). The regulator, conjugation conventions, and multiplicative interval model agree with [Bunke–Tamme, Sections 2 and 6](https://arxiv.org/html/1311.1421v3). Section 2 constructs the regulator on regular finite arithmetic models and correctly obtains a nonzero real cohomology class modulo the purely imaginary weight-three subspace on every permitted finite open. Section 3 correctly identifies the flat pullback of the supported class with kappa. Filtered continuity then excludes every nonzero integer annihilator. No critical errors, gaps, or hard-prohibition violations were found.",
+  "critical_errors": [],
+  "gaps": [],
+  "verification_kind": "independent language-model review",
+  "source_verification_file_sha256": "e85ec124ce834b6915d14a9cb2eda892443fa975a5e6adc5ba9d76f7f9882a2a"
+}

@@ -1,0 +1,11 @@
+{
+  "version": "v4.34.1",
+  "source": "https://github.com/leanprover/lean4/releases/tag/v4.34.1",
+  "asset_url": "https://github.com/leanprover/lean4/releases/download/v4.34.1/lean-4.34.1-darwin_aarch64.tar.zst",
+  "archive_sha256": "65f22a4f047738ec742667b3247e836a86ebf06eabc12655c3dee00637e37866",
+  "source_sha256": "4d9554e8938dfa181446991d1d13411da962863a6fabf44d310ab7e734ae29c1",
+  "kernel_check_exit_code": 0,
+  "theorems": 12,
+  "proof_admissions": 0,
+  "assumptions": "Lean standard propext, Classical.choice, Quot.sound; each mathematical hypothesis appears explicitly in the theorem statement."
+}

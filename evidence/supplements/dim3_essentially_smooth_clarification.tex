@@ -1,0 +1,43 @@
+% Independent audit clarification, 7 October 2026.
+% For Lemma 13.26 (lem:essentiallysmoothAMMN), after the finite-range
+% quasi-isogeny assertion and before the passage to circle orbits.
+% This is a proposed mathematical clarification, not a formal certificate.
+
+Here is an explicit equivariant justification for the passage to cyclic
+homology. Let $C$ be the cone of the map of completed Hochschild
+complexes. For every integer $N$, the preceding argument gives an
+integer $a_N$ killing each of the finitely many nonzero homotopy
+modules of $\tau_{\leq N}C$. The pointwise $t$-structure on
+$\operatorname{Fun}(BS^1,D(\mathbf Z_p))$ gives its equivariant
+Postnikov tower. Each heart object has trivial circle action:
+the automorphism space of a module in the heart is discrete and
+$BS^1$ is simply connected. A finite extension argument therefore
+gives an integer $b_N$ such that $p^{b_N}$ annihilates
+$\tau_{\leq N}C$ as an equivariant object, not merely on its
+underlying homotopy groups.
+
+Taking homotopy orbits preserves this scalar null-homotopy.
+The omitted Postnikov tail remains $(N+1)$-connective after
+homotopy orbits and derived $p$-completion. Indeed, homotopy
+orbits of a connective spectrum are connective, and in derived
+$p$-completion the potentially new bottom $\lim^1$ term is zero
+because the bottom coefficient tower is the surjective tower
+$\pi_{N+1}(-)/p^r$. Thus the cone of the corresponding map of
+completed cyclic complexes has bounded $p$-torsion in every fixed
+degree, and vanishes after inverting $p$.
+
+Equivalently, one can take a sufficiently high finite bar skeleton
+for the circle-orbit construction in each degree. Its building blocks
+are finite colimits of $(S^1)^j_+\wedge X$, so the comparison commutes
+with derived completion. This argument requires no uniform bound
+$b_N$ as $N$ varies and no interchange of rationalization with an
+infinite product. The norm fiber sequence then makes the square
+between absolute and relative $HC^-\to HP$ cartesian. It does not
+require that the two vertical maps of that square be equivalences
+individually.
+
+% Scope of the continuity citation:
+% AMMN Prop. 4.2 applies to any qcqs scheme with bounded p-power torsion.
+% The paragraph immediately before Prop. 4.10 expressly includes the
+% relative Hochschild and cyclic variants. Thus this use of Prop. 4.2
+% does not add a finite-presentation hypothesis on the localization B_0.

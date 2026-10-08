@@ -1,0 +1,468 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=26mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small A geometric argument for an arithmetic quadric}
+\fancyhead[R]{\small Research draft}
+\fancyfoot[C]{\thepage}
+\setlength{\parskip}{2pt}
+\setlength{\parindent}{14pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbf Z}
+\newcommand{\Q}{\mathbf Q}
+\newcommand{\R}{\mathbf R}
+\newcommand{\C}{\mathbf C}
+\newcommand{\F}{\mathbf F}
+\newcommand{\PP}{\mathbf P}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\m}{\mathfrak m}
+\newcommand{\n}{\mathfrak n}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Frac}{\operatorname{Frac}}
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\Cl}{\operatorname{Cl}}
+\newcommand{\divisor}{\operatorname{div}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\colim}{\operatorname*{colim}}
+\newcommand{\HD}{H_{\mathcal D,\mathrm{an}}}
+\newcommand{\reg}{\operatorname{reg}}
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+{\Large An arithmetic quadric and rational Gersten injectivity}\\[4pt]
+{\normalsize A proposed counterexample by a geometric regulator argument}\\[8pt]
+{\small Research draft --- 7 October 2026}
+\end{center}
+\vspace{3pt}
+\noindent\fcolorbox{black!35}{black!3}{%
+  \parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{\small
+  \textbf{Review status.} This note gives a new proposed counterexample,
+  with the argument and its standard inputs specified below. It has
+  undergone internal adversarial checking, but has not been externally
+  refereed or formally verified. The cited results establish the tools;
+  they do not establish the new conclusion claimed here.}}
+
+\begin{abstract}
+For an odd prime \(p\), consider the regular local ring
+\(\bigl(\Z_{(p)}[x,y,z]/(p+xy+z^2)\bigr)_{(x,y,z)}\).
+A Borel coefficient on its regular divisor \(x=0\) gives an actual
+supported \(K_3\)-class. After a ramified quadratic base change, this
+class becomes a coefficient times a ruling of a split affine quadric.
+A small resolution proves that the ruling persists arithmetically.
+A componentwise Galois argument then shows that its degree-two Betti
+class survives every permitted finite localization. The multiplicative
+analytic Deligne regulator detects the resulting class at every such
+stage. The proposed conclusion is an infinite-order integral class
+with zero generic image.
+\end{abstract}
+
+\section{The ring and the supported coefficient}
+
+We use Quillen algebraic \(K\)-theory; write \(M_{\Q}=M\otimes_{\Z}\Q\).
+Pushforwards from regular closed subschemes may be defined in
+\(G\)-theory and transported to \(K\)-theory on the regular schemes
+involved. We use localization, d\'evissage, flat base change and the
+projection formula \cite{Quillen}.
+
+\begin{theorem}[Proposed counterexample]\label{thm:geometricmain}
+For every odd prime \(p\), the ring
+\[
+ A=\left(\Z_{(p)}[x,y,z]/(p+xy+z^2)\right)_{(x,y,z)}
+\]
+is a regular local domain of dimension three and residue field \(\F_p\).
+There is an integral class \(c\in K_3(A)\) of infinite order whose
+image in \(K_3(\Frac A)\) is zero. Consequently
+\[
+ \ker\!\left(K_3(A)_{\Q}\longrightarrow K_3(\Frac A)_{\Q}\right)\ne0.
+\]
+\end{theorem}
+
+Put
+\[
+ V=\Z_{(p)},\qquad W=V[u]/(u^2+p),\qquad E=\Q(u),\qquad
+ \sigma(u)=-u.
+\]
+The ring \(W\) is a DVR with uniformizer \(u\) and residue field
+\(\F_p\); \(E\) is imaginary quadratic. Fix an embedding
+\(E\hookrightarrow\C\). We use the analytic Deligne regulator, with
+\(\R(j)=(2\pi i)^j\R\). Its point component is
+\[
+ r_2:K_3(E)\longrightarrow
+ \HD^1(\mathrm{pt},\R(2))=\C/\R(2).
+\]
+Borel's theorem and its comparison with the Beilinson regulator imply
+that \(r_2\) is nonzero \cite[Proposition~12.2]{Borel};
+\cite[Section~6, especially (6.4)]{BunkeTamme}.
+The precise regulator scope used on varieties is explained in
+Section~\ref{sec:geometricregulator}.
+
+The ambient local ring \(V[x,y,z]_{(p,x,y,z)}\) is regular of
+dimension four. The equation \(p+xy+z^2\) has nonzero linear term
+\(p\), so its quotient \(A\) is regular of dimension three.
+It is a domain, with \(\Frac A=\Q(x,z)\), and
+\(p=-xy-z^2\in\m^2\), where \(\m=(x,y,z)A\).
+Its regular principal divisor has coordinate ring
+\[
+ R_D=A/(x)\cong W[y]_{(u,y)},\qquad u\longmapsto z.
+\]
+Write \(i:\Spec R_D\hookrightarrow\Spec A\).
+
+Quillen's finite-field calculation gives \(K_2(\F_p)=0\)
+\cite{QuillenFinite}; hence localization makes
+\(K_3(W)\to K_3(E)\) surjective. Choose \(b_0\in K_3(W)\)
+whose image has nonzero regulator, and set
+\begin{equation}\label{eq:geometriccoefficient}
+ \beta=b_0-\sigma b_0,\qquad
+ c=i_*(\beta|_{R_D})\in K_3(A).
+\end{equation}
+Thus \(\sigma\beta=-\beta\) integrally. On \(\C/\R(2)\), complex
+conjugation acts by \(-1\); therefore
+\(r_2(\beta|_E)=2r_2(b_0|_E)\ne0\).
+Localization at \(x\) sends \(c\) to zero, so its generic image is
+already zero integrally. It remains to prove that \(c\) has infinite
+order.
+
+\section{A small resolution and arithmetic Picard persistence}
+
+Write
+\[
+ A_0=V[x,y,z]/(p+xy+z^2),\qquad
+ S=A_0\setminus(x,y,z),\qquad
+ B_0=W[x,y,z]/(xy+z^2-u^2).
+\]
+Then \(B=A\otimes_VW=S^{-1}B_0\). Define
+\[
+ Q=\Spec E[x,y,z]/(xy+z^2-u^2),\qquad T=\Spec B[1/u].
+\]
+For \(s\in S\), let \(Q_s=D(s)\subset Q\).
+Continuity for filtered localizations
+\cite[Chapter~IV, Section~6.4]{Weibel} gives
+\begin{equation}\label{eq:geometriccontinuity}
+ K_3(T)=\colim_{s\in S}K_3(Q_s).
+\end{equation}
+
+The finite free \(A\)-algebra \(B\) is local: its closed fiber is
+\(\F_p[u]/(u^2)\), with a unique maximal ideal. Consequently
+\[
+ B=(B_0)_{\n},\qquad \n=(u,x,y,z).
+\]
+It is a domain, since \(u^2+p\) stays irreducible over \(\Q(x,z)\).
+Its generic fiber is smooth; off the origin of the special fiber
+one of the partial derivatives \(y,x,2z\) is a unit.
+Thus \(B\) is regular off its closed point and is normal by
+the hypersurface \(S_2\) property and \(R_1\).
+The height-one primes
+\[
+ P_+=(x,z-u),\qquad P_-=(x,z+u)
+\]
+occur with multiplicity one in \(\divisor_B(x)=P_++P_-\).
+
+\begin{lemma}\label{lem:geometricresolution}
+The class \([P_+]\) has infinite order in \(\Cl(B)\).
+\end{lemma}
+\begin{proof}
+Set \(w=z-u\) and \(d=2u\), so the equation is
+\(xy+w(w+d)=0\). Blow up \(I=(x,w)\) in \(\Spec B\).
+The two actual Rees charts, inside the fraction field, are
+localizations of
+\begin{align*}
+ W[x,t]:&\quad w=xt,\qquad y=-t(xt+d),\\
+ W[q,y]:&\quad w=-qy-d,\qquad x=-q(qy+d).
+\end{align*}
+For example the first chart is \(B[w/x]\): substituting \(w=xt\)
+gives \(x(y+t(xt+d))=0\), and \(x\)-saturation gives the displayed
+polynomial chart. The other chart is obtained by \(w\)-saturation.
+There are no further relations, since the indicated parameter pairs
+are algebraically independent over \(E\).
+
+The blowup \(Y\) is therefore regular. The inverse image of the
+closed point has charts \(\F_p[t]\) and \(\F_p[q]\), glued by
+\(q=t^{-1}\), so it is the reduced curve \(F\simeq\PP^1_{\F_p}\).
+The denominators coming from \(B\) reduce to nonzero constants
+on these charts, so no points of this projective line are removed.
+
+The ideal \(I\) is invertible away from the closed point.
+At a nonclosed prime containing \(I\), if \(u\) is not a unit
+then \(y\) is a unit and \(I=(w)\). If \(u\) is a unit, then
+\(w+d\) is a unit and \(I=(x)\). Outside \(V(I)\) it is the
+unit ideal. Hence \(Y\to\Spec B\) is an isomorphism off the
+closed point. Its exceptional locus is the curve \(F\), of
+codimension two; there are no exceptional prime divisors.
+
+The tautological identity \(I\OO_Y=\OO_Y(1)\)
+\cite[Section~31.33]{StacksBlowup} restricts to
+\(\OO_{\PP^1}(1)\) on \(F\).
+The ideal \(I\) has valuation one at \(P_+\) and zero at all
+other height-one primes. Since the resolution has no exceptional
+divisors, for the strict transform \(\widetilde P_+\) we obtain
+\[
+ I\OO_Y=\OO_Y(-\widetilde P_+),\qquad
+ \OO_Y(\widetilde P_+)|_F=\OO_{\PP^1}(-1).
+\]
+If \(\divisor_B(f)=N P_+\), the same rational function upstairs
+has divisor exactly \(N\widetilde P_+\). Restricting its trivial
+divisor line bundle to \(F\) forces \(\OO_{\PP^1}(-N)\) to be
+trivial, and hence \(N=0\).
+\end{proof}
+
+The quotient
+\[
+ B/(u)=\F_p[x,y,z]_{(x,y,z)}/(xy+z^2)
+\]
+is a domain. Inverting \(u\) therefore removes only the principal
+height-one prime \((u)\). The divisor-class localization sequence
+gives an isomorphism
+\begin{equation}\label{eq:geometricclasslocalization}
+ \Cl(B)\xrightarrow{\;\sim\;}\Cl(B[1/u])=\Pic(T).
+\end{equation}
+In particular the image of \(P_+\) is not torsion.
+
+\section{Every geometric boundary component has zero class}
+
+Let \(D_\pm\subset Q\) be the divisors \((x,z\mp u)\).
+The projective closure of \(Q\) is split:
+\[
+ \overline Q=\{xy+z^2=u^2t^2\}\cong\PP^1_E\times\PP^1_E,
+ \qquad
+ \det\begin{pmatrix}x&ut-z\\ut+z&y\end{pmatrix}=0.
+\]
+Its divisor at infinity is a smooth \((1,1)\) curve, and becomes
+the diagonal after changing a factor coordinate. Thus
+\begin{equation}\label{eq:geometricpic}
+ Q\cong(\PP^1\times\PP^1)\setminus\Delta,\qquad
+ \Pic(Q)=\Z^2/\Z(1,1)=\Z[D_+].
+\end{equation}
+The same calculation holds over \(\overline E\) and \(\C\).
+The geometric generator is defined over \(E\), so the absolute
+Galois group of \(E\) acts trivially on \(\Pic(Q_{\overline E})\).
+Projection to a factor is an affine-line bundle; on complex points
+it is a homotopy equivalence. In particular
+\[
+ H^2(Q_{\C},\Z)=\Z h,\qquad
+ h=c_1^{\mathrm{top}}(\OO_Q(D_+))
+\]
+up to sign, and \(h\) is primitive.
+By Lemma~\ref{lem:geometricresolution} and
+\eqref{eq:geometricclasslocalization}, the generator in
+\eqref{eq:geometricpic} has infinite-order image on \(T\).
+Hence \(\Pic(Q)\to\Pic(T)\) is injective.
+
+\begin{lemma}\label{lem:geometriccomponents}
+For \(s\in S\), every geometric irreducible curve in
+\(Q_{\C}\setminus(Q_s)_{\C}\) has zero class in \(\Pic(Q_{\C})\).
+Consequently restriction is injective:
+\begin{equation}\label{eq:geometricbetti}
+ H^2(Q_{\C},\R)\longrightarrow H^2((Q_s)_{\C},\R).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let \(D\) be an \(E\)-prime divisor contained in \(V(s)\).
+It is absent from \(T\), so its canonical Cartier section
+trivializes \(\OO_Q(D)|_T\). Picard injectivity gives
+\([D]=0\) on \(Q\).
+In characteristic zero, \(D_{\overline E}\) is reduced and
+its irreducible components form one Galois orbit.
+Trivial Galois action on the geometric Picard group implies
+that all these components have the same class \(a\in\Z\).
+If there are \(r\) components, then \(ra=[D_{\overline E}]=0\);
+thus \(a=0\). Base change to \(\C\) proves the first assertion.
+
+For the second, let \(Z=V(s)_{\C,\mathrm{red}}\).
+The kernel in \eqref{eq:geometricbetti} is the image of
+\(H^2_Z(Q_{\C},\R)\).
+Delete the finite set of singular and intersection points of
+the curve components. Point-supported cohomology on a real
+four-manifold vanishes below degree four, so neither
+degree-two support cohomology nor the ambient \(H^2\) changes.
+The remaining curves are disjoint and smooth.
+The Thom isomorphism supplies one degree-two support generator
+per component, mapping to that component's first Chern class.
+Every such class is zero by the first assertion.
+\end{proof}
+
+\begin{remark}[An independent norm check]
+A geometric boundary component \(\Gamma\) is defined over some finite
+\(E'/E\). Set \(L=\OO_Q(D_+)\) and write
+\([\OO(\Gamma)]=a[L_{E'}]\) in \(\Pic(Q_{E'})=\Z[L_{E'}]\).
+This line bundle is trivial on \(T_{E'}\). Its finite-flat norm
+(equivalently, determinants after restriction of scalars) therefore
+makes \(L_T^{a[E':E]}\) trivial. Since \(L_T\) has infinite order,
+\(a=0\). This also proves the componentwise assertion.
+\end{remark}
+
+The componentwise assertion is essential. Merely observing that
+\(\divisor(s)\) is principal would not suffice:
+\(\divisor(x)=D_++D_-\) is principal although its components have
+opposite nonzero classes. Here \(x\notin S\).
+
+\section{Regulator detection at every finite stage}
+\label{sec:geometricregulator}
+
+Throughout, \(\HD\) denotes \emph{analytic} Deligne cohomology.
+Bunke--Tamme construct a natural multiplicative analytic Beilinson
+regulator \cite[Remark~2.6 and Theorem~2.31]{BunkeTamme},
+with weight-\(j\) component
+\[
+ r_j:K_a(U)\longrightarrow\HD^{2j-a}(U_{\C},\R(j)).
+\]
+Their site consists of regular separated schemes of finite type
+over \(\Z\). To apply it here, spread any finite collection of
+classes, opens and line bundles to a smooth model over
+\(\OO_E[1/N]\) for a sufficiently divisible integer \(N\).
+Such a model is in that site. Further integer localizations do not
+change its complex fiber; naturality and \(K\)-theory continuity
+give the stated maps on \(E\) and \(Q_s\). Projection to the chosen
+embedding preserves multiplication. We use no regulator on \(T\).
+
+\begin{lemma}\label{lem:geometricdeligne}
+For every smooth complex surface \(U\),
+\[
+ \HD^3(U,\R(3))\cong H^2(U,\C)/H^2(U,\R(3)).
+\]
+These identifications are natural in \(U\), and the maps
+\(\HD^3(Q_{\C},\R(3))\to\HD^3((Q_s)_{\C},\R(3))\)
+are injective for every \(s\in S\).
+\end{lemma}
+\begin{proof}
+The analytic Deligne complex is
+\([\R(3)\to\OO_U\to\Omega_U^1\to\Omega_U^2]\).
+Since there are no holomorphic three-forms, the holomorphic
+Poincar\'e lemma identifies this with the shifted cone of
+\(\R(3)\to\C\).
+Real cohomology injects into its complexification, giving the
+displayed quotient. An injection of real vector spaces
+\(V\hookrightarrow W\) induces an injection
+\[
+ (V\otimes_{\R}\C)/(2\pi i)^3V
+ \longrightarrow (W\otimes_{\R}\C)/(2\pi i)^3W.
+\]
+Apply Lemma~\ref{lem:geometriccomponents}.
+\end{proof}
+
+Put \(L=\OO_Q(D_+)\) and
+\[
+ \eta=[\OO_{D_+}]=1-[L^{-1}]\in K_0(Q),\qquad
+ \gamma=(\beta|_E)\eta\in K_3(Q).
+\]
+Here \(\eta\) is the class of the two-term locally free resolution
+of \(\OO_{D_+}\); it has rank zero and
+\(\operatorname{ch}_1(\eta)=c_1(L)\).
+Multiplicativity gives
+\begin{equation}\label{eq:geometricproduct}
+ r_3(\gamma)=r_2(\beta|_E)\cup c_1(L).
+\end{equation}
+There are no other weight-three terms: at a complex point,
+positive-twist analytic Deligne cohomology is concentrated in
+degree one, and the rank of \(\eta\) is zero.
+
+The right side of \eqref{eq:geometricproduct} is nonzero.
+Indeed the Betti normalization of \(c_1(L)\) is \(2\pi i\,h\).
+Represent \(r_2(\beta|_E)\) by \(it\), \(t\in\R\setminus\{0\}\).
+The Deligne cup product in the quotient of
+Lemma~\ref{lem:geometricdeligne} is represented by
+\[
+ (it)(2\pi i)h=-2\pi t\,h.
+\]
+This is nonzero and real, whereas \(H^2(Q_{\C},\R(3))\)
+is the imaginary real line through \(h\).
+The same calculation can be made on \(\PP^1\): the line bundle
+in \eqref{eq:geometricpic} is the pullback of a ruling, and
+cup with its Chern class multiplies the point coefficient by
+\(2\pi i\). Pullback along the affine-line bundle gives the
+displayed calculation on \(Q\).
+
+It follows from regulator naturality and
+Lemma~\ref{lem:geometricdeligne} that
+\(r_3(\gamma|_{Q_s})\ne0\) for every \(s\in S\).
+If an integer \(N>0\) killed \(\gamma|_T\), continuity
+\eqref{eq:geometriccontinuity} would kill \(N\gamma\) on some
+\(Q_s\). Its regulator there is a nonzero element of a real
+vector space, a contradiction. Thus \(\gamma|_T\) has infinite
+order.
+
+\section{Flat base change and the conclusion}
+
+The map \(A\to B[1/u]\) is flat: it is a finite free coefficient
+extension followed by localization. The divisor \(x=0\) pulls
+back to the disjoint union
+\[
+ (D_+\cap T)\amalg(D_-\cap T),
+\]
+since \(2u\) is invertible on \(T\).
+The original coefficient homomorphism in
+\eqref{eq:geometriccoefficient} sends \(u\) to \(z\).
+Its two restrictions are therefore \(u\mapsto u\) and
+\(u\mapsto-u\). Flat base change and the projection formula give
+\begin{align*}
+ c|_T
+ &= (\beta|_E)[\OO_{D_+\cap T}]
+       +(\sigma\beta|_E)[\OO_{D_-\cap T}]\\
+ &= (\beta|_E)\bigl([\OO_{D_+\cap T}]
+                         -[\OO_{D_-\cap T}]\bigr).
+\end{align*}
+The union is the principal divisor \(V(x)\).
+Its resolution by multiplication by \(x\) gives
+\[
+ [\OO_{D_+\cap T}]+[\OO_{D_-\cap T}]
+   =[\OO_{T/(x)}]=0\quad\text{in }K_0(T).
+\]
+Consequently
+\begin{equation}\label{eq:geometricbasechange}
+ c|_T=2(\beta|_E)[\OO_{D_+\cap T}]=2\gamma|_T.
+\end{equation}
+This class has infinite order, and hence so does \(c\).
+Its generic image is zero by its support on \(x=0\), as shown
+in Section~1. This proves Theorem~\ref{thm:geometricmain}.
+
+{\small
+\begin{thebibliography}{9}
+\bibitem{Borel}
+A.~Borel, \emph{Stable real cohomology of arithmetic groups},
+Ann. Sci. \'Ecole Norm. Sup. (4) \textbf{7} (1974), 235--272;
+Proposition~12.2.
+\href{https://doi.org/10.24033/asens.1269}{doi:10.24033/asens.1269}.
+
+\bibitem{BunkeTamme}
+U.~Bunke and G.~Tamme, \emph{Multiplicative differential algebraic
+\(K\)-theory and applications}, Annals of \(K\)-Theory
+\textbf{1} (2016), no.~3, 227--258;
+Remark~2.6, Theorem~2.31 and Section~6.
+\href{https://doi.org/10.2140/akt.2016.1.227}{doi:10.2140/akt.2016.1.227}.
+
+\bibitem{Quillen}
+D.~Quillen, \emph{Higher algebraic \(K\)-theory I}, in
+\emph{Algebraic \(K\)-Theory I: Higher \(K\)-Theories},
+Lecture Notes in Math. \textbf{341}, Springer, 1973, 85--147.
+\href{https://doi.org/10.1007/BFb0067053}{doi:10.1007/BFb0067053}.
+
+\bibitem{QuillenFinite}
+D.~Quillen, \emph{On the cohomology and \(K\)-theory of the general
+linear groups over a finite field}, Ann. of Math. (2)
+\textbf{96} (1972), 552--586.
+\href{https://doi.org/10.2307/1970825}{doi:10.2307/1970825}.
+
+\bibitem{StacksBlowup}
+The Stacks Project Authors, \emph{The Stacks Project},
+Section~31.33, \emph{Blowing up}, standard charts and tautological
+ideal identity.
+\href{https://stacks.math.columbia.edu/tag/01OF}{Tag 01OF}.
+
+\bibitem{Weibel}
+C.~A.~Weibel, \emph{The \(K\)-book: An Introduction to Algebraic
+\(K\)-theory}, Graduate Studies in Math. \textbf{145}, AMS, 2013;
+Chapter~IV, Section~6.4 (filtered-colimit continuity).
+\href{https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf}{Author's Chapter IV}.
+\end{thebibliography}
+}
+\end{document}

@@ -1,0 +1,11 @@
+{
+  "fact_id": "d8c925bb8cff43ee",
+  "record_id": "dd41a560e6d4a299",
+  "timestamp_utc": "2026-10-07T13:59:49.062048+00:00",
+  "verdict": "correct",
+  "summary": "The proof passes sequential verification. The statement specifies its hypotheses and continuous, ordinary-image cohomology convention. Both cited facts, 50b9a29bc7dc842b and 868cb19bf6a0a52c, were read in the fact graph; their statements apply here and contain no prohibited unproved conditional premises. Step 1 correctly computes the mixed diagonal class with the stated cup-product convention. Inversion doubles the mixed term in the graph difference, and algebraic exactness passes to the completed continuous complex by functoriality. Step 2 correctly proves injectivity of pullback on proper rational H^1 using the degree and perfect pairing, including inseparable degree, and restriction to the affine curve is injective by localization. Step 3 correctly computes the Frobenius polynomial X^2-2X+5 and its integral unit root. The Frobenius lift and functorial dagger comparison yield the scalar equation required by fact 868cb19bf6a0a52c. Step 4 applies fact 50b9a29bc7dc842b to send the Chern class to the nonzero class 2[Q^*eta]; its chain identity rules out an exact two-form. Finite constant extension commutes with the completed form complexes because W' is finite free over W, and faithful flatness preserves nonzero cohomology with ordinary images. External references were checked using arXiv theorem search first and then the original papers: [Berthelot, sections 1.3, 1.7(i), 2.3(i), Theorems 2.4 and 3.2](https://wstein.org/people/berthelo/publis/Poincare_Kunneth.pdf) supplies the relevant trace, duality and Kunneth compatibilities; [Davis–Langer–Zink, page 198](https://smf.emath.fr/sites/default/files/2023-04/ens_ann-sc_44_197-262__sample.pdf) explicitly supplies the noncanonical Frobenius lift on the weak completion of a smooth affine lift. No critical errors, gaps, or hard-prohibition violations were found.",
+  "critical_errors": [],
+  "gaps": [],
+  "verification_kind": "independent language-model review",
+  "source_verification_file_sha256": "e85ec124ce834b6915d14a9cb2eda892443fa975a5e6adc5ba9d76f7f9882a2a"
+}

@@ -1,0 +1,11 @@
+{
+  "fact_id": "47409d3a276b6039",
+  "record_id": "700ee2561747e780",
+  "timestamp_utc": "2026-10-07T13:57:21.593852+00:00",
+  "verdict": "correct",
+  "summary": "The statement is self-contained, and all five proof steps pass sequential verification. The cited fiber, continuity, and nilpotence results match [AMMN, On the Beilinson fiber square](https://arxiv.org/pdf/2003.12541), including its convention of spectral completion followed by rationalization. The extension to completed localizations is justified: completed cotangent transitivity splits because the relative cotangent module is projective, and the derived exterior-power torsion bounds control each finite range of the HKR filtration. Connectivity makes the subsequent completion and circle-orbit argument valid without asserting separate equivalences on negative or periodic cyclic homology. Henselianity and nilpotence justify replacing the ideal (5) by (pi). The coefficient diagrams, linearization, and norm construction preserve the required module actions; trace multiplicativity is supported by [Blumberg–Gepner–Tabuada, Theorem 7.4](https://arxiv.org/pdf/1103.3923). In relative dimension two, the normalized HKR map is defined integrally and respects the mixed differential. Its completed cyclic complex gives the stated canonical top-form summand with the ordinary differential image. The relative scalar representative t^(-1)b and the rank-zero line-bundle character multiply to -b c_1^dR(J). The nonvanishing implication and its finite-sum version follow, without assuming injectivity into spectral completion. No critical errors, gaps, or hard-prohibition violations were found.",
+  "critical_errors": [],
+  "gaps": [],
+  "verification_kind": "independent language-model review",
+  "source_verification_file_sha256": "e85ec124ce834b6915d14a9cb2eda892443fa975a5e6adc5ba9d76f7f9882a2a"
+}

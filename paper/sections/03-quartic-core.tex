@@ -1,0 +1,2388 @@
+\section{The quartic construction}\label{d2:sec:introduction}
+
+\subsection*{Supported classes and generic restriction}
+
+A class pushed forward from a Cartier divisor vanishes after restriction to the complement of that divisor. For a regular local ring, the question is whether such a class can retain infinite order in algebraic K-theory. The localization sequence and the projection formula express this question in terms of supported classes and their products; we use these results in the forms of \cite[V.3--V.6]{Weibel}. Our examples allow two different regulators to detect one such product. The first uses the analytic regulator and its comparison with the regulator of a number ring \cite{Borel,BunkeTamme}. The second uses the relative fiber comparison with cyclic homology \cite{AMMN,BGTTrace}.
+
+The ring is defined by a quartic equation whose constant term is the residue characteristic. Its cyclotomic divisor splits into four components after a flat coefficient extension. The coefficients of these components are conjugates of one actual class in degree three. The resulting divisor calculation is the common starting point of both proofs.
+
+\subsection{A rational generic kernel}
+
+The geometric argument detects the class on every finite open that occurs in the localization defining the local ring.
+
+\begin{theorem}\label{d2:thm:geometric}
+Let
+\[
+ A=
+ \left(
+ \DtwoZZ_{(5)}[T,x,y]/
+ \bigl(\Phi _5(1+y)+x^4+Txy^3\bigr)
+ \right)_{(5,x,y)},
+ \qquad
+ \Phi _5(z)=z^4+z^3+z^2+z+1.
+\]
+Then \(A\) is a regular local ring of dimension two with residue field
+\(\DtwoFF _5(T)\). There is an actual infinite-order class
+\(c\in K_3(A)\) whose image in \(K_3(\DtwoFrac A)\) is zero.
+Here \(K_3\) denotes Quillen algebraic K-theory.
+\end{theorem}
+
+The class is the pushforward of a cyclotomic coefficient from \(x=0\).
+After the divisor splits, its analytic regulator is a linear combination
+of four first Chern classes. A blowup calculation shows that the only
+relation among these classes is the diagonal relation. It also controls
+every geometric component of every divisor removed by an allowed
+localization.
+
+\subsection{Persistence after completion}
+
+The completed argument requires a coefficient with prescribed nonzero
+components at both odd characters.
+
+\begin{theorem}\label{d2:thm:completed}
+Let \(A\) be the ring in Theorem~\ref{d2:thm:geometric}, and let
+\(\Dtwowh A\) be its \((x,y)\)-adic completion. Both rings are regular local
+domains of dimension two, with maximal ideal \((x,y)\) and residue field
+\(\DtwoFF _5(T)\). There is an actual class \(c\in K_3(A)\) such that its image
+\(\Dtwowh c\in K_3(\Dtwowh A)\) has infinite order and
+\[
+ c|_{\DtwoFrac A}=0,
+ \qquad
+ \Dtwowh c|_{\DtwoFrac\Dtwowh A}=0
+\]
+integrally. Consequently both maps
+\[
+ K_3(A)\otimes\DtwoQQ\longrightarrow K_3(\DtwoFrac A)\otimes\DtwoQQ,
+ \qquad
+ K_3(\Dtwowh A)\otimes\DtwoQQ\longrightarrow
+ K_3(\DtwoFrac\Dtwowh A)\otimes\DtwoQQ
+\]
+have nonzero kernel.
+\end{theorem}
+
+The class in Theorem~\ref{d2:thm:completed} can also be used in the geometric
+proof of Theorem~\ref{d2:thm:geometric}. We establish this identification
+after constructing its arithmetic coefficient. In particular, the
+passage to completion does not require choosing a second supported
+class.
+
+\subsection*{Proof architecture}
+
+The completed detector is a continuous two-form relative to a ramified
+coefficient ring. Its parameter differential is retained. A tame trace
+to a constant ordinary elliptic curve, followed by a bounded contraction,
+takes the weighted root-divisor class to
+\(4e_3(b)\) times a nonzero one-form class on a generic Cohen completion.
+The exact linear identity is proved in
+Proposition~\ref{d2:prop:weighted}; it holds for every anti-invariant
+coefficient \(b\). Nonvanishing of the one-form rests on scalar
+Frobenius pole removal in Lemma~\ref{d2:lem:scalar} and on the
+rigid-to-convergent results of \cite{CaroDAddezio2025}.
+
+Proposition~\ref{d2:prop:cyclic} identifies the relevant relative K-theory
+fiber with ordinary cyclic homology after spectral completion and
+inversion of \(5\). Its product calculation detects an actual relative
+class. The smooth-surface finite-coefficient bound of
+\cite[Theorem~8.4]{GeisserLevineCharP} then applies twice: first to the
+fiber of reduction, and then to the support term in localization.
+These are distinct fiber sequences.
+
+Section~\ref{d2:sec:preliminaries} fixes the K-theory conventions and the
+supported construction. Sections~\ref{d2:sec:geometry}
+and~\ref{d2:sec:analytic} prove the geometric route.
+Section~\ref{d2:sec:cyclic} establishes the relative cyclic comparison.
+Section~\ref{d2:sec:cohen} develops the Cohen and elliptic arguments.
+Section~\ref{d2:sec:quartic} computes the weighted quartic detector.
+Section~\ref{d2:sec:arithmetic} constructs its actual arithmetic coefficient.
+Section~\ref{d2:sec:assembly} proves Theorem~\ref{d2:thm:completed} and identifies
+the coefficient used in both routes.
+
+\section{Preliminaries}\label{d2:sec:preliminaries}
+
+We use algebraic K-theory, transfers, localization, and finite
+coefficients with the conventions of
+\cite[Chapters~IV and~V]{Weibel}.
+
+\begin{notation}\label{d2:notation:completion}
+For a ring \(H\) and an ideal \(I\), put
+\[
+ K(H,I)=\Dtwofib\bigl(K(H)\longrightarrow K(H/I)\bigr),
+ \qquad
+ \DtwocK(H)=K(H)^\wedge_5[1/5],
+ \qquad
+ \DtwocK(H,I)=K(H,I)^\wedge_5[1/5].
+\]
+The completion is the derived inverse limit of the spectra
+\(K(H)/5^n\), and likewise for a relative spectrum.
+It is not defined by tensoring the actual K-groups with \(\DtwoZZ _5\).
+Completion and inversion of \(5\) preserve fiber sequences.
+
+On adically completed rings, differential forms are continuous forms.
+Every de Rham quotient in this article uses the ordinary image of the
+differential, unless a closure is explicitly introduced in the
+construction of a bounded functional.
+\end{notation}
+
+For regular noetherian rings of finite dimension, projective-module
+K-theory agrees with coherent-module G-theory. Finite closed immersions
+have G-theory pushforwards by restriction of scalars. These pushforwards commute with flat base change and satisfy the projection formula
+\[
+ i_*(i^*\alpha\cdot z)=\alpha\cdot i_*z.
+\]
+For an effective Cartier divisor with invertible ideal \(I\), its
+two-term resolution gives \(i_*[\DtwocO]=1-[I]\).
+We use \cite[V.3.3, V.3.3.2, V.3.7.2, V.3.12]{Weibel}
+for these statements. In each application, the immersions are finite
+between affine schemes and the base change in question is flat.
+Thus the required properness and Tor-independence hold.
+
+For a regular noetherian ring \(H\), a nonzero divisor \(s\), and a
+regular quotient \(H/sH\), localization and d\'evissage give
+\[
+ K(H/sH)\longrightarrow K(H)\longrightarrow K(H[1/s]),
+\]
+where the first map is support pushforward
+\cite[V.4.1, V.6.1]{Weibel}.
+K-groups commute with filtered colimits of rings
+\cite[IV, Section~6.4]{Weibel}. The same holds with finite coefficients,
+by the cofiber construction. In particular, an equality in a filtered
+localization holds after some finite further localization.
+
+\begin{setup}\label{d2:setup:ring}
+Write
+\[
+ \begin{split}
+ P(y)&=\Phi _5(1+y)=5+10y+10y^2+5y^3+y^4,\\
+ F&=P(y)+x^4+Txy^3,\\
+ R_0&=\DtwoZZ _{(5)}[T,x,y]/(F),\qquad
+ \Dtwofm=(5,x,y),\qquad
+ S=R_0\setminus\Dtwofm,\qquad A=S^{-1}R_0.
+ \end{split}
+\]
+Fix a primitive fifth root \(\rho\), and put
+\[
+ E_{\Dtwoar}=\DtwoQQ(\rho),\qquad
+ W_{\Dtwoar}=\DtwoZZ _{(5)}[\rho],\qquad
+ \pi=\rho-1,\qquad
+ G=(\DtwoZZ/5\DtwoZZ)^\times.
+\]
+For \(g\in G\), let \(\sigma_g(\rho)=\rho^g\).
+\end{setup}
+
+The two coefficients \(xy^3\) and \(P(y)+x^4\) of the linear polynomial
+\(F\) in \(T\) have no common irreducible factor in
+\(\DtwoZZ _{(5)}[x,y]\). Neither \(x\) nor \(y\) divides \(P(y)+x^4\).
+Gauss's lemma therefore shows that \(R_0\) is a domain.
+Solving for \(T\) gives \(\DtwoFrac A=\DtwoQQ(x,y)\).
+
+The ambient local ring
+\(\DtwoZZ _{(5)}[T,x,y]_{(5,x,y)}\) is regular of dimension three,
+with residue field \(k_0=\DtwoFF _5(T)\).
+The class of \(F\) in its cotangent space is the nonzero class of \(5\).
+Thus \(A\) is regular local of dimension two. The identity
+\begin{equation}\label{d2:eq:ramification}
+ 5(1+2y+2y^2+y^3)=-(x^4+y^4+Txy^3)
+\end{equation}
+shows that its maximal ideal is \((x,y)\).
+Completion preserves the dimension and cotangent space of a noetherian
+local ring, so \(\Dtwowh A\) is also regular local of dimension two, with the
+same residue field. Both rings are domains.
+
+The polynomial \(P\) is Eisenstein at \(5\).
+Consequently \(W_{\Dtwoar}\) is finite free of rank four over
+\(\DtwoZZ _{(5)}\). Its reduction modulo \(5\) is
+\(\DtwoFF _5[\pi]/(\pi^4)\), so it is local.
+Moreover,
+\begin{equation}\label{d2:eq:epsilon}
+ 5=\pi^4\epsilon,\qquad
+ \epsilon=-\frac{1}{1+2\pi+2\pi^2+\pi^3},
+ \qquad
+ \epsilon\bmod\pi=-1.
+\end{equation}
+Thus \(W_{\Dtwoar}\) is a discrete valuation ring with uniformizer \(\pi\)
+and residue field \(\DtwoFF _5\). Taking the quotient by \(x\) gives
+\begin{equation}\label{d2:eq:cartier-quotient}
+ A/xA=W_{\Dtwoar}[T]_{(\pi)},
+ \qquad y\longmapsto\pi.
+\end{equation}
+This is a regular discrete valuation ring. Its completion
+\(\Dtwowh A/x\Dtwowh A\) is regular as well.
+
+\begin{definition}\label{d2:defn:supported}
+Let \(i\colon\DtwoSpec(A/xA)\to\DtwoSpec A\) be the closed immersion.
+For an actual class \(\beta\in K_3(W_{\Dtwoar})\), define
+\[
+ c(\beta)=i_*\bigl(\beta|_{A/xA}\bigr)\in K_3(A).
+\]
+\end{definition}
+
+Restriction to \(A[1/x]\) kills \(c(\beta)\), because the modules in its
+pushforward are supported on \(x=0\). Hence its generic image is zero
+integrally. The map \(A\to\Dtwowh A\) is flat.
+Flat base change identifies its completed image with the same
+pushforward on \(\DtwoSpec\Dtwowh A\), so that image also vanishes over
+\(\DtwoFrac\Dtwowh A\). The remaining issue in both theorems is infinite order.
+
+\section{The divisor lattice and its finite opens}\label{d2:sec:geometry}
+
+In this section, we prove the Picard and Betti persistence used in
+Theorem~\ref{d2:thm:geometric}.
+
+\begin{proposition}\label{d2:prop:geometry}
+In Setup~\ref{d2:setup:ring}, put
+\[
+ B_{\Dtwoar}=A\otimes_{\DtwoZZ _{(5)}}W_{\Dtwoar},
+ \qquad
+ \DtwocT=\DtwoSpec B_{\Dtwoar}[1/\pi,1/y],
+\]
+and
+\[
+ \DtwocQ=\DtwoSpec E_{\Dtwoar}[T,x,y,y^{-1}]/(F),
+ \qquad
+ D_g=V(x,y-(\rho^g-1))\subset\DtwocQ.
+\]
+For \(s\in S\), write \(\DtwocQ_s=D(s)\subset\DtwocQ\).
+Then \(\DtwocQ\) is a smooth geometrically integral surface,
+\(\DtwocT=\DtwoSpec S^{-1}\DtwocO(\DtwocQ)\), and
+\[
+ \DtwoPic(\DtwocQ)=\DtwoZZ ^4/\DtwoZZ(1,1,1,1),
+\]
+where the standard basis maps to \(\DtwocO(D_g)\).
+This calculation persists under every extension of \(E_{\Dtwoar}\), and
+\(\DtwoPic(\DtwocQ)\to\DtwoPic(\DtwocT)\) is injective.
+
+For every embedding \(E_{\Dtwoar}\to\DtwoCC\), the classes
+\[
+ e_g=c_1^{\Dtwotopol}(\DtwocO(D_g))
+       \in H^2(\DtwocQ(\DtwoCC),\DtwoRR)
+\]
+have exactly the real diagonal relation. For every \(s\in S\),
+restriction induces an injection
+\[
+ H^2(\DtwocQ(\DtwoCC),\DtwoRR)\longrightarrow H^2(\DtwocQ_s(\DtwoCC),\DtwoRR).
+\]
+\end{proposition}
+
+\begin{proof}
+The ring \(B_{\Dtwoar}\) is finite free over \(A\).
+Its closed fiber is \(k_0[\pi]/(\pi^4)\), so it has the single maximal
+ideal \(\Dtwofn=(\pi,x,y)\).
+Tensoring \(A\hookrightarrow\DtwoQQ(x,y)\) with the free
+\(\DtwoZZ _{(5)}\)-module \(W_{\Dtwoar}\) embeds \(B_{\Dtwoar}\) in
+\(E_{\Dtwoar}(x,y)\). Thus \(B_{\Dtwoar}\) is a domain.
+With \(V_{\Dtwoar}=W_{\Dtwoar}[T]_{(\pi)}\), comparison of localizations gives
+\[
+ B_{\Dtwoar}=
+ \bigl(V_{\Dtwoar}[x,y]/(F)\bigr)_{(\pi,x,y)}.
+\]
+Here every polynomial whose reduction is nonzero modulo \(\pi\)
+becomes a unit. Inverting \(\pi\) and \(y\) gives
+\(S^{-1}E_{\Dtwoar}[T,x,y,y^{-1}]/(F)\), as asserted.
+
+Consider the blowup
+\(\DtwocY=\operatorname{Bl}_{\Dtwofn}(\DtwoSpec B_{\Dtwoar})\).
+Its tangent coordinates \((U:X:Y)\) correspond to \((\pi,x,y)\).
+The associated graded ring is
+\[
+ k_0[U,X,Y]/(X^4+Y^4+TXY^3-U^4).
+\]
+Indeed \(F\) has order four in the ambient regular local ring, and its
+nonzero initial form generates the initial ideal of the principal
+ideal \((F)\). The exceptional scheme is the plane curve
+\[
+ C_{\mathrm{exc}}\colon X^4+Y^4+TXY^3=U^4.
+\]
+
+A geometric singular point of this curve would satisfy \(U=0\).
+It cannot have \(Y=0\), since then \(X=0\).
+Putting \(s=X/Y\), the remaining equations are
+\[
+ s^4+Ts+1=0,\qquad 4s^3+T=0.
+\]
+In characteristic five these imply \(T=s^3\), \(s^4=2\), and
+\(T^4=3\), contrary to the transcendence of \(T\).
+Thus \(C_{\mathrm{exc}}\) is geometrically smooth.
+Distinct geometric plane components would intersect by B\'ezout and
+give a singular point; repeated components would also be singular.
+Therefore the curve is geometrically integral.
+
+The strict-transform equations retain the coefficient
+\(\epsilon=5/\pi^4\) from \eqref{d2:eq:epsilon}:
+\begin{align*}
+ h_\pi&=X^4+Y^4+TXY^3+
+       \epsilon(1+2\pi Y+2\pi^2Y^2+\pi^3Y^3),\\
+ h_x&=1+Y^4+TY^3+
+       \epsilon U^4(1+2xY+2x^2Y^2+x^3Y^3),\\
+ h_y&=X^4+1+TX+
+       \epsilon U^4(1+2y+2y^2+y^3).
+\end{align*}
+The substitutions are respectively
+\((x,y)=(\pi X,\pi Y)\),
+\((\pi,y)=(xU,xY)\), and
+\((\pi,x)=(yU,yX)\).
+The latter two ambient charts retain the relations
+\(\pi=xU\) and \(\pi=yU\).
+
+These ambient charts are regular.
+For example, on the \(x\)-chart one can eliminate \(x\) or \(U\) when
+the other is a unit. At a point where both vanish,
+\(\pi-xU\) has the nonzero linear term \(\pi\) in a regular local
+polynomial ring over \(V_{\Dtwoar}\).
+The argument on the \(y\)-chart is identical with \(x\) replaced by
+\(y\); the \(\pi\)-chart is a localization of \(V_{\Dtwoar}[X,Y]\).
+
+Let \(t\) denote the exceptional parameter on any one of these charts.
+It is a nonzero divisor, the ambient quotient modulo \(t\) is a
+polynomial domain over \(k_0\), and the corresponding \(h\) has
+nonzero reduction. If \(ta=hb\), reduction modulo \(t\) forces
+\(b=tb'\), and cancellation gives \(a=hb'\).
+Thus the quotient by \(h\) has no \(t\)-torsion.
+The displayed equations describe the strict transform without an
+additional exceptional component.
+
+At a point of \(C_{\mathrm{exc}}\), its smoothness gives a nonzero
+differential of the reduced equation in an exceptional-plane
+direction. Therefore the strict transform is regular there.
+Away from the exceptional divisor, where \(\pi\) is invertible, the
+characteristic-zero hypersurface is smooth: if
+\(F_T=xy^3=0\), then either \(x=0\), where \(P'(y)\ne0\) at each
+root of \(P\), or \(y=0\), where \(x^4=-5\) and
+\(F_x=4x^3\ne0\).
+At a nonclosed point over \(\pi=0\), the binary form
+\(x^4+y^4+Txy^3\) is geometrically square-free by the repeated-root
+calculation above. Its affine zero locus is smooth away from
+\((x,y)=(0,0)\), so its \(x,y\) Jacobian proves regularity there.
+Consequently \(\DtwocY\) is regular everywhere and is an isomorphism off
+\(\Dtwofn\). The hypersurface \(B_{\Dtwoar}\) is Cohen--Macaulay and regular
+in codimension one, hence normal.
+
+The exceptional ideal satisfies
+\[
+ \Dtwofn\DtwocO_{\DtwocY}=\DtwocO_{\DtwocY}(-C_{\mathrm{exc}}),
+ \qquad
+ \DtwocO_{\DtwocY}(C_{\mathrm{exc}})|_{C_{\mathrm{exc}}}
+       =\DtwocO_{C_{\mathrm{exc}}}(-1).
+\]
+These identities follow from the exceptional parameters on the charts,
+or from \cite[Lemmas~31.33.2 and~31.33.4, Tags~0804 and~02OS]{StacksBlowup}:
+the charts are \(R[I/a]\), the extended ideal is generated by \(a\),
+and the degree-minus-one tautological line is the exceptional-divisor
+line.
+
+Write \(a_g=\rho^g-1\) and \(b_g=a_g/\pi\).
+Then \(b_g\) is a unit with reduction \(g\).
+The strict transform \(\Dtwowt D_g\) of the prime
+\((x,y-a_g)\) meets the exceptional curve only at
+\[
+ P_g=[1:0:g].
+\]
+Its parameter is \(\pi\), giving this tangent direction.
+On the \(\pi\)-chart, setting \(X=0\) gives
+\[
+ h_\pi(0,Y)=\prod_{g=1}^4(Y-b_g),
+\]
+because \(P(\pi Y)=\pi^4\prod_g(Y-b_g)\).
+The \(Y\)-derivative is a unit at
+\((\pi,X,Y-b_g)\).
+The maximal ideal there is generated by \(\pi,X\), while
+\(\Dtwowt D_g\) is given by \(X=0\).
+Its intersection with \(C_{\mathrm{exc}}\), given by \(\pi=0\),
+has multiplicity one.
+
+We next compute the lattice on
+\(C_{\mathrm{exc}}^*=C_{\mathrm{exc}}\cap\{UY\ne0\}\).
+Extend the constants to \(k=\overline{\DtwoFF}_5\), and consider
+\[
+ M=\DtwoSpec k[X,Z,Y,Y^{-1}]/(XZ-(1-Y^4)),
+ \qquad
+ T=\frac{Z-X^3}{Y^3}.
+\]
+This surface is smooth, since the derivative \(4Y^3\) is a unit.
+The open \(X\ne0\) has coordinate ring
+\(k[X^{\pm1},Y^{\pm1}]\), which is factorial.
+The omitted prime divisors are
+\(L_g=V(X,Y-g)\), each with multiplicity one in \(\Dtwodivisor(X)\).
+They generate \(\DtwoCl(M)=\DtwoPic(M)\) by divisor localization.
+A relation among them is the divisor of a function that becomes a unit
+on the Laurent open. Such a unit is \(cX^rY^s\).
+Since \(Y\) is already invertible on \(M\), the only relation is
+\[
+ \DtwoPic(M)=\DtwoZZ^4/\DtwoZZ(1,1,1,1).
+\]
+
+For every \(t\in k\), the fiber \(T=t\) is
+\[
+ X^4+Y^4+tXY^3=1,\qquad Y\ne0.
+\]
+With \(s=X/Y\) and \(w=1/Y\), its coordinate ring is
+\[
+ k[s,w,w^{-1}]/\bigl(w^4-(s^4+ts+1)\bigr).
+\]
+The polynomial \(s^4+ts+1\) is not a square in \(k(s)\).
+A rational square that is polynomial is a polynomial square by unique
+factorization. Comparing it with \((s^2+bs+c)^2\), after normalizing
+the leading coefficient, gives \(b=c=0\) from the cubic and quadratic
+coefficients, contradicting the constant term.
+Since \(k\) contains the fourth roots of unity and has characteristic
+different from two, adjoining a fourth root of this nonsquare has
+degree four. The extension is a splitting field with Galois group
+inside \(\mu_4\); a subgroup of order at most two would fix the square
+of the root and make the polynomial a square.
+Thus every fiber is integral and reduced.
+Its single vertical prime divisor is \(\Dtwodivisor(T-t)\), with
+multiplicity one.
+
+Localization to \(k(T)\) removes exactly these vertical prime
+divisors. Their classes are zero, so
+\[
+ \DtwoPic(M)\xrightarrow{\ \sim\ }\DtwoPic(M_{k(T)}).
+\]
+The generic fiber is \(C_{\mathrm{exc},k(T)}^*\), and \(L_g\)
+restricts to \(P_g\) with multiplicity one.
+Hence a principal combination \(\sum_g n_gP_g\) on
+\(C_{\mathrm{exc}}^*\) must be diagonal: extend to \(k(T)\) and use
+the lattice just computed.
+
+The substitution \(v=x^3+Ty^3\) identifies
+\[
+ \DtwocQ=\DtwoSpec E_{\Dtwoar}[x,v,y,y^{-1}]/(xv+P(y)).
+\]
+This surface is smooth because \(P\) has four distinct roots, all in
+\(E_{\Dtwoar}\). Its open \(x\ne0\) is the Laurent factorial surface
+with coordinates \(x,y\).
+The removed prime divisors are exactly \(D_g\), each occurring once
+in \(\Dtwodivisor(x)\).
+Every relation is obtained from a Laurent unit \(cx^ry^s\).
+It follows that
+\(\DtwoPic(\DtwocQ)=\DtwoZZ^4/\DtwoZZ(1,1,1,1)\).
+This also proves geometric integrality.
+The same argument works over every extension of \(E_{\Dtwoar}\).
+
+Suppose that \(\sum_g n_gD_g\) is principal on \(\DtwocT\), with
+rational function \(f\).
+On the regular surface \(\DtwocY\), its divisor differs from
+\(\sum_g n_g\Dtwowt D_g\) by
+\[
+ mC_{\mathrm{exc}}+\sum_jm_jV_j,
+\]
+where \(V_j\) are strict transforms of primes in \(\pi=0\) or \(y=0\).
+Indeed \(\DtwocY[1/\pi,1/y]=\DtwocT\).
+The strict transforms over \(\pi=0\) meet the exceptional curve only
+in \(U=0\), and those over \(y=0\) meet it only in \(Y=0\), as the
+chart equations show.
+They therefore miss \(C_{\mathrm{exc}}^*\).
+The line \(\DtwocO_{C_{\mathrm{exc}}}(-1)\) is trivial where \(U\ne0\).
+Restriction of the principal-divisor identity gives
+\[
+ \sum_g n_g[P_g]=0\quad\text{in }\DtwoPic(C_{\mathrm{exc}}^*).
+\]
+The coefficients \(n_g\) are equal.
+The original combination is already a multiple of \(\Dtwodivisor(x)\)
+on \(\DtwocQ\), which proves Picard injectivity.
+
+Fix an embedding into \(\DtwoCC\).
+The divisors \(D_g(\DtwoCC)\) are disjoint affine lines, and their
+complement is \((\DtwoCC^\times)^2\).
+The Thom isomorphism gives the exact segment
+\[
+ H^1((\DtwoCC^\times)^2,\DtwoRR)
+ \longrightarrow \bigoplus_g\DtwoRR
+ \longrightarrow H^2(\DtwocQ(\DtwoCC),\DtwoRR).
+\]
+The second map sends the standard vectors to \(e_g\).
+The angular classes of \(x,y\) form a basis of the first group.
+Around each \(D_g\), \(x\) winds once because its zero is simple,
+whereas \(y\) winds zero times because it is invertible.
+The image of the first map is precisely the diagonal line.
+This proves the asserted relation among the \(e_g\).
+
+Let \(Z\) be an irreducible \(E_{\Dtwoar}\)-divisor in the zero locus of
+some \(s\in S\).
+Its restriction to \(\DtwocT\) is empty.
+Picard injectivity therefore gives \([Z]=0\) on \(\DtwocQ\).
+Over an algebraic closure, its geometric components
+\(Z_1,\ldots,Z_d\) form one Galois orbit and each has multiplicity
+one, since the characteristic is zero.
+The geometric Picard group is the torsion-free lattice computed
+above. Galois acts trivially on it because its generators \(D_g\)
+are already defined over \(E_{\Dtwoar}\).
+Thus all \([Z_j]\) equal a class \(h\), and \(dh=0\).
+It follows that every \([Z_j]\) vanishes.
+Geometric irreducibility persists under extension of algebraically
+closed fields, so every irreducible complex component of the boundary
+has zero Picard class and zero topological first Chern class.
+
+Let \(H\) be the reduced complex divisor cut out by \(s\).
+If it is empty, restriction is the identity.
+Otherwise remove the finite set \(\Sigma\) of singular points and
+component intersections.
+Local cohomology at a point of a smooth real four-manifold is
+concentrated in degree four, by the cohomology of a ball relative to
+its punctured ball. Therefore
+\[
+ H^2_\Sigma(\DtwocQ(\DtwoCC),\DtwoRR)
+ =H^3_\Sigma(\DtwocQ(\DtwoCC),\DtwoRR)=0.
+\]
+Put \(X=\DtwocQ(\DtwoCC)\), \(X^\circ=X\setminus\Sigma\), and
+\(D=H\setminus\Sigma\). The support exact sequences give
+\[
+ H^2_H(X,\DtwoRR)\xrightarrow{\sim}H^2_D(X^\circ,\DtwoRR),
+ \qquad
+ H^2(X,\DtwoRR)\xrightarrow{\sim}H^2(X^\circ,\DtwoRR).
+\]
+Each irreducible component \(H_i\) of \(H\) has connected smooth
+part \(D_i=H_i\setminus\Sigma\): its normalization is a connected
+Riemann surface, and removing finitely many points preserves
+connectedness. The \(D_i\) are disjoint closed smooth curves in
+\(X^\circ\).
+
+A tubular neighborhood is a disk neighborhood in their normal
+complex line bundles; a varying radius accommodates noncompact
+curves. Excision reduces cohomology with supports to the relative
+cohomology of this neighborhood and its complement of the zero
+section. Over a contractible trivializing open, the normal fiber
+pair \((B^2,B^2\setminus\{0\})\) has relative cohomology
+\(\DtwoRR\) in degree two and zero otherwise.
+Changes of trivialization preserve its complex orientation and
+therefore its generator. Relative Mayer--Vietoris on a good
+trivializing cover gives
+\[
+ H^2_D(X^\circ,\DtwoRR)=H^0(D,\DtwoRR)
+       =\bigoplus_i\DtwoRR.
+\]
+This uses ordinary cohomology of \(D\), without a compactness
+assumption.
+
+The canonical section of \(\DtwocO_X(H_i)\) is transverse to zero
+along \(D_i\) on \(X^\circ\), with complex-linear normal derivative.
+Pulling back the oriented fiber Thom class gives the corresponding
+support generator. After forgetting supports, homotopy of this
+section to the zero section identifies its class with the Euler
+class of the underlying oriented real plane bundle. This equals
+\(c_1(\DtwocO_X(H_i))|_{X^\circ}\): both classes are given by the
+winding-number cocycle of the circle-valued transition functions,
+with the complex orientation fixing the positive generator.
+The isomorphism on ambient \(H^2\) above identifies its preimage
+with the global class \(c_1(\DtwocO_X(H_i))\) on \(X\).
+Every such class is zero by the Picard-group calculation.
+The restriction sequence
+\[
+ H^2_H(\DtwocQ(\DtwoCC),\DtwoRR)\longrightarrow H^2(\DtwocQ(\DtwoCC),\DtwoRR)
+ \longrightarrow H^2(\DtwocQ_s(\DtwoCC),\DtwoRR)
+\]
+now proves injectivity for every \(s\).
+\end{proof}
+
+\section{The multiplicative analytic regulator}\label{d2:sec:analytic}
+
+The goal of this section is to prove Theorem~\ref{d2:thm:geometric} from
+Proposition~\ref{d2:prop:geometry}.
+
+\begin{proof}[Proof of Theorem~\ref{d2:thm:geometric}]
+Regularity and the supported construction were established in
+Section~\ref{d2:sec:preliminaries}.
+Let \(\DtwocO_{E_{\Dtwoar}}\) be the integer ring of \(E_{\Dtwoar}\).
+It is contained in \(W_{\Dtwoar}\): an element integral over \(\DtwoZZ\)
+is integral over \(W_{\Dtwoar}\), which is integrally closed in
+\(E_{\Dtwoar}\).
+
+The field \(E_{\Dtwoar}\) has two complex-conjugate pairs of embeddings
+and no real embedding. By \cite[Proposition~12.2]{Borel},
+\[
+ \dim_\DtwoRR\bigl(K_3(\DtwocO_{E_{\Dtwoar}})\otimes\DtwoRR\bigr)=2.
+\]
+The analytic regulator is injective on this real vector space by
+\cite[Section~6, especially~(6.4)]{BunkeTamme}.
+The comparison there with the Borel regulator is up to a nonzero
+factor \(2\), which does not affect injectivity.
+At a point, its weight-two target is \(\DtwoCC/\DtwoRR(2)\), where
+\(\DtwoRR(p)=(2\pi i)^p\DtwoRR\).
+Conjugate embeddings give conjugate values.
+The interval description has point representatives
+\(i^{p+1}dt\); in weight two they are purely imaginary.
+
+Choose \(\gamma_0\in K_3(\DtwocO_{E_{\Dtwoar}})\) with nonzero regulator,
+and set
+\[
+ \gamma=\gamma_0-\sigma_{-1}\gamma_0,\qquad
+ \beta=\gamma|_{W_{\Dtwoar}}.
+\]
+Since \(\DtwoRR(2)\) is the real subspace of \(\DtwoCC\), conjugation negates
+the unique imaginary representative of a point regulator.
+Thus the regulator of \(\gamma\) is twice that of \(\gamma_0\)
+and remains nonzero after restriction to \(E_{\Dtwoar}\).
+The identity \(\sigma_{-1}\beta=-\beta\) holds in actual K-theory.
+Put \(c=c(\beta)\).
+Its generic restriction is zero by Definition~\ref{d2:defn:supported}.
+
+On \(\DtwocQ\), define
+\[
+ J_g=\DtwocO_{\DtwocQ}(-D_g),\qquad
+ \eta_g=1-[J_g],\qquad
+ \kappa=\sum_{g\in G}(\sigma_g\beta)|_{E_{\Dtwoar}}\cdot\eta_g.
+\]
+The resolution of the Cartier divisor gives
+\(\eta_g=[\DtwocO_{D_g}]\) in \(K_0(\DtwocQ)\).
+We will detect \(\kappa\) on every \(\DtwocQ_s\).
+
+The regulator is first defined at a finite arithmetic stage.
+Choose \(N\) divisible by \(5\) and by the denominators needed for
+\(s\). The roots \(a_g=\rho^g-1\) and their pairwise differences are
+units over \(\DtwocO_{E_{\Dtwoar}}[1/N]\).
+Indeed their norms have absolute value \(5\):
+for \(a_g\) this is \(\Phi_5(1)=5\), and a difference is
+\(\rho^h(\rho^{g-h}-1)\).
+The scheme
+\[
+ X_N=\DtwoSpec
+ \DtwocO_{E_{\Dtwoar}}[1/N][x,v,y,y^{-1}]/(xv+P(y))
+\]
+is smooth over \(\DtwocO_{E_{\Dtwoar}}[1/N]\).
+At a residue point where either \(x\) or \(v\) is nonzero, one of the
+corresponding partial derivatives is nonzero.
+Where both vanish, \(P'(y)\ne0\), since the four roots remain distinct.
+Thus \(X_N\) and \((X_N)_s\) are regular separated schemes of finite
+type over \(\DtwoZZ\).
+The root divisors extend as Cartier divisors: near \(y=a_g\), the
+other factors of \(P\) are units and the equation expresses
+\(y-a_g\) as a multiple of \(x\).
+The coefficient classes \(\sigma_g\gamma\) extend there as well.
+
+For such schemes, \cite[Theorem~2.31 and Remark~2.27]{BunkeTamme}
+gives a natural regulator of ring spectra with homotopy maps
+\[
+ K_n(X)\longrightarrow
+ \prod_{p\ge0}H_{\mathcal D,\Dtwoan}^{\,2p-n}
+                  (X(\DtwoCC),\DtwoRR(p)).
+\]
+The target satisfies the arithmetic conjugation invariance.
+After constructing this map, project to the component selected by
+a fixed embedding \(\tau\colon E_{\Dtwoar}\to\DtwoCC\).
+Increasing \(N\) is compatible with this construction.
+Filtered-colimit continuity
+\cite[IV, Section~6.4]{Weibel} therefore defines the regulator on
+\(K_3(\DtwocQ_s)\); the complex component is always
+\(U_s=\DtwocQ_s(\DtwoCC)\).
+
+We use its multiplicative structure explicitly.
+By \cite[Remark~2.6 and Definition~2.7]{BunkeTamme}, analytic
+Deligne cohomology is the shifted cone of
+\[
+ (2\pi i)^pA_\DtwoRR^\bullet(U)
+       \oplus F^pA_\DtwoCC^\bullet(U)
+ \longrightarrow A_\DtwoCC^\bullet(U),
+ \qquad (a,b)\longmapsto a-b.
+\]
+Here \(A^\bullet\) denotes smooth forms, and \(F^p\) means at least
+\(p\) holomorphic differentials. There is no logarithmic boundary
+condition. Its interval model consists of forms on
+\([0,1]\times U\) whose endpoint values are respectively real-twisted
+and in \(F^p\).
+Multiplication is wedge product.
+The map to the cone is
+\[
+ \theta\longmapsto
+ \left(\theta|_0,\theta|_1,-\int_{[0,1]}\theta\right);
+\]
+see \cite[Proposition~2.8 and Corollary~2.14]{BunkeTamme}.
+
+For a complex surface, \(F^3A_\DtwoCC^\bullet(U)=0\), because at most two
+holomorphic coordinate differentials can occur.
+The cone sequence consequently identifies
+\begin{equation}\label{d2:eq:analytic-quotient}
+ H_{\mathcal D,\Dtwoan}^{3}(U,\DtwoRR(3))
+   =H^2(U,\DtwoCC)/H^2(U,\DtwoRR(3)).
+\end{equation}
+The next possible term is the kernel of
+\(H^3(U,\DtwoRR(3))\to H^3(U,\DtwoCC)\), which is zero by extension of
+scalars. This argument does not require properness.
+
+Let \(r_g\in i\DtwoRR\) be the imaginary representative of the point
+regulator of \(\sigma_g\beta\) at \(\tau\).
+At least one \(r_g\) is nonzero, since the embeddings
+\(\tau\sigma_g\) exhaust all embeddings of \(E_{\Dtwoar}\).
+Antisymmetry and commutativity of \(G\) give \(r_{-g}=-r_g\).
+The vector \((r_g)\) is therefore nonzero and not diagonal.
+
+The interval representative of this point class is \(-r_gdt\).
+Choose a Hermitian metric and Chern connection on \(\DtwocO(D_g)\),
+and let \(\omega_g\) be the resulting real closed representative of
+\(e_g\). Its weight-one regulator is the interval-constant form
+\(2\pi i\omega_g\).
+This follows from the unitary, type-\((1,1)\) curvature and the
+degree-two term of the unnormalized character
+\(\DtwoTr\exp(-\mathrm{curvature})\) in
+\cite[Definitions~2.16--2.20]{BunkeTamme}.
+The weight-one class of \(\eta_g\) is the same, by additivity of
+the first Chern class.
+Wedge multiplication followed by minus integration gives
+\[
+ (-r_gdt)\wedge(2\pi i\omega_g)
+ \longmapsto 2\pi i r_g\omega_g.
+\]
+Thus the weight-three regulator of \(\kappa|_{\DtwocQ_s}\) is
+\begin{equation}\label{d2:eq:analytic-detector}
+ \left[2\pi i\sum_g r_g e_g|_{U_s}\right]
+ \in H^2(U_s,\DtwoCC)/H^2(U_s,\DtwoRR(3)).
+\end{equation}
+No other point weight contributes: point Deligne cohomology is
+nonzero only in degrees zero and one, and for \(K_3\) the equation
+\(2p-3=1\) forces \(p=2\).
+
+Write \(r_g=it_g\) with \(t_g\in\DtwoRR\).
+Proposition~\ref{d2:prop:geometry} shows that
+\(\sum_g t_ge_g\ne0\), since \((t_g)\) is not diagonal.
+It stays nonzero on every \(U_s\).
+The representative in \eqref{d2:eq:analytic-detector} is the nonzero
+real class
+\[
+ -2\pi\sum_g t_ge_g|_{U_s}.
+\]
+By contrast, \(H^2(U_s,\DtwoRR(3))=iH^2(U_s,\DtwoRR)\) is purely imaginary.
+The real and purely imaginary subspaces intersect in zero.
+Hence \eqref{d2:eq:analytic-detector} is nonzero.
+Its target is a real vector space, so
+\(\kappa|_{\DtwocQ_s}\) has infinite order for every \(s\in S\).
+
+The map \(A\to B_{\Dtwoar}[1/\pi,1/y]\) is flat.
+Over it, the divisor \(x=0\) splits into the disjoint components
+\(D_g\cap\DtwocT\).
+On the \(g\)-th component, the coefficient map sends
+\(\rho=1+y\) to \(\rho^g\).
+Flat base change and the projection formula give the equality of
+actual classes
+\begin{equation}\label{d2:eq:analytic-splitting}
+ c|_{\DtwocT}
+ =\sum_g(\sigma_g\beta)|_{E_{\Dtwoar}}\,[\DtwocO_{D_g\cap\DtwocT}]
+ =\kappa|_{\DtwocT}.
+\end{equation}
+The ring of \(\DtwocT\) is regular, being a localization of the smooth
+surface \(\DtwocQ\). No identification of K-theory and G-theory on the
+possibly singular ring \(B_{\Dtwoar}\) is involved.
+
+Finally,
+\[
+ K_3(\DtwocT)=\varinjlim_{s\in S}K_3(\DtwocQ_s).
+\]
+If a nonzero integer killed \(c\), it would kill \(\kappa\) in this
+colimit by \eqref{d2:eq:analytic-splitting}.
+The resulting equality would hold at a finite stage, contrary to
+\eqref{d2:eq:analytic-detector}. Thus \(c\) has infinite order.
+\end{proof}
+
+\section{Relative cyclic detection}\label{d2:sec:cyclic}
+
+In this section, we prove the comparison and product formula that will
+detect the completed supported class.
+
+\begin{proposition}\label{d2:prop:cyclic}
+Let \(k=\overline{\DtwoFF}_5\), \(W_0=W(k)\), and let \(R\) be the
+integer ring of a finite totally ramified extension of \(W_0[1/5]\).
+Write \(\pi_R\) for a uniformizer and \(E_R=\DtwoFrac R\).
+Let \(B_0\) be a localization of a smooth \(R\)-algebra whose relative
+cotangent module is finite projective of constant rank two.
+Assume that \(B=\varprojlim_nB_0/5^nB_0\ne0\).
+There is a natural equivalence
+\begin{equation}\label{d2:eq:relative-cyclic}
+ \DtwocK(B,\pi_RB)\simeq\Sigma\DtwoHC^\Dtwocts(B/R;\DtwoQQ_5)
+\end{equation}
+compatible with the \(K(B)\)-module action through the negative cyclic
+Chern character.
+
+The degree-two cyclic group has the canonical summand
+\[
+ \Omega^2_{B/R}[1/5]\big/d\Omega^1_{B/R}[1/5].
+\]
+For an actual \(\beta\in K_3(R,\pi_RR)\), let \(b\in E_R\) be its
+relative point coordinate, so its point character is \(t^{-1}b\)
+in the mixed-HKR convention with \(|t|=-2\).
+There is a scalar \(\lambda_R\in E_R^\times\), independent of
+\(B\), \(J\), and \(\beta\), such that for every invertible
+\(B\)-module \(J\), the top-form component of
+\(\beta_B(1-[J])\) under \eqref{d2:eq:relative-cyclic} is
+\[
+ -\lambda_R b\,c_1^\DtwodR(J).
+\]
+Nonvanishing of \(-b\,c_1^\DtwodR(J)\), or of a finite sum of
+these forms, proves nonvanishing of the corresponding actual
+relative class after rationalized spectral completion: the whole
+sum is multiplied by the same nonzero \(\lambda_R\).
+No injectivity from actual K-theory to its completion is asserted.
+\end{proposition}
+
+\begin{proof}
+The fiber theorem \cite[Theorem~A]{AMMN} applies to a commutative
+ring henselian along \((5)\). Its coefficients \(\DtwoQQ_5\) mean
+spectral completion followed by inversion of \(5\).
+It gives a cartesian square with rows
+\[
+ K(T;\DtwoQQ_5)\longrightarrow K(T/5;\DtwoQQ_5),
+ \qquad
+ \DtwoHC^-(T;\DtwoQQ_5)\longrightarrow\DtwoHP(T;\DtwoQQ_5),
+\]
+and hence identifies the relative K-theory fiber with
+\(\Sigma\DtwoHC(T;\DtwoQQ_5)\).
+The continuity result
+\cite[Proposition~4.2]{AMMN} applies to bounded \(5\)-power
+torsion and compares completed Hochschild and cyclic objects with
+their infinitesimal inverse limits.
+The paragraph preceding \cite[Proposition~4.10]{AMMN}
+also treats relative Hochschild and cyclic theories.
+We extend that relative argument to \(B_0\) by bounds in each finite
+degree range; no topological finite-presentation assertion about
+\(B\) is needed.
+
+Both \(B_0\) and \(B\) are \(5\)-torsion-free, by flatness over the
+discrete valuation ring and flatness of noetherian adic completion.
+Their continuous relative forms are the completions of
+\(\Omega^j_{B_0/R}\). Completion is exact on these finite projective
+modules, and they vanish for \(j>2\).
+
+For every \(n\), the ring \(W_0/5^n\) is the filtered union of the
+finite \'etale Witt extensions of \(\DtwoZZ/5^n\).
+Its relative cotangent complex over \(\DtwoZZ/5^n\) is zero.
+Flat base change therefore gives
+\({L_{W_0/\DtwoZZ}}^\wedge_5=0\).
+Choose an Eisenstein presentation \(R=W_0[\pi_R]\), with polynomial
+\(f\). Then
+\[
+ {L_{R/\DtwoZZ}}^\wedge_5
+   \simeq [R\xrightarrow{f'(\pi_R)}R]
+\]
+in cohomological degrees \(-1,0\).
+Separability in characteristic zero gives \(f'(\pi_R)\ne0\).
+Choose \(a\ge0\) with \(5^a\in f'(\pi_R)R\).
+Multiplication by \(5^a\) on this complex is null-homotopic.
+
+Completed cotangent transitivity gives a triangle
+\[
+ M\longrightarrow \Dtwowh L\longrightarrow P,
+ \qquad
+ M=[B\xrightarrow{f'(\pi_R)}B],\quad
+ \Dtwowh L={L_{B_0/\DtwoZZ}}^\wedge_5,\quad
+ P=(\Omega^1_{B_0/R})^\wedge_5.
+\]
+The module \(P\) is projective in degree zero and \(M\) lies in
+degrees \(-1,0\).
+The connecting map \(P\to M[1]\) is zero, so the triangle splits
+as a triangle of \(B\)-complexes.
+The kernel terms in the \(i\)-th derived exterior power of the
+projection are sums of
+\[
+ \bigl(L\!\Lambda^rM\bigr)\otimes\Lambda^{i-r}P,
+ \qquad 1\le r\le i.
+\]
+The \(r\)-th exterior-power functor takes the null-homotopy of
+\(5^a\Dtwoid_M\) to one of \(5^{ar}\).
+Thus each displayed term is killed as an object by \(5^{ar}\).
+
+The Hochschild--Kostant--Rosenberg filtration has graded pieces
+\((L\!\Lambda^iL)[i]\), and its tails become increasingly connective.
+Only finitely many pieces affect any fixed homotopy range.
+This remains true after derived completion.
+For a \(c\)-connective spectrum, the only possible additional bottom
+group is the derived inverse limit of the quotients of its
+\(c\)-th homotopy group; that quotient tower is surjective.
+Completion therefore preserves connectivity.
+Combining the exterior-power bounds along the finitely many
+extensions bounds the \(5\)-power torsion in the comparison cone in
+each fixed range. Hence
+\begin{equation}\label{d2:eq:hh-comparison}
+ \DtwoHH(B_0;\DtwoZZ_5)[1/5]
+ \xrightarrow{\ \sim\ }
+ \DtwoHH(B_0/R;\DtwoZZ_5)[1/5]
+\end{equation}
+is an equivalence of spectra with circle action.
+
+Ordinary cyclic homology is the circle homotopy-orbit construction.
+For a connective spectrum, the omitted part of the skeletal
+filtration of its bar construction becomes arbitrarily connective.
+Each finite stage uses finite colimits and tensors with finite cell
+spaces, which commute with spectral completion.
+The finite-range argument proving \eqref{d2:eq:hh-comparison} thus
+also proves the ordinary cyclic comparison.
+Equivalently, the circle norm sequence makes the square comparing
+the absolute and relative maps \(\DtwoHC^-\to\DtwoHP\) cartesian.
+We do not need the separate vertical maps on \(\DtwoHC^-\) and \(\DtwoHP\)
+to be equivalences; those constructions involve infinite limits.
+
+The complete ring \(B\) is henselian along \((5)\).
+Applying the fiber theorem to the ordinary ring \(B\), and replacing
+the cyclic fiber by the relative one just computed, gives the desired
+comparison with \(\DtwocK(B,5B)\).
+The map \(B/5\to B/\pi_R\) has nilpotent kernel.
+By \cite[Corollary~3.8]{AMMN}, a nilpotent relative extension in
+a ring with nilpotent \(5\) has rationalized completed relative
+K-theory zero. Exactness therefore identifies
+\(\DtwocK(B,5B)\) with \(\DtwocK(B,\pi_RB)\).
+This proves \eqref{d2:eq:relative-cyclic}.
+Precomposing with the map from actual relative K-theory defines the
+actual character.
+
+The module structure requires more than naturality.
+Put \(H=\DtwoTHH(B)\), a commutative algebra object in cyclotomic spectra.
+The coefficient comparisons in
+\cite[Proposition~2.8 and Corollary~2.10]{AMMN}
+are tensored with \(H\); their maps are
+\(\Dtwoid_H\) tensored with the coefficient maps.
+They are consequently maps of \(H\)-modules.
+The maps from \(H\), the linearization
+\(H\otimes H\DtwoZZ\to\DtwoHH(B)\) used in
+\cite[Theorem~2.12]{AMMN}, and projection to
+\(\DtwoHH(B/R)\) are \(H\)-linear.
+
+The functor \(\DtwoTC\) is lax symmetric monoidal, so these diagrams
+become diagrams of \(\DtwoTC(B)\)-modules.
+Circle invariants, orbits, and the norm fiber carry the corresponding
+actions. The norm projection formula identifies the fiber action
+with the usual \(\DtwoHC^-\)-action on \(\Sigma\DtwoHC\).
+The equivalences used above may therefore be inverted in the module
+category.
+The relative K-to-\(\DtwoTC\) map is induced by the multiplicative
+cyclotomic trace, whose \(E_\infty\) refinement is
+\cite[Theorem~7.4]{BGTTrace}.
+Restricting the module action along this trace proves the asserted
+\(K(B)\)-linearity through the negative cyclic character.
+
+It remains to compute the ordinary cyclic component.
+In relative dimension two the normalized HKR map is integral,
+because \(2\) is invertible:
+\[
+ a_0[a_1|\cdots|a_j]\longmapsto
+ \frac1{j!}a_0\,da_1\wedge\cdots\wedge da_j
+ \quad (0\le j\le2),
+\]
+and higher chains map to zero.
+The Hochschild boundary maps to zero.
+The alternating sum defining the Connes operator contributes
+\(j+1\) before normalization, so the factors \(1/j!\) make it
+correspond to \(d\).
+For \(j=2\), the target of \(d\) is zero.
+The antisymmetrized smooth HKR representative maps to the original
+form, and higher relative Hochschild homology vanishes.
+Thus this is a quasi-isomorphism of mixed complexes.
+The completed comparison gives the finite continuous form modules
+already identified.
+
+Give a bookkeeping variable \(t\) homological degree \(-2\), and give
+a \(j\)-form degree \(j\).
+The mixed differential is \(td\).
+The ordinary cyclic model retains the powers
+\(1,t^{-1},t^{-2},\ldots\) and discards positive powers.
+In degree two it has \(\Omega^2\oplus t^{-1}B\).
+The differential sends \(t^{-1}b\) to \(db\).
+The degree-three boundaries in the top-form term are exactly
+\(d\Omega^1\).
+Consequently
+\begin{equation}\label{d2:eq:hc-two}
+ \DtwoHC_2^\Dtwocts(B/R;\DtwoQQ_5)=
+ \frac{\Omega^2_{B/R}[1/5]}{d\Omega^1_{B/R}[1/5]}
+ \oplus
+ t^{-1}\ker\bigl(d\colon B[1/5]\to\Omega^1_{B/R}[1/5]\bigr).
+\end{equation}
+In particular the image in the first summand is the ordinary
+differential image.
+
+At the coefficient point, the degree-two group is \(t^{-1}E_R\).
+The class \(\beta\) has representative \(t^{-1}b\), and \(b\) is
+constant for differentiation relative to \(R\).
+We retain this point coordinate without further normalization.
+The character comparison in
+\cite[v2, Constructions~4.7--4.8 and~4.11,
+Propositions~4.10 and~4.12, pp.~21--23]{AMMN}
+gives a common nonzero scalar, whose image in \(E_R\) we denote
+by \(\lambda_R\), for which the first Chern component of the
+periodic character is \(\lambda_R c_1^\DtwodR\).
+Here equation~(28) of that reference gives the special-fiber
+character, equation~(24) gives the crystalline/de Rham comparison,
+and equation~(25) is the fiber square.
+The comparison preserves first Chern classes because their
+transition functions give the same \(d\log\) cocycle.
+The scalar is common to all smooth formal finite-type models
+over the fixed coefficient ring; neither scalar one nor
+\(\DtwoQQ_5\)-rationality is required.
+
+This formula applies to every invertible \(B\)-module \(J\) here.
+The finite presentation of \(J/\pi_RJ\), together with the finite
+equations witnessing rank-one projectivity, descends to the
+special fiber of a finite localization of a smooth relative
+rank-two \(R\)-algebra. Complete this finite model.
+An idempotent presenting the descended module lifts: starting
+with a matrix lift \(e\), iterate \(e\mapsto3e^2-2e^3\).
+If \(\delta=e^2-e\), the new error is
+\(\delta^2(4\delta-3)\), so the errors tend to zero adically
+and the matrices converge to an idempotent.
+Its projective module has rank one since its reduction does
+and \(\pi_R\) lies in the Jacobson radical.
+The completed model maps naturally to \(B\).
+After pullback, an isomorphism modulo \(\pi_R\) with \(J/\pi_RJ\)
+and its inverse lift between the projective modules.
+Their composites are invertible because they reduce to the
+identity modulo the Jacobson radical, so the pulled-back line
+is isomorphic to \(J\).
+Naturality therefore carries the finite-model character formula
+to \(B\).
+
+In the rank-two mixed complex, both degree-zero negative and
+periodic cyclic homology are
+\[
+ \ker\bigl(d\colon B[1/5]\longrightarrow
+                    \Omega^1_{B/R}[1/5]\bigr)
+ \ \oplus\
+ t\bigl(\Omega^2_{B/R}[1/5]/d\Omega^1_{B/R}[1/5]\bigr).
+\]
+The comparison is the identity on these summands: total degree
+zero contains functions and \(t\)-times two-forms, total degree
+one supplies the boundaries \(t\,d\Omega^1\), and higher forms
+vanish. Thus the negative-to-periodic map is injective in this
+degree. The commutative fiber square identifies the negative
+cyclic character of \(J\) with
+\(1+\lambda_Rt\,c_1^\DtwodR(J)\).
+The character of \(1-[J]\) is consequently
+\(-\lambda_Rt\,c_1^\DtwodR(J)\), whose action on \(t^{-1}b\)
+has top component \(-\lambda_Rb\,c_1^\DtwodR(J)\).
+At the normalized bar level, the shuffle term gives this wedge
+product, while cyclic-shuffle corrections insert the relative
+scalar \(b\) in a bar slot and vanish.
+This is the module action established above.
+The common nonzero scalar preserves nonvanishing of every
+finite sum.
+
+A nonzero top-form component cannot be the image of a zero
+rationalized completed relative class.
+The same calculation is additive for finite sums.
+It makes no assertion that actual K-theory injects into completion.
+\end{proof}
+
+\section{Cohen completion and elliptic contraction}\label{d2:sec:cohen}
+
+We prove that the graph-divisor class survives Cohen completion.
+
+\subsection{Scalar Frobenius pole removal}
+
+\begin{lemma}\label{d2:lem:scalar}
+Let \(p\) be a prime, \(k=\overline{\DtwoFF}_p\), \(W=W(k)\), and
+\(K=W[1/p]\).
+Let \(D\) be a smooth affine \(W\)-algebra of relative dimension one
+with connected nonempty special fiber \(U=\DtwoSpec(D/pD)\).
+Put
+\[
+ S_D=\{s\in D\mid s\bmod p\ne0\},\qquad
+ \Dtwowh D=\varprojlim_nD/p^nD,\qquad
+ C=\varprojlim_nS_D^{-1}D/p^nD,\qquad F_C=C[1/p].
+\]
+Let \(D^\dagger\) be the weak completion.
+Assume that an integral Frobenius lift
+\(\phi\colon D^\dagger\to D^\dagger\) restricts to the \(d\)-th Witt
+Frobenius on \(W\), where \(d\ge1\), and reduces to the
+\(q=p^d\) power map.
+If \(\omega\in\Omega^1_{D^\dagger/W}[1/p]\) has nonzero rigid
+cohomology class and
+\[
+ \phi^*\omega-a\omega=dh
+ \qquad(a\in W,\ h\in D^\dagger[1/p]),
+\]
+then its image in
+\[
+ \Omega^1_{C/W}[1/p]\big/dF_C
+\]
+is nonzero.
+\end{lemma}
+
+\begin{proof}
+A smooth connected curve has disjoint irreducible components, since
+its local rings are domains. Therefore \(D_0=D/pD\) is an integral
+normal domain. Write \(L=\DtwoFrac D_0\).
+The localization \(S_D^{-1}D=D_{pD}\) is a regular local ring of
+dimension one with parameter \(p\) and residue field \(L\).
+Thus \(C\) is a complete discrete valuation ring with these same
+data.
+
+For every \(n\), the map
+\(D/p^nD\to S_D^{-1}D/p^nD\) is injective.
+If \(sa\in p^nD\) with \(s\in S_D\), reduction modulo \(p\) gives
+\(a\in pD\). Write \(a=pa_1\), cancel \(p\) by flatness over \(W\),
+and repeat.
+Taking limits embeds \(\Dtwowh D\) in \(C\) and gives
+\begin{equation}\label{d2:eq:integral-intersection}
+ \Dtwowh D\cap p^nC=p^n\Dtwowh D.
+\end{equation}
+The continuous forms on \(C\) are the completions of the forms on
+\(S_D^{-1}D\).
+
+We first determine its continuous constants:
+\begin{equation}\label{d2:eq:cohen-constants}
+ \ker\bigl(d\colon F_C\to\Omega^1_{C/W}[1/p]\bigr)=K.
+\end{equation}
+After inverting an element of \(S_D\), smoothness supplies an
+\'etale coordinate \(t\) and a ring \(D'\) \'etale over \(W[t]\).
+The residue of \(t\) is a separating parameter for \(L\), and the
+generic-special completion of \(D'\) is still \(C\).
+Formal \'etaleness extends \(t\mapsto t+z\) to a Taylor map
+\(D'\to C[[z]]\), successively modulo powers of \(z\).
+Further denominators have unit constant coefficient, so this map
+extends to the localization and then to \(C\), coefficient by
+coefficient.
+Write its coefficients as integral continuous \(W\)-linear operators
+\(H_j\colon C\to C\).
+
+Uniqueness of the \'etale lift identifies successive translations by
+\(z,w\) with translation by \(z+w\).
+With \(\partial=H_1\), this gives
+\(j!H_j=\partial^j\) and \(\partial(t)=1\).
+The continuous cotangent module is free on \(dt\).
+If \(f\in C\) satisfies \(df=0\), then
+\(j!H_j(f)=0\) for every \(j>0\).
+The ring \(C\) is torsion-free over \(\DtwoZZ\), so \(H_j(f)=0\).
+
+On reduction modulo \(p\), all positive Hasse operators annihilate
+\(\bar f\in L\).
+For each \(r\ge1\),
+\[
+ 1,t,\ldots,t^{p^r-1}
+\]
+is a basis of \(L\) over \(L^{p^r}\).
+Indeed finite separability of \(L/k(t)\) gives
+\([L:L^p]=p\), and \(dt\ne0\) implies \(t\notin L^p\).
+Iteration gives \([L:L^{p^r}]=p^r\).
+A smaller purely inseparable degree for \(t\) over \(L^{p^r}\)
+would force \(t\) to be a \(p\)-th power in \(L\).
+
+Expand \(\bar f=\sum_{i=0}^{p^r-1}b_i^{p^r}t^i\).
+The Taylor series of \(b_i^{p^r}\) has no terms of degrees
+\(1,\ldots,p^r-1\).
+Comparing the coefficients of \(z^{p^r-1},z^{p^r-2},\ldots,z\)
+successively gives \(b_i=0\) for every \(i>0\).
+Thus \(\bar f\in\bigcap_rL^{p^r}=k\).
+For the last equality, the valuation of a nonzero element of the
+intersection at every point of the smooth proper model of \(L\) is
+divisible by all \(p^r\), hence zero.
+Such an element is a global regular function on a proper connected
+curve and belongs to \(k\); conversely \(k\) is perfect.
+
+Choose \(w_0\in W\) lifting \(\bar f\).
+Then \((f-w_0)/p\) is integral and again has zero differential.
+Repeating gives \(f=\sum_{i\ge0}p^iw_i\), with \(w_i\in W\).
+This converges in \(W\) and in \(C\), so \(f\in W\).
+Scaling by a power of \(p\) proves \eqref{d2:eq:cohen-constants}.
+
+The integral map \(\phi\) fixes \(p\) and extends continuously to
+\(\Dtwowh D\). Its reduction preserves nonzero residues, so inversion
+of \(S_D\) and completion extend it to \(C\).
+We claim that
+\begin{equation}\label{d2:eq:pole-removal}
+ f\in C,\quad \phi(f)-af\in\Dtwowh D
+ \quad\Longrightarrow\quad f\in\Dtwowh D.
+\end{equation}
+Write \(\phi(f)-af=r\).
+A pole of \(\bar f\) on \(U\) of order \(m>0\) would give pole
+order \(qm\) in \(\bar f^q\) and at most \(m\) in
+\(\bar a\bar f\). These cannot cancel.
+Hence \(\bar f\) has no poles on \(U\).
+Normality gives \(\bar f\in D_0\).
+
+Lift \(\bar f\) to \(g_0\in D\), and put
+\[
+ f_1=(f-g_0)/p,\qquad
+ r_1=(r-\phi(g_0)+ag_0)/p.
+\]
+The numerator defining \(r_1\) belongs to
+\(\Dtwowh D\cap pC=p\Dtwowh D\) by \eqref{d2:eq:integral-intersection}.
+Thus \(r_1\in\Dtwowh D\) and \(\phi(f_1)-af_1=r_1\).
+Iteration yields
+\[
+ f=\sum_{i=0}^{n-1}p^ig_i+p^nf_n,
+ \qquad g_i\in D,\quad f_n\in C.
+\]
+The partial sums converge in \(\Dtwowh D\), and the remainder tends to
+zero in \(C\). This proves \eqref{d2:eq:pole-removal}.
+No \(W\)-linearity of \(\phi\) was used.
+
+Suppose now that \(\omega=df\) in \(F_C\).
+The Frobenius equation gives
+\(d(\phi(f)-af-h)=0\).
+By \eqref{d2:eq:cohen-constants},
+\(\phi(f)-af=h+c\) for \(c\in K\).
+Multiply by one sufficiently large power of \(p\) to make
+\(f,h,c\) integral in \(C,\Dtwowh D,W\), respectively.
+The equation is preserved because \(\phi(p)=p\).
+Equation~\eqref{d2:eq:pole-removal} then puts the scaled \(f\) in
+\(\Dtwowh D\). Undoing the scaling makes \(\omega\) exact in the
+rational completed de Rham complex.
+
+For the smooth finite-type curve \(U\) and its constant overconvergent
+Frobenius coefficient, the map
+\[
+ H^1_\Dtworig(U/K)\longrightarrow H^1_\Dtwoconv(U/K)
+\]
+is injective by \cite[Theorem~3.2.1]{CaroDAddezio2025}.
+The weakly completed de Rham complex computes the first group, and
+the completed de Rham complex computes the second, with comparison
+induced by \(D^\dagger\to\Dtwowh D\);
+see also \cite[Theorem~2.1.2]{CaroDAddezio2025}.
+Both use ordinary differential images in degree one.
+The primitive just constructed contradicts this injectivity.
+Only the original finite-type curve \(U\) enters this external
+comparison.
+\end{proof}
+
+\subsection{A bounded elliptic contraction}
+
+\begin{setup}\label{d2:setup:elliptic}
+For the remainder of this section, let
+\(k=\overline{\DtwoFF}_5\), \(W=W(k)\), and \(K=W[1/5]\).
+Let
+\[
+ \DtwocE/W\colon v^2=z^3+z
+\]
+be the smooth projective elliptic curve with origin \(O\), and put
+\[
+ \DtwocE^\circ=\DtwocE\setminus\{O,(0,0)\},
+ \qquad
+ E_0=\DtwocE\otimes_Wk,
+ \qquad
+ A_{\mathrm{ell}}=\Gamma(\DtwocE^\circ,\DtwocO).
+\]
+Let \(D\) be a smooth affine \(W\)-algebra of relative dimension one
+with connected nonempty special fiber. Let \(C\) be its
+generic-special completion, and put
+\[
+ B_{\mathrm{ell}}=
+ \bigl(\Dtwowh A_{\mathrm{ell}}\otimes_WC\bigr)^\wedge_5.
+\]
+\end{setup}
+
+\begin{proposition}\label{d2:prop:contraction}
+Choose rational dagger one-forms \(\omega,\eta\) on
+\(\DtwocE^\circ\) representing nonzero generators of the proper
+slope-one and slope-zero crystalline lines, respectively.
+There is a bounded \(K\)-linear functional
+\[
+ \ell\colon\Omega^1_{\Dtwowh A_{\mathrm{ell}}/W}[1/5]\longrightarrow K
+\]
+such that
+\[
+ \ell(\omega)=1,\qquad
+ \ell(\eta)=0,\qquad
+ \ell(d\Dtwowh A_{\mathrm{ell}}[1/5])=0.
+\]
+It extends to a continuous degree-minus-one chain operator
+\[
+ L\colon\Omega^\bullet_{B_{\mathrm{ell}}/W}[1/5]
+       \longrightarrow\Omega^\bullet_{C/W}[1/5][-1]
+\]
+with \(L_2(\alpha\wedge\gamma)=\ell(\alpha)\gamma\), where the
+elliptic form is placed first.
+The map
+\[
+ J\colon H^1_\DtwodR(C/W)[1/5]\longrightarrow
+          H^2_\DtwodR(B_{\mathrm{ell}}/W)[1/5],
+ \qquad [\gamma]\longmapsto[\omega\wedge\gamma],
+\]
+is split injective, with left inverse induced by \(L\).
+In particular, a class represented by
+\(\omega\wedge\gamma+\eta\wedge\delta\) is nonzero whenever
+\([\gamma]\ne0\) in the ordinary one-form quotient of \(C\).
+\end{proposition}
+
+\begin{proof}
+The cubic has distinct roots in characteristic five, so \(E_0\) is
+smooth. The coefficient of \(z^4\) in \((z^3+z)^2\) is \(2\),
+which is nonzero modulo five.
+The Hasse-invariant criterion
+\cite[Theorem~V.4.1(a), p.~148]{SilvermanAEC2009} gives ordinarity.
+Proper rational crystalline \(H^1\) therefore has two lines of
+slopes zero and one.
+Restriction to \(E_0^\circ\) is injective in rigid \(H^1\).
+The removed reduced finite set \(Z=\{O,(0,0)\}\) has codimension
+one in the smooth curve \(E_0\).
+The support-vanishing assertion of
+\cite[Theorem~1.1, third assertion, p.~63]{Petrequin2003}
+gives \(H^1_{Z,\Dtworig}(E_0/K)=0\), since \(1<2\).
+The localization sequence
+\cite[Proposition~1.3, p.~64]{Petrequin2003} therefore gives
+\[
+ 0\longrightarrow H^1_\Dtworig(E_0/K)
+       \longrightarrow H^1_\Dtworig(E_0^\circ/K).
+\]
+This natural restriction respects Frobenius.
+
+For unramified Witt coefficients,
+\cite[Theorem~7.3.1]{CaroDAddezio2025} identifies slope-one rigid and
+convergent cohomology in degree one.
+For smooth affine schemes with unit-root coefficients, the
+slope-one convergent part meets the closure of zero trivially
+\cite[Theorem~7.3.6]{CaroDAddezio2025}.
+The slopes in \([0,1)\) lie in the closure of zero by
+\cite[Theorem~7.2.1]{CaroDAddezio2025}.
+All hypotheses apply to \(E_0^\circ\), constant coefficients, and
+the unramified ring \(W\).
+
+Put \(M_0=\Omega^1_{\Dtwowh A_{\mathrm{ell}}/W}\), \(M=M_0[1/5]\),
+and let \(N\) be the closure of
+\(d\Dtwowh A_{\mathrm{ell}}[1/5]\) in \(M\).
+All one-forms are closed, since the relative dimension is one.
+The topology and convergent-cohomology description in
+\cite[Definition~7.1.1]{CaroDAddezio2025} identify the separated
+quotient with \(M/N\).
+The class of \(\omega\) in this quotient is nonzero, whereas
+\(\eta\in N\).
+We use this separated quotient only to construct \(\ell\).
+
+The finite projective, complete, separated, torsion-free module
+\(M_0\) defines a Banach norm on \(M\) with discrete values.
+The quotient \(V=M/N\) is Banach for the quotient norm.
+For a nonzero quotient vector, the infimum of the norms of its
+representatives is positive and attained, because the norm values
+are discrete and \(N\) is closed.
+Completeness follows by taking a Cauchy subsequence, lifting its
+successive differences with norms tending to zero, and summing
+those lifts in \(M\).
+
+Let \(V_0\) be the unit ball, and lift a basis of the \(k\)-vector
+space \(V_0/5V_0\) to elements \(e_i\in V_0\).
+Every \(v\in V_0\) has a unique expansion
+\[
+ v=\sum_i a_ie_i,\qquad a_i\in W,
+\]
+where the coefficients tend to zero off finite subsets.
+To obtain the expansion, reduce modulo five, subtract a finite
+lifted basis expansion, divide by five, and repeat.
+The resulting series converges by completeness.
+For uniqueness, a nonzero coefficient family has a largest absolute
+value. Scaling to make that value one and reducing modulo five
+contradicts independence of the finitely many largest coefficients.
+Scaling also gives such expansions over \(K\) for all \(v\in V\).
+The coordinate maps are consequently bounded and \(K\)-linear.
+
+Some coordinate is nonzero on the image of \(\omega\).
+Divide that coordinate by its value on \(\omega\) and compose with
+\(M\to V\). This gives \(\ell\).
+It annihilates \(N\), hence both \(\eta\) and exact forms.
+For some \(e\ge0\), boundedness gives \(5^e\ell(M_0)\subset W\).
+
+Set \(\ell_0=5^e\ell\).
+Reduce this integral map modulo \(5^n\), tensor with \(C/5^nC\),
+and pass to the inverse limit.
+This defines \(M_0\Dtwoct_WC\to C\).
+Tensoring instead with \(\Omega^1_{C/W}/5^n\) defines
+\(M_0\Dtwoct_W\Omega^1_{C/W}\to\Omega^1_{C/W}\).
+After rationalization divide by \(5^e\).
+These are limits of compatible operators, with no interchange
+between cohomology and inverse limits.
+
+At each finite precision, the tensor-product formula for
+differentials gives
+\begin{align}
+ \Omega^1_{B_{\mathrm{ell}}/W}
+ &=(M_0\Dtwoct_WC)\oplus
+   (\Dtwowh A_{\mathrm{ell}}\Dtwoct_W\Omega^1_{C/W}),\label{d2:eq:product-one}\\
+ \Omega^2_{B_{\mathrm{ell}}/W}
+ &=M_0\Dtwoct_W\Omega^1_{C/W}.\label{d2:eq:product-two}
+\end{align}
+Higher forms vanish.
+The two factors have cotangent rank one; for \(C\), this follows
+from completion of an \'etale-coordinate localization of \(D\).
+The form modules are finite projective.
+Flatness over \(W\) ensures that completed tensor products reduce to
+the ordinary tensor products modulo \(5^n\), so the displayed limits
+are valid.
+
+Define \(L_0=0\).
+Define \(L_1\) by the extended \(\ell\) on the first summand of
+\eqref{d2:eq:product-one} and zero on the second.
+Define \(L_2\) by the second tensor extension.
+On functions, \(L_1d=0\).
+For an elliptic one-form \(\alpha\) and a base function \(f\),
+\[
+ d(\alpha f)=-\alpha\wedge d_Cf,\qquad
+ L_2d(\alpha f)=-\ell(\alpha)d_Cf=-d_CL_1(\alpha f).
+\]
+For an elliptic function \(a\) and a base one-form \(\gamma\),
+\(d(a\gamma)=d_Aa\wedge\gamma\), so its image under \(L_2\) is
+zero, as is \(d_CL_1(a\gamma)\).
+Finite sums of pure tensors are dense, and all operators are
+continuous. Thus \(L_2d=-d_CL_1\) on the completed complex, which is
+the chain identity for the shift \([-1]\).
+
+The form \(\omega\wedge\gamma\) is closed.
+If \(\gamma=d_Cf\), then
+\(\omega\wedge\gamma=-d(f\omega)\).
+Hence \(J\) is defined on ordinary cohomology.
+Finally \(L_2(\omega\wedge\gamma)=\gamma\).
+This proves the splitting, and \(\ell(\eta)=0\) proves the last
+assertion.
+\end{proof}
+
+\subsection{Graph divisors}
+
+\begin{proposition}\label{d2:prop:graph}
+In Setup~\ref{d2:setup:elliptic}, assume that
+\(\Dtwowt Q\colon\DtwoSpec D\to\DtwocE^\circ\) has nonconstant special fiber
+\(Q\colon U\to E_0^\circ\).
+Let \(\DtwocL_Q\) be the pullback to \(\DtwoSpec B_{\mathrm{ell}}\) of
+\[
+ \DtwocO(\Gamma_{\Dtwowt Q}-\Gamma_{-\Dtwowt Q})
+\]
+on \(\DtwocE^\circ\times_W\DtwoSpec D\).
+Then
+\[
+ c_1^\DtwodR(\DtwocL_Q)\ne0
+ \quad\text{in}\quad
+ \Omega^2_{B_{\mathrm{ell}}/W}[1/5]\big/
+       d\Omega^1_{B_{\mathrm{ell}}/W}[1/5].
+\]
+Nonvanishing persists under every finite extension of \(K\), with
+continuous relative forms over the extended integer ring.
+\end{proposition}
+
+\begin{proof}
+Choose the proper slope-zero generator \(\eta\) and slope-one
+generator \(\omega\) over \(\DtwoQQ_5\), and normalize
+\(\DtwoTr(\eta\cup\omega)=1\).
+The curve is defined over \(\DtwoFF_5\).
+Proper smooth crystalline/de Rham comparison gives corresponding
+algebraic de Rham classes on \(\DtwocE_K\).
+Their restrictions to \(\DtwocE_K^\circ\) have algebraic one-form
+representatives because the curve is affine.
+These also define dagger and continuous representatives, so
+Proposition~\ref{d2:prop:contraction} applies.
+
+With the principal-polarization convention, the normalized
+Poincar\'e bundle is
+\[
+ \DtwocP=\DtwocO(\Delta-\DtwocE\times O-O\times\DtwocE).
+\]
+Its restrictions to the origin slices are trivial, so its Chern
+class has only a mixed term in the proper K\"unneth decomposition.
+The diagonal acts as the identity on \(H^1\).
+With our pairing convention, the mixed tensor is
+\[
+ \omega\otimes\eta-\eta\otimes\omega.
+\]
+Multiplying by \(\eta\) on the first factor and tracing returns
+\(\eta\) on the second. Multiplying by \(\omega\) returns
+\(\omega\). Perfectness of the pairing determines the tensor.
+The trace, duality, K\"unneth, and proper crystalline compatibilities
+used here are those of \cite[\S1.7(i), \S2.3(i), Theorems~2.4 and~3.2, and \S3.3(i)]{Berthelot1997Duality}.
+
+The graph line for a map \(q\) is the pullback of the diagonal line
+by \(\Dtwoid\times q\).
+In the difference for \(\Dtwowt Q\) and \(-\Dtwowt Q\), the first-factor
+origin line cancels, and the second-factor terms cancel because
+\([-1]^*\DtwocO(O)\simeq\DtwocO(O)\).
+Inversion acts by \(-1\) on proper \(H^1\).
+Thus
+\begin{equation}\label{d2:eq:graph-class}
+ c_1^\DtwodR(\DtwocL_Q)
+ =
+ \left[2\bigl(\omega\wedge\Dtwowt Q^*\eta
+             -\eta\wedge\Dtwowt Q^*\omega\bigr)\right].
+\end{equation}
+This equality first holds on the finite-type affine product over
+\(K\). The difference from another Chern representative is the
+differential of an algebraic one-form there.
+It remains exact under weak completion, generic localization, and
+continuous completion. No K\"unneth formula for the completed
+product is being used.
+
+Compactify \(U\) to its smooth proper connected curve \(\bar U\).
+Properness extends \(Q\) to
+\(\bar Q\colon\bar U\to E_0\).
+The map \(\bar Q\) is finite and flat of rank
+\(m=[k(\bar U):k(E_0)]>0\): its finite direct image is
+torsion-free over the local discrete valuation rings of \(E_0\).
+This rank includes the inseparable degree.
+Write \(\xi_C\) for the rigid homological fundamental class of a
+smooth proper curve \(C\), viewed as its top-degree trace functional.
+Proper cycle pushforward gives
+\(\bar Q_*[\bar U]=m[E_0]\); compatibility of cycle classes with
+proper pushforward therefore gives
+\(\bar Q_*\xi_{\bar U}=m\xi_{E_0}\)
+\cite[Proposition~2.2, Section~2.1, and Proposition~6.4]{Petrequin2003}.
+The homological pushforward is the transpose of cohomological
+pullback. Consequently, for every
+\(u\in H^2_{\mathrm{rig}}(E_0/K)\),
+\[
+ \DtwoTr_{\bar U}(\bar Q^*u)=m\DtwoTr_{E_0}(u).
+\]
+Taking \(u=a\cup b\) and using the naturality of cup products gives
+\[
+ \DtwoTr_{\bar U}(\bar Q^*a\cup\bar Q^*b)
+   =m\,\DtwoTr_{E_0}(a\cup b).
+\]
+The pairing is perfect and \(m\) is invertible in \(K\).
+Consequently \(\bar Q^*\) is injective on degree-one cohomology,
+without a separability assumption.
+Restriction from \(\bar U\) to \(U\) is also injective.
+If the reduced finite complement \(Z=\bar U\setminus U\) is
+nonempty, it has codimension one in the smooth curve \(\bar U\).
+Support vanishing gives \(H^1_{Z,\Dtworig}(\bar U/K)=0\), and
+the localization sequence then makes
+\(H^1_\Dtworig(\bar U/K)\to H^1_\Dtworig(U/K)\) injective
+\cite[Theorem~1.1, third assertion, and Proposition~1.3,
+pp.~63--64]{Petrequin2003}.
+For an empty complement restriction is the identity.
+Thus \(Q^*\eta\ne0\) in \(H^1_\Dtworig(U/K)\), represented
+by \(\Dtwowt Q^*\eta\).
+
+The special curve and map descend to some finite field
+\(\DtwoFF_{5^d}\).
+The four \(\DtwoFF_5\)-points of \(E_0\) are \(O\) and the three
+points with \(v=0\), at \(z=0,2,3\).
+At \(z=1,4\) the cubic is a nonsquare.
+The Frobenius polynomial is therefore \(X^2-2X+5\).
+Its reduction has simple roots \(0,2\), so its two roots lie in
+\(\DtwoZZ_5\), one a unit \(\alpha\).
+We choose \(\eta\) with Frobenius eigenvalue \(\alpha\).
+
+The weak completion \(D^\dagger\) admits an integral, Witt-semilinear
+Frobenius lift by the smooth affine lifting statement in
+\cite[Introduction, p.~198]{DLZ2011}.
+Iterate it \(d\) times to obtain \(\phi\).
+Its action on rigid cohomology is canonical and independent of the
+lift.
+Descent of \(Q\) gives
+\(\phi^*[Q^*\eta]=\alpha^d[Q^*\eta]\).
+On the affine dagger complex this means
+\[
+ \phi^*(\Dtwowt Q^*\eta)-\alpha^d\Dtwowt Q^*\eta=dh
+ \qquad(h\in D^\dagger[1/5]).
+\]
+Lemma~\ref{d2:lem:scalar} applies, since \(\alpha^d\in W\).
+Hence the image \([\Dtwowt Q^*\eta]\) in the ordinary Cohen one-form
+quotient is nonzero.
+
+Apply \(L\) from Proposition~\ref{d2:prop:contraction} to
+\eqref{d2:eq:graph-class}.
+The result is \(2[\Dtwowt Q^*\eta]\), which is nonzero.
+Because \(L\) takes exact forms to exact forms, the graph class
+cannot be exact.
+
+For a finite extension \(K'/K\), its integer ring \(W'\) is finite
+free over \(W\) and complete.
+Scalar extension therefore commutes with the adic limits defining
+the product and its finite projective form modules.
+Relative forms over \(W'\) are the old forms tensored with \(W'\).
+After inversion of five, the complexes are tensored with \(K'\).
+Field extension is exact and faithfully flat, so it commutes with
+kernels and ordinary images and preserves the nonzero class.
+\end{proof}
+
+\section{The quartic quotient and its weight}\label{d2:sec:quartic}
+
+In this section, we construct the elliptic quotient and compute the
+linear functional on the four root-divisor classes.
+
+\begin{proposition}\label{d2:prop:weighted}
+Let \(k=\overline{\DtwoFF}_5\), \(W=W(k)\), \(R=W[\rho]\), and
+\[
+ V=\varprojlim_n W[T]_{(5)}/5^n.
+\]
+There is a finite unramified extension \(C/V\), obtained as the
+generic-special completion of a smooth affine \(W\)-curve \'etale
+over an open of the \(T\)-line, with the following property.
+Put \(C'=C\otimes_WR\) and
+\[
+ B=C'\langle X,Y\rangle/
+ \left(X^4+\frac{\Phi_5(1+\pi Y)}{\pi^4}+TXY^3\right).
+\]
+For \(g\in G=\DtwoFF_5^\times\), set
+\[
+ a_g=\frac{\rho^g-1}{\pi},\qquad
+ J_g=(X,Y-a_g),\qquad
+ \gamma_g=-c_1^\DtwodR(J_g).
+\]
+The ideals \(J_g\) are invertible.
+Let \(E=\DtwoQQ_5(\rho)\), let
+\(\omega_T\colon G\to\DtwoZZ_5^\times\) be the Teichm\"uller character,
+and put
+\[
+ e_r=\frac14\sum_{g\in G}\omega_T(g)^{-r}\sigma_g
+ \qquad(r=1,3)
+\]
+on \(\DtwoQQ_5\)-vector-space targets.
+If \(b\in E\) satisfies
+\(\sigma_{-1}b=-b\) and \(e_1b,e_3b\ne0\), then
+\[
+ \sum_{g\in G}\sigma_g(b)\gamma_g\ne0
+ \quad\text{in}\quad
+ \Omega^2_{B/R}[1/5]\big/d\Omega^1_{B/R}[1/5].
+\]
+The relative forms retain \(dT\).
+\end{proposition}
+
+\begin{proof}
+Over \(k(T)\), consider
+\[
+ H\colon X^4+Y^4+TXY^3=Z^4,\qquad
+ H^\circ=H\cap\{Z\ne0\},\qquad
+ P_g=[0:g:1].
+\]
+The singular-point calculation in
+Proposition~\ref{d2:prop:geometry} applies with \(Z\) in place of \(U\).
+It gives \(T^4=3\) at a hypothetical singularity.
+Thus \(H\) is smooth and geometrically integral.
+
+The same auxiliary surface
+\[
+ \DtwoSpec k[X,U,Y,Y^{-1}]/(XU-(1-Y^4)),
+ \qquad T=(U-X^3)/Y^3,
+\]
+has root-divisor lattice \(\DtwoZZ^4/\DtwoZZ(1,1,1,1)\).
+For clarity, the mechanisms remain unchanged here: inversion of \(X\)
+gives the factorial Laurent ring; its units give only the diagonal
+relation; each fiber becomes
+\(w^4=s^4+ts+1\), whose right side is not a square by comparison
+with \((s^2+bs+c)^2\); hence each vertical divisor is the reduced
+principal divisor \(T-t\).
+Divisor localization therefore gives this same lattice on
+\(H^\circ\cap\{Y\ne0\}\).
+A torsion relation on \(P_1-P_{-1}\) in the proper Jacobian would
+restrict to a torsion relation in this lattice, which is impossible.
+Finite field extension preserves nontorsion: norm after pullback multiplies divisor classes by the extension degree.
+
+We construct the quotients over an \'etale parameter cover.
+Set \(\Delta=256-27T^4\), and order the roots
+\(b_1,\ldots,b_4\) of \(s^4+Ts+1\) over a finite \'etale cover of
+\(W[T,1/\Delta]\).
+Put
+\[
+ a=\frac{b_2-b_4}{b_2-b_1},\qquad
+ x=a\frac{s-b_1}{s-b_4},\qquad
+ \lambda=a\frac{b_3-b_1}{b_3-b_4}.
+\]
+The elements \(a,a-1,a-\lambda,\lambda,\lambda-1\) are units,
+as follows from the pairwise root differences.
+Adjoin \(c\) with \(c^4=a(a-1)(a-\lambda)\).
+Replacing \(w=Z/Y\) by \(cw/(s-b_4)\) gives
+\begin{equation}\label{d2:eq:cyclic-quartic}
+ w^4=x(x-1)(x-\lambda).
+\end{equation}
+Indeed the product of the three transformed factors is
+\(a(a-1)(a-\lambda)\prod_{j=1}^3(s-b_j)/(s-b_4)^3\),
+which is \(c^4(s^4+Ts+1)/(s-b_4)^4\).
+
+Adjoin \(r\) with \(r^2=\lambda\) and
+\(\alpha_\pm\) with \(\alpha_\pm^2=r\pm1\).
+All these extensions are \'etale, because the radicands and \(2,4\)
+are units.
+Set
+\[
+ z=\frac{w^2}{x},\qquad v_\pm=\frac{w(x\pm r)}x.
+\]
+Equation~\eqref{d2:eq:cyclic-quartic} gives
+\begin{equation}\label{d2:eq:elliptic-quotients}
+ z^2=x+\frac{r^2}{x}-1-r^2,\qquad
+ v_\pm^2=z^3+(r\pm1)^2z.
+\end{equation}
+After \(z=\alpha_\pm^2\zeta\), \(v_\pm=\alpha_\pm^3v\),
+the target is the constant elliptic curve \(v^2=\zeta^3+\zeta\).
+
+Let \(\tau(x,w)=(x,-w)\) and
+\[
+ \iota(x,w)=\left(\frac{r^2}{x},\frac{rw}{x}\right).
+\]
+The maps \(h_+,h_-\) are the quotients by \(\iota\) and
+\(\tau\iota\), respectively.
+Their degree is two: \(x\) satisfies a quadratic over the target
+functions by \eqref{d2:eq:elliptic-quotients}, \(w\) is recovered from
+\(x,v_\pm\), and the displayed nontrivial involution fixes the
+target functions.
+They extend between the proper smooth curves.
+
+The boundary \(Z=0\) consists of the four points
+\(x=0,1,r^2,\infty\).
+At \(0,\infty\), the orders of \(z,v_\pm\) are \((-2,-3)\), so
+the image is \(O\) with local degree one.
+At \(1,r^2\), these orders are \((2,1)\), so the image is
+\((0,0)\), again with local degree one.
+Everywhere else \(z\) is finite and nonzero.
+The exact inverse image of \(\{O,(0,0)\}\) is therefore the boundary.
+Both maps restrict to finite maps of all of \(H^\circ\) to
+\(E_0^\circ\).
+
+The equations are defined over \(W\).
+Shrinking the parameter open by elements nonzero at its generic
+special point makes these finite flat quotient maps between smooth
+relative curves.
+Choose a connected component of the special fiber of the finite
+\'etale parameter cover.
+It can be isolated in a smooth affine \(W\)-model by inverting a
+lift of its characteristic idempotent.
+Write \(D\) for the resulting smooth \(W\)-algebra.
+Its generic-special completion \(C\) is the corresponding finite
+unramified extension of \(V\); subsequent open restrictions are
+units in \(C\).
+
+The involutions \(\tau,\iota,\tau\iota\) form a Klein four group.
+Its total quotient is rational with coordinate \(z=w^2/x\).
+Recovering \(x\) and then \(w\) gives degree at most four, and the
+four automorphisms fix \(z\), so \(k(T)(z)\) is the invariant field.
+If \(q\) is the quotient by \(\tau\), the pullback and norm identities
+on Jacobians give
+\begin{equation}\label{d2:eq:klein-identity}
+ q^*q_*+h_+^*h_{+*}+h_-^*h_{-*}
+   =2\Dtwoid+\sum_{g\in\{1,\tau,\iota,\tau\iota\}}g
+   =2\Dtwoid.
+\end{equation}
+The full group norm is zero because it factors through the Jacobian
+of the rational total quotient.
+The class \(P_1-P_{-1}\) is killed by \(q_*\).
+If its images under both \(h_+\) and \(h_-\) were torsion,
+\eqref{d2:eq:klein-identity} would make it torsion.
+Choose a quotient \(h\) for which the image is nontorsion.
+Since \(h\tau=[-1]h\), this image is \(2Q\), where \(Q=h(P_1)\).
+Every point in \(E_0(k)\) is defined over a finite field and is
+torsion. Hence \(Q\) is nonconstant.
+The lifted root section gives
+\(\Dtwowt Q\colon\DtwoSpec D\to\DtwocE^\circ\) with this reduction.
+
+Let \(i\in W\) be the fourth root of unity reducing to \(2\).
+The rotation
+\([X:Y:Z]\mapsto[iX:iY:Z]\) fixes \(s\), sends the transformed
+\(w\) to \(-iw\), sends \(z\) to \(-z\), and sends \(v_\pm\) to
+\(-iv_\pm\).
+Thus it induces \([-i]\) on the elliptic target.
+It sends \(P_1\) to \(P_i\), so
+\begin{equation}\label{d2:eq:root-equivariance}
+ h(P_g)=[g^{-1}]Q
+\end{equation}
+for all fourth roots \(g\), including the lifted Teichm\"uller
+sections.
+
+We need an integral trace on total forms, including base
+differentials.
+For a tame double quotient of smooth relative curves, the trace is
+the \'etale trace away from ramification.
+At ramification, choose an anti-invariant fiber parameter \(t\);
+\'etale-locally the quotient parameter is \(s=t^2\).
+Invariant fiber one-forms are multiples of
+\(t\,dt=ds/2\).
+Invariant base forms and their wedges also descend.
+Thus invariant total forms are exactly the forms on the quotient.
+Summing \(1+\iota^*\) and descending defines a chain map
+\[
+ \DtwoTr_hh^*=2,\qquad h^*\DtwoTr_h=1+\iota^*.
+\]
+It is integral and continuous, and extends through localization and
+completion, first relative to \(W\) and then relative to \(R\).
+For an invertible module \(L\), the Cartier-divisor norm identity is
+\(h^*\DtwoNm_hL=L\otimes\iota^*L\), including ramification
+multiplicities.
+Since \(h^*\) is injective on rational cohomology by
+\(\DtwoTr_hh^*=2\), it follows that
+\begin{equation}\label{d2:eq:trace-chern}
+ \DtwoTr_h(c_1^\DtwodR(L))=c_1^\DtwodR(\DtwoNm_hL).
+\end{equation}
+This is an identity on ordinary de Rham quotients, because the trace
+is an actual chain map.
+
+Consider first
+\[
+ B_{\Dtwocyc}=
+ C'\langle X,Y\rangle/(X^4+Y^4+TXY^3-1),
+ \qquad
+ \gamma_g^\Dtwocyc=c_1^\DtwodR(\DtwocO(P_g)).
+\]
+The norm of its root line under \(h\) is the graph line of
+\([g^{-1}]\Dtwowt Q\).
+Choose \(\eta,\omega\) with the polarization convention of
+\eqref{d2:eq:graph-class}.
+The unit-root character can be determined exactly.
+On the elliptic curve,
+\[
+ [i](z,v)=(-z,iv),\qquad
+ [i]^*\!\left(\frac{dz}{2v}\right)
+       =i\,\frac{dz}{2v}.
+\]
+By the perfect pairing, the character on \(H^1(\DtwocO)\) is
+\(i^{-1}\).
+A primitive integral generator of the unit-root crystalline line
+has nonzero image in \(H^1(\DtwocO)\) modulo five.
+Otherwise its nonzero reduction would lie in the holomorphic
+subspace, which crystalline Frobenius kills modulo five,
+contradicting its unit Frobenius eigenvalue.
+The two order-four eigenvalues have distinct reductions.
+Consequently the character on the unit-root line is exactly
+\(\omega_T^3\), rather than an unspecified odd character.
+
+Let \(\lambda_g=\sigma_g(b)\) for any anti-invariant \(b\).
+Then \(\lambda_{-g}=-\lambda_g\).
+Pair opposite roots and apply \eqref{d2:eq:trace-chern}, followed by
+the contraction \(L\) of Proposition~\ref{d2:prop:contraction}.
+The graph-difference formula \eqref{d2:eq:graph-class} contributes
+twice the pullback of \(\eta\).
+Equation~\eqref{d2:eq:root-equivariance} gives
+\([g^{-1}]^*\eta=\omega_T(g)^{-3}\eta\).
+Hence the exact linear identity is
+\begin{equation}\label{d2:eq:linear-weight}
+ L\DtwoTr_h\left(\sum_{g\in G}\sigma_g(b)\gamma_g^\Dtwocyc\right)
+   =
+ \left(\sum_{g\in G}\sigma_g(b)\omega_T(g)^{-3}\right)
+       [\Dtwowt Q^*\eta]
+   =4e_3(b)[\Dtwowt Q^*\eta].
+\end{equation}
+The factor two from the graph difference is exactly the contribution
+of the two opposite roots in the full sum.
+The polarization convention fixes the common sign in this formula.
+
+Proposition~\ref{d2:prop:graph}, using
+Lemma~\ref{d2:lem:scalar}, shows that \([\Dtwowt Q^*\eta]\) is nonzero
+in the ordinary Cohen one-form quotient.
+Its finite-constant-extension assertion preserves this class over
+\(R\).
+Thus \eqref{d2:eq:linear-weight} is nonzero when \(e_3(b)\ne0\);
+in particular it is nonzero under the two nonvanishing assumptions
+of the proposition.
+Both operators preserve exactness, so the weighted class on
+\(B_{\Dtwocyc}\) is nonzero.
+Formula~\eqref{d2:eq:linear-weight} remains valid for all anti-invariant \(b\), even if an odd component vanishes.
+
+Finally we transport all four root lines to \(B\).
+The cyclotomic identity gives \(5/\pi^4\equiv-1\bmod\pi\), and all
+other coefficients below degree four in
+\(\Phi_5(1+\pi Y)/\pi^4\) are divisible by \(\pi\).
+Thus \(B\) and \(B_{\Dtwocyc}\) have the same special fiber
+\[
+ X^4+Y^4+TXY^3=1.
+\]
+For \(G_0=X^4+Y^4+TXY^3\), Euler's identity
+\(X(G_0)_X+Y(G_0)_Y=4G_0\) proves smoothness on this fiber.
+The two equations are monic in \(Y\), so the models are
+\(\pi\)-torsion-free. Their completions are formally smooth over
+\(C'\).
+
+Lift the identity modulo \(\pi\) successively modulo \(\pi^n\).
+This gives a continuous \(C'\)-linear map between the two completed
+models.
+Successive approximation proves surjectivity.
+An element of its kernel lies in \(\pi\) times the source;
+torsion-freeness of the target permits division of the relation by
+\(\pi\). Iteration and separatedness prove injectivity.
+Thus the map is an isomorphism.
+
+On the support of \(J_g\), the \(Y\)-derivative is
+\(\prod_{h\ne g}(a_g-a_h)\), a unit.
+The equation expresses \(Y-a_g\) locally as a multiple of \(X\);
+elsewhere \(J_g\) is the unit ideal.
+Hence \(J_g\) is invertible.
+Its reduction is \((X,Y-g)\), equal to the reduction of the cyclic
+root ideal.
+In a complete ring, \(\pi\) lies in the Jacobson radical.
+An isomorphism between the reductions of two projective rank-one
+modules lifts by projectivity; Nakayama at every maximal ideal
+makes the lift an isomorphism.
+Therefore the formal replacement identifies every root Picard class.
+
+The replacement fixes \(C'\), so it fixes all \(\sigma_g(b)\).
+It induces an isomorphism of continuous forms relative to \(R\),
+with \(dT\) retained.
+The weighted nonzero class, and the transported linear functional
+\eqref{d2:eq:linear-weight}, therefore give the assertion for \(B\).
+\end{proof}
+
+\section{An actual arithmetic coefficient}\label{d2:sec:arithmetic}
+
+The goal of this section is to construct one actual coefficient whose
+two odd point-character components are nonzero.
+
+\begin{proposition}\label{d2:prop:coefficient}
+Put \(W_E=\DtwoZZ_5[\rho]\), \(E=\DtwoQQ_5(\rho)\), and
+\(\pi=\rho-1\).
+Define
+\[
+ r_E\colon K_3(W_E)\longrightarrow E
+\]
+by passage to \(\pi_3\DtwocK(W_E)\), the inverse of
+\(\pi_3\DtwocK(W_E,(\pi))\to\pi_3\DtwocK(W_E)\), and the relative point
+equivalence with \(\DtwoHC_2^\Dtwocts(W_E/W_E;\DtwoQQ_5)=E\).
+There is an actual class
+\[
+ \beta=(1-\sigma_{-1})\beta_0\in K_3(W_{\Dtwoar})
+\]
+whose reduction in \(K_3(\DtwoFF_5)\) is zero, such that
+\(\sigma_{-1}\beta=-\beta\) integrally and
+\[
+ b=r_E(\beta|_{W_E})
+ \quad\text{satisfies}\quad e_1b\ne0,\qquad e_3b\ne0.
+\]
+The projectors \(e_r\) act only on the indicated
+\(\DtwoQQ_5\)-vector-space targets.
+\end{proposition}
+
+\begin{proof}
+For \(r=1,3\), set
+\[
+ \tau_r=\sum_{g=1}^4\omega_T(g)^{-r}\rho^g.
+\]
+Its \(\pi\)-adic valuation is \(r\).
+To see this, expand \(\rho^g=(1+\pi)^g\).
+For \(j<r\), the coefficient
+\(\sum_g\omega_T(g)^{-r}\binom gj\) vanishes modulo five:
+\(\binom gj\) has degree \(j\) in \(g\), and the power sums on
+\(\DtwoFF_5^\times\) vanish unless the exponent is divisible by four.
+For \(j=r\), the coefficient is \(4/r!\bmod5\), which is nonzero.
+Since \(5\) is a unit times \(\pi^4\), terms with \(j<r\)
+have valuation at least \(4+j>r\), while terms with \(j>r\)
+have valuation at least \(j>r\).
+The degree-\(r\) term is the unique one of minimal valuation.
+
+Let \(\DtwoLi_2\) be the Coleman dilogarithm normalized by
+\(\sum_{m\ge1}z^m/m^2\) on the open unit disc.
+Define
+\[
+ S_j(z)=\left(z\frac d{dz}\right)^j\frac1{1-z},
+ \qquad
+ F_2(z)=\DtwoLi_2(z)-5^{-2}\DtwoLi_2(z^5).
+\]
+Partitioning the indices prime to five into \(a+5m\), and expanding
+\((a+5m)^{-2}\), gives on that disc
+\begin{equation}\label{d2:eq:depletion}
+ F_2(z)=
+ \sum_{j\ge0}(-1)^j(j+1)5^jS_j(z^5)
+       \sum_{a=1}^4\frac{z^a}{a^{j+2}}.
+\end{equation}
+The right side converges uniformly on
+\(|z|\le1,\ |1-z^5|=1\).
+Each \(S_j\) has integral coefficients and unit denominator there,
+so its \(j\)-th term has norm at most \(5^{-j}\).
+This affinoid is connected: its reduction is the integral curve
+\(\DtwoSpec\DtwoFF_5[z,(1-z)^{-1}]\), and its integral affinoid algebra
+has no nontrivial idempotent.
+
+By \cite[Theorem~2.7(3)]{BesserDeJeuAlgorithm}, the depleted polylogarithm
+\(\DtwoLi_n(z)-p^{-n}\DtwoLi_n(z^p)\) is analytic outside the closed disc
+\(|z-1|\le p^{-1/(p-1)}\), with a convergent expression in
+\(1/(1-z)\).
+For \(p=5\), this region contains the affinoid just used.
+Both sides of \eqref{d2:eq:depletion} are analytic there.
+Their equality on the open unit disc extends by the identity
+principle.
+
+At \(z=-\rho\), \(z^5=-1\).
+The value \(\DtwoLi_2(-1)\) is fixed by \(G\), so its odd projections
+vanish.
+Permuting the summation indices gives the exact identity
+\[
+ e_r(\rho^a)=\frac{\omega_T(a)^r}{4}\tau_r.
+\]
+Applying it to \eqref{d2:eq:depletion} yields
+\begin{equation}\label{d2:eq:odd-dilogarithms}
+ \frac{4e_r\DtwoLi_2(-\rho)}{\tau_r}
+ =
+ \sum_{j\ge0}(-1)^j(j+1)5^jS_j(-1)
+    \sum_{a=1}^4\frac{(-1)^a\omega_T(a)^r}{a^{j+2}}.
+\end{equation}
+All \(S_j(-1)\) are \(5\)-integral.
+Modulo five, only the \(j=0\) term remains:
+\[
+ \frac12\sum_{a=1}^4(-1)^aa^{r-2}.
+\]
+For \(r=1\) it is
+\(\frac12(-1+3-2+4)=2\) in \(\DtwoFF_5\).
+For \(r=3\) it is
+\(\frac12(-1+2-3+4)=1\).
+Thus both odd projections of \(\DtwoLi_2(-\rho)\) are nonzero.
+Division by \(\tau_r\) is legitimate by its valuation, and the
+projection identity is exact, so no precision loss is involved.
+
+The special-unit symbol construction
+\cite[Theorems~1.6 and~1.10, Remark~1.7]{BesserDeJeu}
+maps the degree-one, weight-two symbol complex of a localized
+number ring to rational K-theory.
+Its syntomic regulator is
+\([x]_n\mapsto\pm(n-1)!L_{\mathrm{mod},n}(x)\);
+the sign is the single convention in the cited remark.
+In weight two there is no conjectural vanishing assumption.
+
+Take \(x=-\rho\) in \(W_{\Dtwoar}\).
+Both \(x\) and \(1-x=1+\rho\) are units, since the latter reduces
+to \(2\) modulo \(\pi\).
+The symbol \([-\rho]_2\) is a rational degree-one cocycle:
+its differential is \((1+\rho)\otimes(-\rho)\), or the exterior
+version, and the root-of-unity factor is zero after rationalization.
+It gives \(\beta_{\mathrm{rat}}\in K_3(W_{\Dtwoar})\otimes\DtwoQQ\).
+Its syntomic regulator is \(\pm\DtwoLi_2(-\rho)\), because the
+modification terms contain \(\log(-\rho)=0\).
+Choose a positive integer \(N\) and an actual \(\beta_0\)
+representing \(N\beta_{\mathrm{rat}}\), and set
+\(\beta=(1-\sigma_{-1})\beta_0\).
+This is an operation on actual groups.
+The automorphism \(\sigma_{-1}\) induces the identity on the residue
+field, so \(\beta\) reduces to zero.
+Its integral antisymmetry follows by squaring \(\sigma_{-1}\).
+Equivariance of the regulator and
+\eqref{d2:eq:odd-dilogarithms} show that its two odd syntomic
+components are nonzero.
+
+For the possibly ramified field \(E\), the syntomic-to-\'etale
+comparison in \cite[Section~2]{HuberKings} has no ramification
+restriction.
+The degree-one syntomic coordinate for weight \(n>1\) is \(E\)
+\cite[Example~2.2.4]{HuberKings}.
+It agrees with the definition used above
+\cite[Proposition~2.2.7]{HuberKings}.
+Its Chern-compatible map to \(H^1(E,\DtwoQQ_5(n))\) is the
+Bloch--Kato exponential
+\cite[Propositions~2.2.9 and~2.3.4]{HuberKings}, which is an
+isomorphism for \(n>1\), as recalled in
+\cite[Section~1.3]{HuberKings}.
+These maps are natural under field automorphisms.
+Thus the actual \'etale Chern class
+\(c_{2,1}(\beta)\in H^1(E,\DtwoQQ_5(2))\) has both odd components
+nonzero.
+
+There is a natural \(G\)-equivariant \(\DtwoQQ_5\)-linear map
+\begin{equation}\label{d2:eq:completed-chern}
+ \pi_3\DtwocK(W_E)\longrightarrow H^1(E,\DtwoQQ_5(2))
+\end{equation}
+through which the Chern class of every actual element factors.
+To construct this map, first work before inverting five.
+Map from \(\pi_3(K(W_E)^\wedge_5)\) to \(\pi_3(K(E)^\wedge_5)\), and then to
+\(\varprojlim_nK_3(E;\DtwoZZ/5^n)\).
+Apply the finite-coefficient Chern classes
+\[
+ K_3(E;\DtwoZZ/5^n)\longrightarrow
+ H^1(E,\mu_{5^n}^{\otimes2}).
+\]
+Naturality, compatibility with reduction of integral classes,
+additivity for odd coefficients, and compatibility with coefficient
+transitions are respectively
+\cite[Proposition~2.1.1, Lemma~2.3, Propositions~2.4 and~2.8]{WeibelChern}.
+The resulting compatible additive maps recover the actual Chern
+class. Each finite target is killed by \(5^n\), so the inverse-limit
+map is \(\DtwoZZ_5\)-linear.
+The groups \(H^0(E,\mu_{5^n}^{\otimes2})\) are finite, hence
+Mittag--Leffler. The continuous-cohomology inverse-limit sequence
+therefore identifies the target limit with \(H^1(E,\DtwoZZ_5(2))\).
+Inverting five gives \eqref{d2:eq:completed-chern}.
+No derived inverse-limit vanishing on the K-theory side is needed.
+
+The finite-field calculation \cite{QuillenFinite}\cite[IV, Corollary~1.13]{Weibel} gives
+\[
+ K_{2j}(\DtwoFF_5)=0,\qquad
+ K_{2j-1}(\DtwoFF_5)=\DtwoZZ/(5^j-1)\qquad(j\ge1).
+\]
+Multiplication by five is invertible on these positive groups.
+The finite-coefficient exact sequences show that all positive
+homotopy groups of \(K(\DtwoFF_5)^\wedge_5\) vanish.
+In particular the groups in degrees three and four of
+\(\DtwocK(\DtwoFF_5)\) vanish.
+The relative fiber sequence identifies
+\(\pi_3\DtwocK(W_E,(\pi))\) with \(\pi_3\DtwocK(W_E)\).
+
+The point case of
+\cite[Theorem~A, Proposition~4.10, Corollary~3.8]{AMMN}
+identifies this group with
+\(\DtwoHC_2^\Dtwocts(W_E/W_E;\DtwoQQ_5)=E\).
+Here \(W_E\) is a complete mixed-characteristic discrete valuation
+ring with perfect finite residue field, its formal spectrum is
+smooth over itself, and changing \((5)\) to \((\pi)\) changes the
+special fiber only by a nilpotent thickening.
+The comparison is natural for automorphisms of the coefficient
+point, hence \(G\)-equivariant.
+
+Transporting \eqref{d2:eq:completed-chern} through this point
+identification gives a \(G\)-equivariant \(\DtwoQQ_5\)-linear map from
+\(E\) to \(H^1(E,\DtwoQQ_5(2))\), carrying \(b\) to
+\(c_{2,1}(\beta)\).
+If \(e_rb=0\), the corresponding Chern component would vanish.
+This contradicts the syntomic calculation for \(r=1,3\).
+Equivariance also gives \(\sigma_{-1}b=-b\).
+No equality between a chosen syntomic normalization and the point
+coordinate was required.
+\end{proof}
+
+\section{Assembly over the local ring and its completion}\label{d2:sec:assembly}
+
+In this section, we prove Theorem~\ref{d2:thm:completed} and show that its
+actual coefficient also gives the geometric detector.
+
+\begin{proof}[Proof of Theorem~\ref{d2:thm:completed}]
+Choose the actual \(\beta\) of Proposition~\ref{d2:prop:coefficient},
+and set \(c=c(\beta)\).
+Section~\ref{d2:sec:preliminaries} proves regularity of \(A,\Dtwowh A\)
+and both integral generic vanishings.
+We prove that the image of this same \(c\) in \(K_3(\Dtwowh A)\) has
+infinite order.
+
+Put \(k=\overline{\DtwoFF}_5\), \(W=W(k)\), and \(R=W[\rho]\).
+Choose \(C\), arising from a smooth affine curve \(D\), as in
+Proposition~\ref{d2:prop:weighted}.
+Write \(L\) for the function field of \(D/5D\).
+It is a finite separable extension of \(k(T)\).
+The coefficient ring \(C'=C\otimes_WR\) is a complete discrete
+valuation ring with uniformizer \(\pi\) and residue field \(L\).
+Use the test algebra
+\begin{equation}\label{d2:eq:test-algebra}
+ B=C'\langle X,Y\rangle/
+ \left(X^4+\frac{\Phi_5(1+\pi Y)}{\pi^4}+TXY^3\right).
+\end{equation}
+The polynomial is integral over \(R\): every coefficient below
+degree four before division has \(\pi\)-valuation at least four.
+It is monic in \(Y\), so the polynomial quotient and its completion
+are \(\pi\)-torsion-free.
+
+Its special fiber is
+\begin{equation}\label{d2:eq:test-special}
+ B/\pi B=L[X,Y]/(X^4+Y^4+TXY^3-1).
+\end{equation}
+For \(G_0=X^4+Y^4+TXY^3\), Euler's identity gives
+\(X(G_0)_X+Y(G_0)_Y=4G_0=4\) on this fiber.
+It is therefore smooth over \(L\).
+Its projective closure is the smooth geometrically integral quartic
+of Proposition~\ref{d2:prop:weighted}, so the fiber is a domain.
+
+The ring \(B\) is noetherian by its monic presentation and adic
+completion. Since \(\pi\) lies in its Jacobson radical, all maximal
+ideals contain \(\pi\).
+At each one, the quotient by \(\pi\) is regular and \(\pi\) is a
+nonzero divisor. Lifting a regular system of parameters from the
+quotient and adjoining \(\pi\) proves regularity of that local ring.
+Hence \(B\) is regular.
+Its dimension is two: the restricted two-variable ring over \(C'\)
+has dimension three, and the equation is a nonzero monic equation.
+Equivalently, the parameter argument gives dimension at most two
+at every maximal ideal and equality at closed points of the special
+curve.
+Separatedness, torsion-freeness, and the domain special fiber show
+that \(B\) is a domain: the first nonzero \(\pi\)-adic terms of a
+product of two nonzero elements have nonzero product.
+
+We construct the essentially smooth rank-two model required in
+Proposition~\ref{d2:prop:cyclic}.
+Let \(U_D=D_{5D}\), whose completion is \(C\), and put
+\[
+ H=
+ \bigl((U_D\otimes_WR)[X,Y]\bigr)/
+ \left(X^4+\frac{\Phi_5(1+\pi Y)}{\pi^4}+TXY^3\right).
+\]
+Its completion is \(B\).
+The two relative partial derivatives generate the unit ideal
+modulo \(\pi\) by the Euler calculation.
+Choose an element \(j\) of their generated ideal with
+\(j\equiv1\bmod\pi\).
+Then \(H[1/j]\) is smooth of relative dimension one over
+\(U_D\otimes_WR\).
+Inverting \(j\) does not change the completion.
+
+The ring \(U_D\otimes_WR\) is a localization of the smooth
+\(R\)-algebra \(D\otimes_WR\), of relative dimension one.
+Transitivity of smoothness makes \(H[1/j]\) a localization of a
+smooth \(R\)-algebra with relative cotangent rank two.
+The finite coefficients and the choice of \(j\) spread over a
+further localization of \(D\).
+This gives the required \(B_0\).
+The \(5\)-adic and \(\pi\)-adic completions agree because \(5\)
+is a unit times \(\pi^4\).
+In particular, relative forms over \(R\) retain the differential
+\(dT\).
+
+Write \(b=r_E(\beta|_{W_E})\).
+Proposition~\ref{d2:prop:weighted} gives invertible ideals
+\[
+ J_g=\left(X,Y-\frac{\rho^g-1}{\pi}\right)
+\]
+and the nonzero class
+\begin{equation}\label{d2:eq:completed-form}
+ \Xi=\sum_{g\in G}\sigma_g(b)\bigl(-c_1^\DtwodR(J_g)\bigr)
+ \ne0
+ \quad\text{in}\quad
+ \Omega^2_{B/R}[1/5]\big/d\Omega^1_{B/R}[1/5].
+\end{equation}
+
+The reduction of \(\beta|_{W_E}\) in \(K_3(\DtwoFF_5)\) is zero.
+It lifts to an actual
+\(\beta_{\mathrm{rel}}\in K_3(W_E,(\pi))\).
+This lift is unique, since \(K_4(\DtwoFF_5)=0\) by
+\cite{QuillenFinite}\cite[IV, Corollary~1.13]{Weibel}.
+Naturality makes the lifts of all conjugates compatible.
+Pull them through \(W_E\to R\).
+The relative point coordinates are \(\sigma_g(b)\) in \(R[1/5]\):
+the point comparison is natural for this coefficient extension,
+and the map on degree-two point cyclic homology is inclusion of
+the coefficient fields.
+
+Form the actual relative class
+\[
+ \delta_{\mathrm{rel}}
+   =\sum_{g\in G}
+      (\sigma_g\beta_{\mathrm{rel}})|_B\cdot(1-[J_g])
+       \in K_3(B,\pi B),
+\]
+and let \(\delta\) be its image in actual \(K_3(B)\).
+Proposition~\ref{d2:prop:cyclic}, applied to the rank-two model above,
+identifies its top-form component with \(\lambda_R\Xi\), where
+\(\lambda_R\ne0\).
+Thus the image of \(\delta_{\mathrm{rel}}\) in
+\(\pi_3\DtwocK(B,\pi B)\) is nonzero.
+
+We establish the special-fiber vanishing before using either fiber
+sequence.
+The ring in \eqref{d2:eq:test-special} is the filtered colimit of
+\[
+ (D/5D)[1/s][X,Y]/(X^4+Y^4+TXY^3-1),
+ \qquad 0\ne s\in D/5D.
+\]
+These are smooth affine surfaces over the perfect field \(k\).
+The base is a smooth affine curve, and the Euler identity makes
+the displayed curve over it smooth.
+For a smooth \(d\)-dimensional variety over a perfect field of
+characteristic \(p\), the finite-coefficient theorem
+\cite[Theorem~8.4]{GeisserLevineCharP} gives
+\(K_j(-;\DtwoZZ/p^n)=0\) for \(j>d\).
+Its groups are the homotopy groups of the cofiber spectrum, with
+their torsion contribution, rather than mere tensor products of
+actual K-groups.
+The theorem follows there from the motivic-to-K spectral sequence
+and the vanishing of logarithmic de Rham--Witt sheaves above the
+dimension.
+Applying its smooth-surface form and then filtered continuity gives
+\[
+ K_j(B/\pi B;\DtwoZZ/5^n)=0
+ \qquad(j>2,\ n\ge1).
+\]
+For \(j\ge3\), both the degree-\(j\) and degree-\((j+1)\) groups
+of the finite-coefficient tower vanish.
+The Milnor exact sequence therefore gives
+\(\pi_jK(B/\pi B)^\wedge_5=0\), and inversion of five preserves
+this vanishing. In particular,
+\begin{equation}\label{d2:eq:special-vanishing}
+ \pi_3\DtwocK(B/\pi B)=\pi_4\DtwocK(B/\pi B)=0.
+\end{equation}
+
+First use the reduction fiber sequence
+\begin{equation}\label{d2:eq:reduction-fiber}
+ \DtwocK(B,\pi B)\longrightarrow\DtwocK(B)
+                  \longrightarrow\DtwocK(B/\pi B).
+\end{equation}
+Equation~\eqref{d2:eq:special-vanishing} makes the first map an
+isomorphism on degree three.
+The image of \(\delta\) in \(\pi_3\DtwocK(B)\) is consequently nonzero.
+
+Next use regularity of \(B\), regularity of \(B/\pi B\), and
+the nonzero divisor \(\pi\).
+Localization and d\'evissage
+\cite[V.4.1, V.6.1]{Weibel} give the different fiber sequence
+\begin{equation}\label{d2:eq:localization-fiber}
+ \DtwocK(B/\pi B)\longrightarrow\DtwocK(B)
+                         \longrightarrow\DtwocK(B[1/\pi]).
+\end{equation}
+The left map is support pushforward, not reduction.
+Its source has zero degree-three group, so the second map is
+injective on degree three.
+Thus \(\delta|_{B[1/\pi]}\) has nonzero image in
+\(\pi_3\DtwocK(B[1/\pi])\).
+That target is a \(\DtwoQQ_5\)-vector space, so the actual class
+\(\delta|_{B[1/\pi]}\) has infinite order.
+Only the fact that torsion maps to zero in a characteristic-zero
+vector space is used here.
+
+There is a ring map \(A\to B\) defined by
+\[
+ x\longmapsto\pi X,\qquad y\longmapsto\pi Y,
+ \qquad T\longmapsto T.
+\]
+The defining equation maps to \(\pi^4\) times the equation of \(B\).
+Every element inverted in forming \(A\) reduces to a nonzero
+polynomial in \(T\) modulo \((5,x,y)\).
+Its image modulo \(\pi\) is a nonzero element of \(L\), hence a
+unit. Since \(\pi\) lies in the Jacobson radical, its image is
+a unit in \(B\).
+This verifies the map on the localization.
+It takes \((x,y)\) into \(\pi B\), so completeness extends it
+continuously to \(\Dtwowh A\to B\).
+
+We match the actual supported class only after a flat splitting.
+Set
+\[
+ S_{\mathrm{spl}}=
+ (A\otimes_{\DtwoZZ_{(5)}}W_{\Dtwoar})[1/5].
+\]
+This is flat over \(A\), and regular because it is finite \'etale
+over \(A[1/5]\).
+The polynomial \(P(y)\) splits there with roots \(\rho^g-1\),
+whose differences are units.
+The divisor \(x=0\) is the disjoint union of the Cartier divisors
+with ideals
+\[
+ I_g=(x,y-(\rho^g-1)).
+\]
+Near a component, the other factors of \(P\) are units, and the
+equation expresses \(y-(\rho^g-1)\) as a multiple of \(x\).
+Away from that component the ideal is the unit ideal.
+The element \(x\) remains a nonzero divisor by flatness, and the
+component rings are localizations of \(E_{\Dtwoar}[T]\), hence regular.
+
+On the \(g\)-th component, the original coefficient map sends
+\(\rho=1+y\) to \(\rho^g\).
+Flat base change and the projection formula give the equality of
+actual classes
+\begin{equation}\label{d2:eq:flat-splitting}
+ c|_{S_{\mathrm{spl}}}
+   =\sum_{g\in G}(\sigma_g\beta)|_{S_{\mathrm{spl}}}
+                         \cdot(1-[I_g]).
+\end{equation}
+No scalar projector acts on an actual K-group in this identity.
+
+The map \(A\to B\), together with the coefficient embedding,
+gives \(S_{\mathrm{spl}}\to B[1/\pi]\).
+There
+\[
+ x=\pi X,\qquad
+ y-(\rho^g-1)=\pi(Y-a_g).
+\]
+The pulled-back invertible module \(I_g\) identifies with
+\(J_g[1/\pi]\).
+Locally on its support it is generated by \(x\), whose image
+\(\pi X\) is a nonzero divisor in the domain \(B[1/\pi]\);
+off the support it is generated by a unit.
+Thus this identification is an isomorphism of invertible modules,
+not only an equality of generated ideals.
+
+Pulling back \eqref{d2:eq:flat-splitting} now gives
+\[
+ c|_{B[1/\pi]}
+ =\sum_g(\sigma_g\beta)|_{B[1/\pi]}
+                          (1-[J_g[1/\pi]])
+ =\delta|_{B[1/\pi]}.
+\]
+The right side has infinite order.
+The map factors through \(\Dtwowh A\), so it is also the image of
+\(\Dtwowh c\). Hence \(\Dtwowh c\), and therefore \(c\), has infinite order.
+
+An element of an abelian group maps to zero after tensoring with
+\(\DtwoQQ\) precisely when it is torsion.
+The two integral generic vanishings established at the start thus
+give the two asserted nonzero rational kernels.
+
+We finish by identifying this coefficient with one allowed in the
+geometric proof. The inclusions
+\(\DtwoZZ[\rho]\subset\DtwocO_{E_{\Dtwoar}}\subset W_{\Dtwoar}\) show that
+\(W_{\Dtwoar}\) is the localization of \(\DtwocO_{E_{\Dtwoar}}\) obtained by
+inverting integers prime to five.
+Localization, filtered continuity, and
+\(K_2\) of finite fields being zero give a surjection
+\[
+ K_3(\DtwocO_{E_{\Dtwoar}})\longrightarrow K_3(W_{\Dtwoar});
+\]
+see \cite[V.6.1]{Weibel},
+\cite[IV, Section~6.4]{Weibel}, and
+\cite{QuillenFinite}\cite[IV, Corollary~1.13]{Weibel}.
+Lift the actual \(\beta_0\) in
+Proposition~\ref{d2:prop:coefficient} to
+\(\gamma_0\in K_3(\DtwocO_{E_{\Dtwoar}})\).
+Then \(\gamma=(1-\sigma_{-1})\gamma_0\) maps exactly to \(\beta\).
+
+The nonzero point coordinate makes \(\beta\) nontorsion, so
+\(\gamma\) is nontorsion.
+The regulator injectivity of
+\cite[Section~6]{BunkeTamme}, with the rank calculation of
+\cite[Proposition~12.2]{Borel}, gives \(\gamma\) a nonzero
+complex regulator.
+All calculations in Section~\ref{d2:sec:analytic} therefore apply to
+this same \(\beta\).
+Thus both detectors apply to the actual class \(c\) just constructed,
+and its image under completion is exactly \(\Dtwowh c\).
+\end{proof}

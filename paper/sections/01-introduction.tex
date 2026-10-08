@@ -1,0 +1,151 @@
+\section{Introduction}\label{sec:introduction}
+
+For a regular local domain $R$ with fraction field $F$, consider the
+rational restriction map
+\[
+ K_j(R)_{\Q}\longrightarrow K_j(F)_{\Q},
+ \qquad K_j(R)_{\Q}=K_j(R)\otimes_{\Z}\Q.
+\]
+Its injectivity is the first assertion of the augmented rational
+Gersten conjecture. We construct classes in its kernel for ramified
+regular local rings of mixed characteristic. The classes are represented
+in actual algebraic $K$-groups: they have infinite order, and their
+restrictions to the fraction field vanish before tensoring with $\Q$.
+
+The two basic rings are
+\begin{equation}\label{eq:intro-basic-rings}
+\begin{aligned}
+ A_2&=\left(\Z_{(5)}[T,x,y]/
+       (\Phi_5(1+y)+x^4+Txy^3)\right)_{(5,x,y)},\\
+ A_3&=\left(\Z_{(3)}[x,y,z]/(3+xy+z^2)\right)_{(x,y,z)},
+\end{aligned}
+\end{equation}
+where $\Phi_5(t)=1+t+t^2+t^3+t^4$.
+The ring $A_2$ has dimension two, maximal ideal $(x,y)$, and residue
+field $\F_5(T)$; the ring $A_3$ has dimension three, maximal ideal
+$(x,y,z)$, and residue field $\F_3$.
+Write $\widehat A_i$ for completion at the maximal ideal.
+Theorem~\ref{d2:thm:completed} and
+Theorem~\ref{thm:explicit-three-dimensional} construct classes
+$c_i\in K_3(A_i)$ whose images in $K_3(\widehat A_i)$ also have
+infinite order. In each of the four rings the corresponding class
+vanishes after inverting $x$, and hence in the fraction field,
+integrally.
+
+In dimension three the class is the product of three explicit units:
+\begin{equation}\label{eq:intro-explicit-three}
+ c_3=2\left\{\frac{1+z}{2},\,1+x,\,
+                   1+\frac{(1+x)y}{4}\right\}.
+\end{equation}
+The braces denote the product of unit classes in Quillen $K_1$.
+Dennis--Stein identities prove its integral vanishing after inverting
+$x$. Its infinite order is detected on a smooth formal quadric by a
+convergent three-adic endpoint series. The actual vanishing of the
+special-fiber group $K_4$ makes the relative-to-absolute map injective,
+so this argument detects an actual $K_3$-class.
+The two-dimensional construction starts with a coefficient in the
+$K_3$ of a cyclotomic integer ring and pushes it forward from the
+regular divisor $x=0$. A second construction identifies the explicit
+unit product
+\[
+ \left\{2+y,\ 1-x,\
+ 1+(1-x)(x^3+Ty^3)y\bigl((1+y)^5+1\bigr)\right\}
+ \in K_3(A_2)
+\]
+as an infinite-order generic-kernel class in both $A_2$ and
+$\widehat A_2$; see Proposition~\ref{d2ext:dimtwoExplicitTriple}.
+
+The same methods give families with larger rank, higher $K$-degree,
+and one fixed ring supporting infinitely many independent classes.
+Table~\ref{tab:intro-results} locates these extensions. Every rank
+assertion concerns the rational generic kernel; the witnesses are
+actual integral classes vanishing on the indicated principal open.
+The parameters introduced in residue fields preserve the local
+Krull dimension.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{@{}p{0.10\textwidth}p{0.64\textwidth}p{0.20\textwidth}@{}}
+\hline
+Dim. & Result & Reference\\
+\hline
+$2$ & At every residue prime, tame families have unbounded kernel rank
+in degree three and nonzero kernel in every odd degree at least three.
+& \ref{d2ext:twodimtamefamily}, \ref{d2ext:twodimtameallodd}\\
+$3$ & Eisenstein families have explicit rank formulas before completion
+and arbitrarily large lower bounds after completion.
+& \ref{d3:thm:eisenstein}, \ref{d3:thm:completedeisensteinrank}\\
+$3$ & Explicit cyclotomic triples at every prime retain their independence
+after henselization and completion.
+& \ref{d3:thm:explicitwildtriples}\\
+$3$ & Products of $j$ specified units give infinite-order kernel classes
+for every $j\geq3$.
+& \ref{d3:thm:everydegreelaurent}\\
+$2,3$ & At each prime, a fixed ring has infinite kernel rank in every odd
+degree at least three; in dimension three this also holds for its completion.
+& \ref{d2ext:twodimstrictcoefficientinfinite}, \ref{d3:thm:strictallprimeallodd}\\
+$3$ & At every prime, one fixed ring and one fixed complete ring, with
+residue field $\overline{\F}_p(T)$, have infinite kernel rank in every $j\geq3$.
+& \ref{d3:thm:singlefixedalldegree}, \ref{d3:thm:completedfixedalldegree}\\
+$2$ & One complete ring with residue field $\overline{\F}_5(T,S)$ has
+infinite kernel rank in every $j\geq3$.
+& \ref{d2ext:dimtwoCompleteAllDegreesInfiniteRank}\\
+$2,3$ & Explicit degree-three classes yield Milnor kernels; the
+three-dimensional class also gives Beilinson-motivic and higher-Chow kernels.
+& \ref{d2ext:twodimexplicitMilnor}, \ref{d3:cor:explicitmilnormotivic}\\
+\hline
+\end{tabular}
+\caption{Families and consequences of the basic constructions.
+The cited statements give the coefficient rings and all rank bounds.}
+\label{tab:intro-results}
+\end{table}
+
+The geometric and completed proofs detect the supported classes by
+different cohomology theories. On an arithmetic quadric, a small
+resolution shows that the ruling has infinite order in the local
+class group. This calculation forces each geometric boundary component
+removed by an allowed denominator to have zero divisor class.
+Consequently the ruling's Betti class survives every finite
+localization. Multiplying by a number-field coefficient with nonzero
+regulator gives a nonzero analytic Deligne class on every such open.
+Filtered continuity then proves nonvanishing on the local ring.
+For the quartic surface, the corresponding divisor calculation uses
+the exceptional quartic curve and its Jacobian.
+
+Completion requires a separate detector. The Beilinson fiber square
+of Antieau--Mathew--Morrow--Nikolaus identifies the relevant relative
+$p$-completed $K$-theory with continuous cyclic homology
+\cite{AMMN}. A finite mixed Hochschild--Kostant--Rosenberg comparison
+retains the ordinary continuous de Rham quotients. On a quadric, an
+explicit residue operator detects the ruling class. On the quartic
+family, the elliptic quotients of its Jacobian and a bounded
+slope-one functional detect the weighted root class after passage to
+the generic Cohen completion. In each case the proof separately
+controls the relative-to-absolute map and localization of the
+integral test ring. This is the step that returns a cohomological
+nonvanishing statement to the actual algebraic $K$-group.
+
+For the rank constructions, cyclotomic classes supply finite families
+of independent coefficient values. Their Chern classes factor through
+spectral completion, so independence passes to the continuous cyclic
+point coordinates without requiring surjectivity from actual
+$K$-theory. A continuous Laurent constant-term operator preserves the
+ruling detector after adjoining units. Products with these units raise
+the $K$-degree, while unramified coefficient extensions increase the
+rank. Finite descent handles each possible relation before completion;
+a separate comparison for completed essentially smooth models handles
+the fixed complete rings.
+
+We use $K(R)$ for the algebraic $K$-theory spectrum and
+$K(R;\Q_p)=K(R)^{\wedge}_p[1/p]$ for its rationalized spectral
+$p$-completion. This notation is distinct from tensoring each actual
+$K$-group with $\Q_p$. Throughout the continuous de Rham arguments,
+cohomology means the quotient by the image of the differential, with
+no closure of that image.
+The final mathematical section gives an explicit obstruction to the
+strict simplicial-functor construction in
+\cite[Lemma~13(III)]{MochizukiParameters}.
+The scope of the accompanying computational and formal checks is
+recorded separately at the end of the article.

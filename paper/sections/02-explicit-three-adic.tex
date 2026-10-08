@@ -1,0 +1,895 @@
+\section{An explicit three-adic kernel class}
+\label{sec:explicit-core}
+\subsection{The ring and the class}\label{c3:sec:introduction}
+
+\medskip
+\noindent\textbf{Generic restriction.}
+Products of units give explicit classes with which to study restriction
+from a regular local ring to its fraction field. Dennis--Stein identities
+can establish the vanishing of such a class after localization
+\cite[III, Definition~5.11 and Theorem~5.11.1]{Weibel}.
+For nonvanishing, we use the continuous fiber comparison
+\cite[Proposition~4.10]{AMMN}, together with multiplicative traces and
+the module structure on cyclic homology
+\cite{BGTTrace,NikolausScholze,HoyoisCircle,BokstedtOttosen}.
+The example below requires both an integral calculation in algebraic
+$\CthreeK$-theory and an ordinary, possibly non-Hausdorff, differential quotient.
+
+\medskip
+\noindent\textbf{An explicit class.}
+For units $b_1,\ldots,b_r$ in a commutative ring $R$, write
+$\{b_1,\ldots,b_r\}=[b_1]\cdots[b_r]\in\CthreeK_r(R)$ for the product of their
+classes in actual Quillen algebraic $\CthreeK$-theory.
+
+\begin{theorem}
+\label{thm:explicit-three-dimensional}
+Let
+\[
+ A_3=
+ \left(\CthreeZ_{(3)}[x,y,z]/(3+xy+z^2)\right)_{(x,y,z)},
+ \qquad
+ \widehat A_3=\CthreeZ_3[[x,y,z]]/(3+xy+z^2).
+\]
+Then $\widehat A_3$ is the maximal-ideal completion of $A_3$, and both
+rings are ramified regular local domains of dimension three.
+For either $R=A_3$ or $R=\widehat A_3$, the class
+\[
+ c_R=
+ 2\left\{\frac{1+z}{2},\,1+x,\,
+              1+\frac{(1+x)y}{4}\right\}\in\CthreeK_3(R)
+\]
+has infinite order and maps to zero in $\CthreeK_3(R[1/x])$ integrally.
+Consequently,
+\[
+ \CthreeK_3(R)\otimes_{\CthreeZ}\CthreeQ
+ \longrightarrow
+ \CthreeK_3(\CthreeFrac(R))\otimes_{\CthreeZ}\CthreeQ
+\]
+is not injective.
+\end{theorem}
+
+The same unit formula therefore gives a nonzero rational class in both
+the algebraic local ring and its completion. Its generic vanishing
+already holds before rationalization.
+
+\medskip
+\noindent\textbf{Method.}
+The integral calculation uses a Dennis--Stein symbol whose product with
+twice a unit class is $c_R$.
+For nonvanishing, we map to a smooth formal quadric over an Eisenstein
+quadratic extension of $\CthreeZ_3$.
+Proposition~\ref{c3:prop:relative-character} constructs the relative
+character with its $\CthreeK$-module action and fixes its value on relative
+units. Lemma~\ref{c3:lem:ordinary-residue} then detects its top component by
+two endpoint values, without constructing a convergent primitive for a
+closed one-form. The endpoint difference is nonzero by an estimate
+valid for every term of its defining series.
+Vanishing of the actual fourth $\CthreeK$-group of the special fiber finally
+passes this detection from relative to absolute $\CthreeK$-theory.
+
+Section~\ref{c3:sec:preliminaries} fixes the conventions and the continuous
+comparison. Section~\ref{c3:sec:integral} proves integral vanishing.
+Section~\ref{c3:sec:character} constructs and normalizes the character.
+Section~\ref{c3:sec:residue} proves the residue criterion.
+Section~\ref{c3:sec:nonvanishing} completes the proof.
+
+
+
+
+
+
+
+\subsection{Preliminaries}\label{c3:sec:preliminaries}
+
+We use Quillen algebraic $\CthreeK$-theory and its unit products with the
+conventions of \cite{Quillen,Weibel}.
+For continuous cyclic constructions we follow
+\cite[Definition~4.1 and Proposition~4.2]{AMMN}.
+We write $\mathrm{HH}$, $\mathrm{HC}$, $\mathrm{HC}^{-}$, and $\mathrm{HP}$ for Hochschild, cyclic, negative cyclic, and periodic cyclic homology, respectively. The symbols $\mathrm{THH}$ and $\mathrm{TC}$ denote topological Hochschild and topological cyclic homology.
+
+\begin{notation}\label{c3:notation:k-theory}
+An uncompleted group $\CthreeK_i(D)$ always means an actual Quillen
+$\CthreeK$-group.
+For an ideal $J\subseteq D$, the relative spectrum is
+\[
+ \CthreeK(D,J)=\Cthreefib\bigl(\CthreeK(D)\longrightarrow\CthreeK(D/J)\bigr),
+ \qquad
+ \CthreeK_i(D,J)=\pi_i\CthreeK(D,J).
+\]
+Thus relative $\CthreeK$-theory is defined by a homotopy fiber, rather than
+by the kernel of a map on homotopy groups.
+
+For a spectrum-valued invariant, the notation $;\CthreeQ_p$ means
+$p$-completion of the spectrum followed by inversion of $p$.
+It does not mean tensoring its actual homotopy groups with $\CthreeQ_p$.
+The superscript $\Cthreects$ denotes the homotopy inverse limit over
+the $p$-power reductions.
+\end{notation}
+
+Unit products are natural under ring maps, multilinear, and graded
+commutative. They satisfy $\{b,1-b\}=0$ whenever both entries are units;
+see \cite[III, Lemma~5.10.2, Definition~5.11, and the unit-product
+discussion following Theorem~5.11.1]{Weibel}.
+The distinction in Notation~\ref{c3:notation:k-theory} will be retained
+when these products are mapped to continuous invariants.
+
+\begin{setup}\label{c3:setup:coefficient-ring}
+Put
+\[
+ W=\CthreeZ_3[u]/(u^2+3),\qquad E=W[1/3].
+\]
+The Eisenstein equation makes $W$ a complete discrete valuation ring
+with uniformizer $u$ and residue field $\CthreeF_3$.
+Its $u$-adic and $3$-adic topologies agree.
+For a smooth $W$-algebra $D_0$ of relative dimension at most two, let
+$D$ denote its $3$-adic completion, and put
+\[
+ \Omega_D^j=
+ \left(\varprojlim_n\Omega^j_{D_0/W}/3^n\Omega^j_{D_0/W}\right)[1/3].
+\]
+All differentials on these modules are relative to $W$.
+The notation $W\langle T_1,\ldots,T_r\rangle$ denotes the restricted
+power series algebra, namely the $3$-adic completion of
+$W[T_1,\ldots,T_r]$.
+
+The two cases used below are $D=W\langle T\rangle$ and
+\[
+ B=W\langle X,Y,Z\rangle/(XY+Z^2-1).
+\]
+The algebra $W[X,Y,Z]/(XY+Z^2-1)$ is smooth of relative dimension two:
+its partial derivatives $Y,X,2Z$ have no simultaneous zero on the
+quadric.
+\end{setup}
+
+The continuous comparison will be used in its formal-scheme form.
+
+\begin{proposition}[Continuous fiber comparison
+{\cite[Proposition~4.10]{AMMN}}]\label{c3:prop:continuous-comparison}
+Let $\CthreecO$ be the integer ring of a complete discretely valued
+characteristic-zero field with perfect residue field $k$ of
+characteristic $p$. Let $\mathfrak X$ be a smooth $p$-adic formal
+$\CthreecO$-scheme. There is a natural diagram
+\begin{equation}\label{c3:eq:continuous-comparison}
+\begin{CD}
+ \CthreeK^\Cthreects(\mathfrak X;\CthreeQ_p)
+     @>>> \CthreeK(\mathfrak X_k;\CthreeQ_p)\\
+ @VVV @VVV\\
+ \CthreeTC^\Cthreects(\mathfrak X;\CthreeQ_p)
+     @>>> \CthreeTC(\mathfrak X_k;\CthreeQ_p)\\
+ @VVV @VVV\\
+ \CthreeHC^{-,\Cthreects}(\mathfrak X/\CthreecO;\CthreeQ_p)
+     @>>> \CthreeHP^\Cthreects(\mathfrak X/\CthreecO;\CthreeQ_p)
+\end{CD}
+\end{equation}
+in which both squares are cartesian.
+\end{proposition}
+
+The proof of \cite[Proposition~4.10]{AMMN} identifies the horizontal
+fibers after projection from absolute Hochschild homology to
+Hochschild homology relative to $\CthreecO$.
+For an algebraization with bounded $p$-power torsion,
+\cite[Proposition~4.2]{AMMN} identifies continuous Hochschild and cyclic
+constructions with their $p$-completed counterparts.
+The relative version is stated immediately before
+\cite[Proposition~4.10]{AMMN}.
+These assertions apply to the smooth, $W$-flat algebraizations in
+Setup~\ref{c3:setup:coefficient-ring}.
+
+\subsection{Integral vanishing}\label{c3:sec:integral}
+
+In this section, we prove the regularity and integral vanishing
+assertions of Theorem~\ref{thm:explicit-three-dimensional}.
+
+\begin{proposition}\label{c3:prop:integral}
+The rings $A_3$ and $\widehat A_3$ of
+Theorem~\ref{thm:explicit-three-dimensional} are ramified regular local
+domains of dimension three, with $\widehat A_3$ the maximal-ideal
+completion of $A_3$. For either ring $R$, all entries defining $c_R$
+are units, and
+\[
+ c_R|_{R[1/x]}=0\quad\text{in }\CthreeK_3(R[1/x]).
+\]
+\end{proposition}
+
+\begin{proof}
+The ambient local ring
+$\CthreeZ_{(3)}[x,y,z]_{(3,x,y,z)}$ is regular of dimension four.
+The image of $3+xy+z^2$ in its maximal ideal modulo its square is the
+nonzero image of $3$.
+Its quotient is therefore regular of dimension three, with maximal
+ideal $(x,y,z)$, and is a domain.
+Completion gives the displayed presentation of $\widehat A_3$.
+The same parameter calculation in $\CthreeZ_3[[x,y,z]]$ proves that this
+completion is regular of dimension three.
+In both rings, $3=-xy-z^2$ belongs to the square of the maximal ideal,
+so the rings are ramified.
+Each entry in the definition of $c_R$ has nonzero image in $\CthreeF_3$.
+
+We use Dennis--Stein symbols with the convention that
+$\langle r,s\rangle$ is defined when $1-rs$ is invertible.
+In additive notation their relations are
+\begin{align*}
+ \langle r,s\rangle&=-\langle s,r\rangle,\\
+ \langle r,s\rangle+\langle r,t\rangle
+   &=\langle r,s+t-rst\rangle,\\
+ \langle r,st\rangle
+   &=\langle rs,t\rangle+\langle tr,s\rangle
+\end{align*}
+whenever the symbols involved are defined
+\cite[III, Definition~5.11, relations (D1)--(D3)]{Weibel}.
+If $r$ is a unit, then
+$\langle r,s\rangle=\{r,1-rs\}$.
+Skew-symmetry gives
+$\langle r,s\rangle=\{1-rs,s\}$ when $s$ is a unit.
+In particular, $\langle r,1\rangle=0$ whenever it is defined.
+These identities hold in actual $\CthreeK$-groups.
+
+In $R$, put
+\[
+ a=\frac{1+z}{2},\qquad t=\frac y4,\qquad
+ \lambda=1+x,\qquad \mu=1+\lambda t,\qquad q=a(1-a).
+\]
+The defining equation of $R$ gives
+\[
+ q=\frac{1-z^2}{4}=1+xt.
+\]
+The elements $a$, $1-a$, $\lambda$, $\mu$, $q$, and $\lambda q$
+are units. The second Dennis--Stein relation gives
+\[
+ \delta\coloneqq \langle -x,t\rangle
+   =\langle -x,t\rangle+\langle -x,1\rangle
+   =\langle -x,t+1+xt\rangle
+   =\langle -x,\mu\rangle
+   =\{\lambda q,\mu\},
+\]
+where the last equality uses $1+x\mu=\lambda q$.
+
+Graded commutativity gives $2\{a,a\}=0$, and the Steinberg relation
+gives $\{a,1-a\}=0$. Hence
+\[
+ 2\{a,q\}=2\{a,a\}+2\{a,1-a\}=0.
+\]
+Multiplying $\delta$ by $2[a]$ now yields
+\[
+ 2[a]\delta
+   =2\{a,\lambda,\mu\}+2\{a,q,\mu\}
+   =c_R.
+\]
+After inverting $x$, the first-entry formula for the Dennis--Stein
+symbol identifies $\delta$ with $\{-x,q\}$. Consequently,
+\[
+ c_R|_{R[1/x]}
+   =2\{a,-x,q\}
+   =-2\{a,q,-x\}
+   =0.
+\]
+No completion or rationalization of a $\CthreeK$-group enters this calculation.
+\end{proof}
+
+\subsection{The relative character and its normalization}
+\label{c3:sec:character}
+
+The goal of this section is to construct the character used to detect
+$c_R$ and to determine its value on a relative unit multiplied by two
+absolute unit classes.
+
+\begin{proposition}
+\label{c3:prop:relative-character}
+In Setup~\ref{c3:setup:coefficient-ring}, the continuous comparison defines
+a natural map from the actual relative spectrum
+\[
+ \chi_D\colon
+ \CthreeK(D,uD)\longrightarrow
+ \Sigma\CthreeHC^\Cthreects(D/W;\CthreeQ_3).
+\]
+This map is $\CthreeK(D)$-linear, where the target action is obtained by
+restriction along
+\[
+ \CthreeK(D)\longrightarrow\CthreeHC^{-,\Cthreects}(D/W;\CthreeQ_3).
+\]
+For $v\in1+uD$, let $[v]_{\Cthreerel}\in\CthreeK_1(D,uD)$ be the relative unit
+class specified by the scalar automorphism $v$ and its identity
+reduction modulo $u$. Then
+\[
+ \chi_D([v]_{\Cthreerel})=\log v
+ \quad\text{in }\CthreeHC^\Cthreects_0(D/W;\CthreeQ_3)=\Omega_D^0.
+\]
+For $b_1,b_2\in D^\times$, its product character satisfies
+\begin{equation}\label{c3:eq:unit-character}
+ \chi_D\bigl([v]_{\Cthreerel}[b_1][b_2]\bigr)_{\Cthreetopcomp}
+   =\pm\log(v)\,\Cthreedlog b_1\wedge\Cthreedlog b_2
+   \quad\text{in }\Omega_D^2/\Cthreedd\Omega_D^1.
+\end{equation}
+Here the top component is the first summand of
+\begin{equation}\label{c3:eq:cyclic-degree-two}
+ \CthreeHC^\Cthreects_2(D/W;\CthreeQ_3)
+   =
+   \bigl(\Omega_D^2/\Cthreedd\Omega_D^1\bigr)
+   \oplus
+   \ker\bigl(\Cthreedd\colon\Omega_D^0\longrightarrow\Omega_D^1\bigr).
+\end{equation}
+The sign in \eqref{c3:eq:unit-character} is the universal suspension sign.
+Equation~\eqref{c3:eq:cyclic-degree-two} uses the ordinary differential image.
+\end{proposition}
+
+\begin{proof}
+The character is obtained from the horizontal fibers of
+\eqref{c3:eq:continuous-comparison} for $\CthreeSpf D$.
+Compatible maps from actual to continuous $\CthreeK$-theory, followed by
+completion of spectra and rationalization, give a map from
+$\CthreeK(D,uD)$ to the fiber of the top row.
+The two squares carry this fiber to the fiber of
+$\CthreeHC^{-,\Cthreects}\to\CthreeHP^\Cthreects$.
+For a circle object $M$, the norm sequence is
+\[
+ \Sigma M_{hS^1}\longrightarrow M^{hS^1}
+       \longrightarrow M^{tS^1};
+\]
+see \cite[\S I.3 and Corollary~I.4.3]{NikolausScholze}.
+By \cite[Theorem~2.1, Lemma~2.2, and Theorem~2.3]{HoyoisCircle},
+its cyclic interpretation identifies the last fiber with
+\[\Sigma\CthreeHC^\Cthreects(D/W;\CthreeQ_3).\]
+This defines a map out of actual relative $\CthreeK$-theory.
+
+The required module action can be followed through the construction of
+the comparison. Put $H=\CthreeTHH(D)$, regarded as a commutative algebra in
+cyclotomic spectra.
+For a bounded-below cyclotomic spectrum $H$, the construction in
+\cite[Proposition~2.8]{AMMN} tensors the cyclotomic maps
+$\CthreeZ^{\Cthreetriv}\to\CthreeTHH(\CthreeF_p)$ with $H$.
+It gives a cartesian square with $\CthreeTC$ in the top row and $\CthreeTC^-$ in
+the bottom row.
+Its horizontal fiber is the $p$-completion of
+$\Sigma(H\otimes\CthreeZ_{hC_p})_{hS^1}$.
+The comparison in \cite[Corollary~2.10]{AMMN} replaces the lower-right
+term by a Tate construction, using the equivalence induced by
+$\CthreeZ^{\Cthreetriv}\to\CthreeTHH(\CthreeF_p)$, and then inverts $p$.
+Specializing to $H=\CthreeTHH(D)$ and using
+$\CthreeTHH(D)\otimes\CthreeZ\to\CthreeHH(D)$ gives the square with rows
+$\CthreeTC(D)\to\CthreeTC(D\otimes_{\CthreebS}\CthreeF_p)$ and
+$\CthreeHC^-(D)\to\CthreeHP(D)$ in \cite[Theorem~2.12]{AMMN}.
+The reduction construction of \cite[Definition~2.14]{AMMN} replaces
+derived reduction by ordinary reduction through their rational
+$\CthreeTC$-equivalence.
+Finally, \cite[Proposition~4.10]{AMMN} replaces reduction modulo $p$
+by reduction modulo a uniformizer and projects to relative
+Hochschild homology.
+
+Every object $H\otimes T$ in the first two constructions is an
+$H$-module through its first factor, and every map
+$\Cthreeid_H\otimes f$ is $H$-linear.
+The lax monoidal structure of $\CthreeTC$ therefore makes their $\CthreeTC$ images
+modules over $\CthreeTC(H)=\CthreeTC(D)$.
+The homotopy-fixed-point and Tate objects carry actions of $\CthreeTC^-(H)$,
+and hence of $\CthreeTC(H)$ through its canonical map to $\CthreeTC^-(H)$.
+Their norm and comparison maps preserve these actions.
+This compatibility follows either from the lax monoidal constructions
+in \cite[\S I.3 and Corollary~I.4.3]{NikolausScholze}, or by forming the norm
+inside the category of modules over the circle-equivariant algebra.
+
+In particular, the Tate equivalence inverted in
+\cite[Corollary~2.10]{AMMN} is a module map.
+Its inverse is taken in the module category.
+The map
+$\CthreeTC(H)\to\CthreeTC(H\otimes\CthreeZ^{\Cthreetriv})$, which becomes an equivalence after
+rationalization in \cite[Theorem~2.12]{AMMN}, is a module map induced
+by the unit of $\CthreeZ^{\Cthreetriv}$.
+After forgetting to circle objects, the maps
+\[
+ H\otimes\CthreeZ\longrightarrow\CthreeHH(D)
+       \longrightarrow\CthreeHH(D/W)
+\]
+are maps of $H$-algebras.
+The reduction maps
+$D\otimes_{\CthreebS}\CthreeF_3\to D/3\to D/u$ are maps of $D$-algebras.
+Thus the rational $\CthreeTC$-equivalences used in
+\cite[Definition~2.14 and Proposition~4.10]{AMMN} are
+$\CthreeTC(D)$-linear as well.
+
+Completion, rationalization, and passage to fibers preserve these
+module constructions. The resulting action on the cyclic fiber is
+restriction along
+\[
+ \CthreeTC(D)\longrightarrow\CthreeTC^-(D)
+       \longrightarrow\CthreeHC^{-,\Cthreects}(D/W;\CthreeQ_3).
+\]
+The multiplicative cyclotomic trace, whose composite with $\CthreeTHH$ is
+the topological Dennis trace
+\cite[Theorems~7.3 and~7.4]{BGTTrace}, and the compatible
+actual-to-continuous maps make $\chi_D$ a $\CthreeK(D)$-module map.
+The suspension contributes the usual sign for a suspended module.
+Only the negative cyclic action on cyclic homology is used here;
+no ring structure on $\CthreeHC$ is asserted.
+
+For the calculation of the target, the relative dimension bound gives
+a finite mixed-complex model. On the algebraization $D_0$, the
+normalized Hochschild map is
+\begin{equation}\label{c3:eq:finite-hkr}
+ b_0\otimes\cdots\otimes b_n
+   \longmapsto
+   \frac{1}{n!}b_0\,\Cthreedd b_1\wedge\cdots\wedge\Cthreedd b_n
+   \qquad(0\leq n\leq2),
+\end{equation}
+and is zero in higher degrees.
+The factorials occurring here are units in $W$.
+The Hochschild differential maps to zero, while the Connes operator
+maps to $\Cthreedd$; beyond degree two its target is zero.
+Smooth Hochschild--Kostant--Rosenberg identifies the underlying
+Hochschild homology with $\Omega^n_{D_0/W}$, vanishing for $n>2$.
+This identification follows from the Koszul resolution of the smooth
+diagonal and is realized by \eqref{c3:eq:finite-hkr}.
+Hence \eqref{c3:eq:finite-hkr} is a quasi-isomorphism of mixed complexes
+to $(\Omega^\ast_{D_0/W},0,\Cthreedd)$.
+Only this finite mixed complex is needed, rather than an infinite
+rational splitting.
+
+The cyclic, negative cyclic, and periodic total complexes of this
+model contain only finitely many form modules in each total degree.
+Those modules are $W$-flat, and their reduction towers modulo $3^n$
+are termwise surjective.
+Derived $3$-completion is therefore given by termwise completion
+of these total complexes.
+The relative continuity assertion of
+\cite[Proposition~4.2 and the paragraph preceding
+Proposition~4.10]{AMMN} identifies them with the continuous
+constructions. Inverting $3$ gives
+$\CthreeHC^\Cthreects_0(D/W;\CthreeQ_3)=\Omega_D^0$ and
+\eqref{c3:eq:cyclic-degree-two}.
+Indeed, cyclic degree two has $\Omega_D^2$ in column zero and
+$\Omega_D^0$ in column minus one.
+The differential out of the second term is $\Cthreedd$, and boundaries
+into the first term form $\Cthreedd\Omega_D^1$.
+These are homology groups in the ordinary derived category, with
+no closure taken on a differential image.
+
+A unit $v\in1+uD$ determines a particular relative class: its scalar
+automorphism is a loop whose reduction is the identity automorphism.
+This construction is natural in $D$ and maps to $[v]\in\CthreeK_1(D)$.
+To determine its character, first take $D=W\langle T\rangle$ and
+$v=1+uT$, and write
+\[
+ f=\chi_D([1+uT]_{\Cthreerel})\in E\langle T\rangle.
+\]
+Choose the circle orientation for which the norm is Connes' operator,
+as in \cite[Lemma~2.2 and Theorem~2.3]{HoyoisCircle}.
+The norm followed by projection to $\CthreeHH_1$ then sends $f$ to $\Cthreedd f$.
+On the $\CthreeK$-theory side, this composite is the Dennis trace.
+The scalar-unit calculation for that trace represents the class of
+$b$ by $b^{-1}\otimes b$ in $\CthreeHH_1$, which
+\eqref{c3:eq:finite-hkr} sends to $\Cthreedlog b$.
+It follows that
+\[
+ \Cthreedd f=\Cthreedlog(1+uT).
+\]
+Evaluation at $T=0$ sends the specified relative unit to zero, so
+$f(0)=0$.
+The kernel of differentiation on $E\langle T\rangle$ consists of
+constants: for each coefficient $c_n$ with $n\geq1$, the equation
+$n c_n=0$ forces $c_n=0$.
+The convergent restricted series
+\[
+ \log(1+uT)
+   =\sum_{n\geq1}\frac{(-1)^{n+1}u^nT^n}{n}
+\]
+has the required derivative and constant term.
+Thus $f=\log(1+uT)$.
+For general $v\in1+uD$, substitution
+$T=(v-1)/u\in D$ defines a continuous $W$-algebra map from
+$W\langle T\rangle$ to $D$.
+Naturality gives $\chi_D([v]_{\Cthreerel})=\log v$.
+
+It remains to specify the coefficient in the product formula.
+Over any commutative base ring, negative cyclic homology acts on
+cyclic homology by ordinary shuffle plus the cyclic variable times
+cyclic shuffle
+\cite[\S2, Definition~2.1 and Remark~2.2]{BokstedtOttosen}.
+The cyclic, negative cyclic, and periodic long exact sequences are
+module sequences, with the usual sign on connecting homomorphisms
+\cite[Proposition~2.3]{BokstedtOttosen}.
+These statements precede, and do not require, the characteristic-two
+hypotheses imposed in later sections of that reference.
+
+Write the cyclic complex, with $h$ of degree $-2$, as
+\[
+ C^+=\bigl(E[h,h^{-1}]/hE[h]\bigr)\otimes_E C_\ast,
+\]
+where $C_\ast$ is the rationalized Hochschild chain complex.
+The function $\log v$ is represented in column zero.
+A negative cyclic representative of a unit has leading Hochschild
+class $b^{-1}\otimes b$; its remaining terms contain positive powers
+of $h$.
+Multiplication on column zero kills all those terms, including the
+cyclic-shuffle correction $h\,\mathrm{sh}'$.
+The first multiplication remains in column zero, so the second
+multiplication has the same property.
+The degree-two shuffle has two terms.
+After antisymmetrization both give the same wedge, canceling the
+factor $2!$ in \eqref{c3:eq:finite-hkr}.
+Changing a leading Hochschild representative by a boundary does not
+change its resulting cyclic class.
+The coefficient in \eqref{c3:eq:unit-character} is therefore one,
+apart from the suspension sign already specified.
+\end{proof}
+
+\subsection{An ordinary residue criterion}\label{c3:sec:residue}
+
+In this section, we detect differential classes on the formal quadric
+of Setup~\ref{c3:setup:coefficient-ring} by a residue on the overlap of two
+affine-plane charts.
+
+\begin{lemma}
+\label{c3:lem:ordinary-residue}
+For $F\in E\langle Z\rangle$, the form initially defined where $X$ is
+invertible by
+\[
+ \omega_F=\frac{\Cthreedd X}{X}\wedge\Cthreedd F
+\]
+extends to a global element of $\Omega_B^2$.
+If $\omega_F$ belongs to the ordinary image $\Cthreedd\Omega_B^1$, then
+$F(1)=F(-1)$.
+\end{lemma}
+
+\begin{proof}
+Differentiating the equation of the quadric gives
+$X\Cthreedd Y+Y\Cthreedd X+2Z\Cthreedd Z=0$.
+On the locus where $Z$ is invertible,
+\[
+ \frac{\Cthreedd X}{X}\wedge\Cthreedd Z
+   =-\frac{\Cthreedd X\wedge\Cthreedd Y}{2Z}.
+\]
+The loci where $X$ or $Z$ is invertible cover the quadric, since
+$X=Z=0$ is incompatible with $XY+Z^2=1$.
+This identity extends $\omega_F$ across its potential pole.
+
+Before completion, let $U_+$ be the complement of the line
+$X=0$, $Z=-1$, and let $U_-$ be the complement of the line
+$X=0$, $Z=1$.
+Put $a_+=1$ and $a_-=-1$.
+Each $U_i$ is an affine plane with coordinates $X,t_i$, under
+\begin{equation}\label{c3:eq:residue-charts}
+ Z=a_i+Xt_i,\qquad
+ Y=-t_i(2a_i+Xt_i).
+\end{equation}
+To see this, write $U_i=D(X)\cup D(Z+a_i)$.
+The inverse coordinate is
+$(Z-a_i)/X$ on $D(X)$ and $-Y/(Z+a_i)$ on $D(Z+a_i)$.
+The equation $(Z-a_i)(Z+a_i)=-XY$ identifies these functions on the
+overlap.
+Their preimages cover the $(X,t_i)$-plane, since $2a_i$ is a unit.
+Thus \eqref{c3:eq:residue-charts} is an isomorphism.
+The intersection $U_+\cap U_-$ is $D(X)$.
+After completion these charts are formal bidiscs, with overlap
+$W\langle X,X^{-1},Z\rangle$.
+
+On the $i$-th bidisc, define
+\[
+ q_i=-\bigl(F(Z)-F(a_i)\bigr)\frac{\Cthreedd X}{X}.
+\]
+Substitution from \eqref{c3:eq:residue-charts} makes
+$F(Z)-F(a_i)$ divisible by $X$ in the restricted series algebra, so
+$q_i$ is regular.
+Differentiation gives $\Cthreedd q_i=\omega_F$.
+On the overlap,
+\begin{equation}\label{c3:eq:primitive-difference}
+ q_+-q_-=\bigl(F(1)-F(-1)\bigr)\frac{\Cthreedd X}{X}.
+\end{equation}
+
+We use a coefficient calculation for closed one-forms on a bidisc.
+Let
+\[
+ A(X,t)\Cthreedd X+D(X,t)\Cthreedd t
+\]
+be closed over $E\langle X,t\rangle$, and write
+$A=\sum_{m,n\geq0}a_{m,n}X^mt^n$ and
+$D=\sum_{m,n\geq0}b_{m,n}X^mt^n$.
+The coefficients tend to zero.
+For $c\in W$, substitution $t=c/X$ is defined on
+$E\langle X,X^{-1}\rangle$.
+The coefficient of $X^{-1}\Cthreedd X$ in the resulting form is the
+convergent sum
+\[
+ \sum_{m\geq0}
+       \bigl(a_{m,m+1}-b_{m+1,m}\bigr)c^{m+1}.
+\]
+Closedness means $\partial_t A=\partial_X D$, hence
+\[
+ (m+1)a_{m,m+1}=(m+1)b_{m+1,m}
+ \qquad(m\geq0).
+\]
+Since $E$ has characteristic zero, each summand in the residue is
+zero. This calculation does not divide an infinite series to
+construct a primitive.
+
+Assume now that $\omega_F=\Cthreedd q$ for a global
+$q\in\Omega_B^1$.
+The forms $q_i-q$ are closed on the two bidiscs.
+Restrict them to the common slice $Z=0$.
+In chart $i$, this restriction is the substitution
+$t_i=-a_i/X$, with $-a_i\in W$.
+Both restricted forms have residue zero by the coefficient
+calculation.
+Their difference, by \eqref{c3:eq:primitive-difference}, has residue
+$F(1)-F(-1)$.
+Therefore $F(1)=F(-1)$.
+The argument concerns exactness in the ordinary quotient
+$\Omega_B^2/\Cthreedd\Omega_B^1$.
+\end{proof}
+
+\subsection{Nonvanishing of the explicit class}\label{c3:sec:nonvanishing}
+
+The goal of this section is to complete
+Theorem~\ref{thm:explicit-three-dimensional} by detecting an actual
+relative class on $B$ and passing to its absolute image.
+
+\begin{proof}[Proof of Theorem~\ref{thm:explicit-three-dimensional}]
+Proposition~\ref{c3:prop:integral} proves regularity and integral
+vanishing.
+It remains to prove that $c_{A_3}$ and $c_{\widehat A_3}$ have infinite
+order.
+
+The substitutions
+\[
+ x=uX,\qquad y=uY,\qquad z=uZ
+\]
+define a continuous homomorphism $\widehat A_3\to B$.
+Indeed, every formal series in $x,y,z$ converges $u$-adically after
+substitution, and the relation maps to
+$3+u^2(XY+Z^2)=0$.
+In $B$, put
+\[
+ a=\frac{1+uZ}{2},\qquad
+ \lambda=1+uX,\qquad
+ \mu=1+\frac{(1+uX)uY}{4},\qquad
+ q=a(1-a)=\frac{1+3Z^2}{4}.
+\]
+These elements are units, and $a^2$ reduces to $1$ modulo $u$.
+Consequently, the specified relative unit of
+Proposition~\ref{c3:prop:relative-character} gives an actual class
+\begin{equation}\label{c3:eq:relative-class}
+ \gamma=[a^2]_{\Cthreerel}[\lambda][\mu]\in\CthreeK_3(B,uB).
+\end{equation}
+Its image in $\CthreeK_3(B)$ is
+$[a^2][\lambda][\mu]=2[a][\lambda][\mu]=c_B$,
+where $c_B$ is the image of either source class.
+
+The map from relative to absolute $\CthreeK$-theory is injective in this
+degree. To prove this using actual groups, put
+\[
+ C=B/uB=\CthreeF_3[X,Y,Z]/(XY+Z^2-1).
+\]
+A second pair of affine-plane charts describes $\CthreeSpec C$ as an
+affine-line torsor over $\CthreePP^1_{\CthreeF_3}$.
+The first chart has coordinates $X,t$ and equations
+\[
+ Z=1+Xt,\qquad Y=-t(2+Xt).
+\]
+It is the complement of the line $X=0$, $Z=-1$.
+The second has coordinates $Y,s$ and equations
+\[
+ Z=-1-sY,\qquad X=-s(2+sY).
+\]
+It is the complement of the line $Y=0$, $Z=1$.
+These charts are affine planes by the inverse-coordinate calculation
+used in \eqref{c3:eq:residue-charts}.
+Their omitted lines are disjoint, so the charts cover $\CthreeSpec C$.
+On their intersection,
+\begin{equation}\label{c3:eq:affine-line-transition}
+ s=t^{-1},\qquad Y=-t^2X-2t.
+\end{equation}
+Thus projection to $t$ on the first chart and to $s$ on the second
+glues to a morphism $\CthreeSpec C\to\CthreePP^1_{\CthreeF_3}$.
+It is locally the affine-line projection, with affine-linear
+transition of invertible slope $-t^2$.
+In particular, it is a torsor under a line bundle.
+
+Homotopy invariance on the two charts and their overlap, followed by
+the two-open Mayer--Vietoris sequence, shows that pullback gives an
+equivalence on $\CthreeK$-theory
+\cite[\S7, Remark~3.5 and Proposition~4.1]{Quillen}.
+The projective bundle formula
+\cite[\S8, Theorem~2.1]{Quillen} identifies
+$\CthreeK(\CthreePP^1_{\CthreeF_3})$ with $\CthreeK(\CthreeF_3)\oplus\CthreeK(\CthreeF_3)$.
+For a finite field, the actual-group computation is
+\[
+ \CthreeK_{2i}(\CthreeF_q)=0,\qquad
+ \CthreeK_{2i-1}(\CthreeF_q)=\CthreeZ/(q^i-1)
+ \qquad(i\geq1);
+\]
+see \cite{QuillenFinite} and
+\cite[IV, Theorem~1.12 and Corollary~1.13]{Weibel}.
+Only its consequence $\CthreeK_4(\CthreeF_3)=0$ is needed here.
+It follows that
+\begin{equation}\label{c3:eq:actual-k-four}
+ \CthreeK_4(C)=\CthreeK_4(\CthreeF_3)\oplus\CthreeK_4(\CthreeF_3)=0.
+\end{equation}
+The long exact sequence of the actual relative spectrum contains
+\[
+ \CthreeK_4(C)\longrightarrow\CthreeK_3(B,uB)\longrightarrow\CthreeK_3(B).
+\]
+Hence \eqref{c3:eq:actual-k-four} makes
+$\CthreeK_3(B,uB)\to\CthreeK_3(B)$ injective.
+This argument uses the actual fourth $\CthreeK$-group.
+
+We detect $\gamma$ by its character.
+Define the $3$-adic logarithm of $2$ by
+\[
+ \log2=\frac12\log4=\frac12\log(1+3),
+ \qquad
+ L(Z)=-\log2+\log(1+uZ).
+\]
+The logarithm series are additive on $1+uB$ by the formal power
+series identity and their $u$-adic convergence.
+Since $4\in1+uB$ and
+$a^2=(1+uZ)^2/4$, this gives
+$\log(a^2)=2L$.
+This use of the logarithm remains valid at ramification index two.
+Proposition~\ref{c3:prop:relative-character} identifies the top
+component of $\chi_B(\gamma)$ with $\pm\tau$, where
+\begin{equation}\label{c3:eq:character-form}
+ \tau=2L\,\Cthreedlog\lambda\wedge\Cthreedlog\mu.
+\end{equation}
+
+For the differential calculation, put $t=uY/4$.
+Then $q=1+uXt$, $\mu=1+\lambda t$, and
+$\lambda q=1+uX\mu$.
+Differentiating the last identity and wedging with $\Cthreedlog\mu$ gives,
+where $X$ is invertible,
+\begin{equation}\label{c3:eq:differential-identity}
+ \Cthreedlog\lambda\wedge\Cthreedlog\mu
+   =\frac{\Cthreedd X}{X}\wedge\Cthreedlog q
+      -\Cthreedlog q\wedge\Cthreedlog\mu.
+\end{equation}
+More explicitly, the left-hand side plus
+$\Cthreedlog q\wedge\Cthreedlog\mu$ is
+\[
+ \frac{u\,\Cthreedd X\wedge\Cthreedd\mu}{\lambda q}
+   =\frac{u\,\Cthreedd X\wedge\Cthreedd t}{q}
+   =\frac{\Cthreedd X}{X}\wedge\frac{\Cthreedd q}{q}.
+\]
+The form involving $\Cthreedd X/X$ is global by the extension calculation
+in Lemma~\ref{c3:lem:ordinary-residue}, since $q$ depends only on $Z$.
+Thus \eqref{c3:eq:differential-identity} is an identity of global regular
+two-forms.
+
+Choose $F\in E\langle Z\rangle$ satisfying
+\begin{equation}\label{c3:eq:primitive-derivative}
+ F'(Z)=\frac{6ZL(Z)}{1+3Z^2},
+ \qquad\text{so that}\qquad
+ \Cthreedd F=L\,\Cthreedlog q.
+\end{equation}
+Such an $F$ exists in the restricted series algebra.
+With the absolute value normalized by $|3|=1/3$, both $L$ and
+$(1+3Z^2)^{-1}$ converge for $|Z|<\sqrt3$.
+Termwise integration divides each coefficient by a positive integer,
+whose $3$-adic valuation grows at most logarithmically.
+The integrated series therefore still has radius of convergence at
+least $\sqrt3$, which is greater than one.
+Equations \eqref{c3:eq:character-form} and
+\eqref{c3:eq:differential-identity} now give the global identity
+\begin{equation}\label{c3:eq:character-residue}
+ \tau=
+ 2\frac{\Cthreedd X}{X}\wedge\Cthreedd F
+       -2\Cthreedd\bigl(F\,\Cthreedlog\mu\bigr).
+\end{equation}
+By Lemma~\ref{c3:lem:ordinary-residue}, a nonzero difference
+$F(1)-F(-1)$ makes the class of $\tau$ nonzero in the ordinary
+quotient $\Omega_B^2/\Cthreedd\Omega_B^1$.
+
+Only the odd part of $L$ contributes to this endpoint difference.
+Since $u^2=-3$, that odd part is
+\[
+ u\sum_{k\geq0}\frac{(-3)^k Z^{2k+1}}{2k+1}.
+\]
+Multiply this series by $6Z/(1+3Z^2)$, integrate, and subtract the
+values at $1$ and $-1$.
+All series converge on a disc of radius greater than one, which
+justifies termwise operations and regrouping by $j=k+l$.
+The resulting formula is
+\begin{equation}\label{c3:eq:endpoint-series}
+ \frac{F(1)-F(-1)}{u}
+   =12\sum_{j\geq0}\frac{(-3)^jS_j}{2j+3},
+ \qquad
+ S_j=\sum_{k=0}^j\frac1{2k+1}.
+\end{equation}
+Its $j=0$ term is $4$.
+
+For completeness, an estimate for all indices controls the tail.
+Normalize $v_3(3)=1$.
+Every denominator in $S_j$ is at most $2j+1$, so
+\[
+ v_3(S_j)\geq-\lfloor\log_3(2j+1)\rfloor.
+\]
+For $j\geq1$, the valuation of the $j$-th summand in
+\eqref{c3:eq:endpoint-series} is therefore at least
+\[
+ A_j=1+j-\lfloor\log_3(2j+1)\rfloor-v_3(2j+3).
+\]
+Direct substitution gives $A_1=1$, $A_2=2$, and $A_3=1$.
+For $j\geq4$, we have
+\begin{equation}\label{c3:eq:logarithmic-bound}
+ \lfloor\log_3(2j+3)\rfloor\leq\lfloor j/2\rfloor.
+\end{equation}
+Equivalently, $2j+3<3^{\lfloor j/2\rfloor+1}$.
+This holds for $j=4$ and $j=5$.
+Advancing $j$ by two preserves the inequality because
+$2j+7<3(2j+3)$.
+Both $\lfloor\log_3(2j+1)\rfloor$ and $v_3(2j+3)$ are bounded by
+$\lfloor\log_3(2j+3)\rfloor$.
+Thus \eqref{c3:eq:logarithmic-bound} gives
+\[
+ A_j\geq1+j-2\lfloor j/2\rfloor\geq1.
+\]
+Moreover,
+\[
+ A_j\geq1+j-2\log_3(2j+3)\longrightarrow+\infty.
+\]
+The entire tail of \eqref{c3:eq:endpoint-series} consequently converges
+in $3\CthreeZ_3$, and
+\begin{equation}\label{c3:eq:endpoint-nonzero}
+ \frac{F(1)-F(-1)}{u}\in4+3\CthreeZ_3.
+\end{equation}
+In particular, the endpoint difference is nonzero.
+
+Equations \eqref{c3:eq:character-residue} and
+\eqref{c3:eq:endpoint-nonzero}, together with
+Lemma~\ref{c3:lem:ordinary-residue}, show that
+$\chi_B(\gamma)$ has nonzero top component.
+Its target is a $\CthreeQ_3$-vector space, so a torsion element cannot have
+this image.
+Hence $\gamma$ has infinite order in the actual group
+$\CthreeK_3(B,uB)$.
+The injection proved using \eqref{c3:eq:actual-k-four} shows that $c_B$
+has infinite order in $\CthreeK_3(B)$.
+As $c_B$ is the image of both $c_{\widehat A_3}$ and $c_{A_3}$, both
+source classes have infinite order.
+
+For either source ring $R$, Proposition~\ref{c3:prop:integral} gives
+integral vanishing in $\CthreeK_3(R[1/x])$.
+Since $R$ is a domain, $R[1/x]$ embeds in $\CthreeFrac(R)$, so the class
+also vanishes in $\CthreeK_3(\CthreeFrac(R))$.
+An element of an abelian group becomes zero after tensoring with
+$\CthreeQ$ exactly when it is torsion.
+Thus $c_R$ remains nonzero in $\CthreeK_3(R)\otimes_{\CthreeZ}\CthreeQ$, proving the
+asserted failure of injectivity.
+\end{proof}
+
+\begin{remark}[Ordinary differential homology]
+\label{c3:rem:ordinary-homology}
+Every differential quotient used above is ordinary algebraic homology
+after derived completion and rationalization.
+No differential image is replaced by its closure.
+The argument makes no assertion about the order of the class in an
+individual finite Artin quotient, and uses no identification
+\[
+ \CthreeK_i(D)\otimes_{\CthreeZ}\CthreeQ_3
+   =\pi_i\bigl(\CthreeK(D)^\wedge_3[1/3]\bigr).
+\]
+It also requires no injection from actual $\CthreeK$-theory into completed
+$\CthreeK$-theory.
+
+The distinction between an ordinary image and its closure is visible
+on this quadric.
+The global form
+\[
+ \omega_0=\frac{\Cthreedd X}{X}\wedge\Cthreedd Z
+\]
+is nonexact by Lemma~\ref{c3:lem:ordinary-residue}, applied to $F(Z)=Z$,
+whose endpoint difference is $2$.
+For every integer $j\geq0$, however, the one-form
+\[
+ \beta_j=-\bigl(Z-Z^{3^j}\bigr)\frac{\Cthreedd X}{X}
+\]
+is global and regular.
+Indeed, $Z-Z^{3^j}$ vanishes at both $1$ and $-1$, and is divisible
+by $Z^2-1=-XY$.
+Its derivative is
+\[
+ \Cthreedd\beta_j
+    =\omega_0-3^jZ^{3^j-1}\omega_0
+    \longrightarrow\omega_0.
+\]
+Thus $\omega_0$ lies in the closure of the differential image while
+remaining outside that image.
+Passing to the Hausdorff quotient would discard the obstruction used
+in the proof.
+\end{remark}

@@ -1,0 +1,11 @@
+{
+  "fact_id": "1e514828f5fb6c04",
+  "record_id": "c0ba4c8e41779003",
+  "timestamp_utc": "2026-10-07T14:15:53.695450+00:00",
+  "verdict": "correct",
+  "summary": "The proof passes sequential verification. Step 1 establishes smoothness and computes the divisor-class lattice after removing the integral, reduced vertical fibers, proving the root difference is non-torsion. Steps 2–3 give the stated degree-two elliptic quotients, check their boundary inverse images, construct the required unramified Cohen extension, and obtain a nonconstant root image with the required CM equivariance. Step 4 constructs an integral trace on total differential forms; its chain identity and norm compatibility apply after completion and preserve ordinary exactness. In Step 5, facts d8c925bb8cff43ee, 50b9a29bc7dc842b, and 868cb19bf6a0a52c were read and their hypotheses checked. Their statements contain no prohibited conditional premise. The graph-difference formula and bounded contraction yield the nonzero class 4 e_chi(b) Q^*eta, and finite constant extension permits its use over R. The degree-one comparison underlying the scalar fact also matches Theorem 3.2.1 of [Caro–D'Addezio](https://carod.users.lmno.cnrs.fr/Injectivity.pdf), checked by web retrieval after the arXiv theorem search returned no match. Step 6 supplies an isomorphism of the formally smooth completed lifts and preserves each root ideal's Picard class by lifting its reduced isomorphism. This isomorphism is C'-linear, so it preserves the coefficients and the continuous relative de Rham complex retaining dT. No critical errors, gaps, or hard-prohibition violations were found.",
+  "critical_errors": [],
+  "gaps": [],
+  "verification_kind": "independent language-model review",
+  "source_verification_file_sha256": "e85ec124ce834b6915d14a9cb2eda892443fa975a5e6adc5ba9d76f7f9882a2a"
+}
