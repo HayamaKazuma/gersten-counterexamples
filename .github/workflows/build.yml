@@ -1,0 +1,60 @@
+name: Import the reviewed release archive
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - gersten-source.zip
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: github.repository == 'HayamaKazuma/gersten-counterexamples'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out this publication repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Verify and unpack the exact reviewed source archive
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, pathlib, zipfile
+          archive = pathlib.Path('gersten-source.zip')
+          expected = '852ffc8658782fb8ea462f696d3d2823e47d64d36dd59c59b5909907ac9b16a2'
+          assert hashlib.sha256(archive.read_bytes()).hexdigest() == expected
+          prefix = 'gersten-counterexamples/'
+          manifest_name = prefix + 'RELEASE-FILES.sha256.json'
+          with zipfile.ZipFile(archive) as z:
+              names = z.namelist()
+              assert len(names) == len(set(names)) and z.testzip() is None
+              manifest = json.loads(z.read(manifest_name))
+              assert set(names) == {prefix + p for p in manifest} | {manifest_name}
+              for relative, digest in manifest.items():
+                  path = pathlib.PurePosixPath(relative)
+                  assert not path.is_absolute() and '..' not in path.parts
+                  assert '.git' not in path.parts
+                  data = z.read(prefix + relative)
+                  assert hashlib.sha256(data).hexdigest() == digest, relative
+                  if relative == '.github/workflows/build.yml':
+                      continue
+                  assert '.github/workflows' not in relative
+                  target = pathlib.Path(relative)
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(data)
+              pathlib.Path('RELEASE-FILES.sha256.json').write_bytes(z.read(manifest_name))
+          archive.unlink()
+          print('Verified all archive entries and restored their original paths.')
+          PY
+      - name: Check manuscript sources and preserved evidence
+        run: make check
+      - name: Commit the verified publication files
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add --all
+          git commit -m "Import reviewed article, source tree, and verification records"
+          git push origin HEAD:main
