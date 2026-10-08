@@ -1,60 +1,45 @@
-name: Import the reviewed release archive
+name: Build paper and check local formal proofs
 
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - gersten-source.zip
+  pull_request:
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  import:
-    if: github.repository == 'HayamaKazuma/gersten-counterexamples'
+  build:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 30
     steps:
-      - name: Check out this publication repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-      - name: Verify and unpack the exact reviewed source archive
-        shell: bash
+      - name: Check out sources
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install TeX tools
         run: |
-          python3 - <<'PY'
-          import hashlib, json, pathlib, zipfile
-          archive = pathlib.Path('gersten-source.zip')
-          expected = '852ffc8658782fb8ea462f696d3d2823e47d64d36dd59c59b5909907ac9b16a2'
-          assert hashlib.sha256(archive.read_bytes()).hexdigest() == expected
-          prefix = 'gersten-counterexamples/'
-          manifest_name = prefix + 'RELEASE-FILES.sha256.json'
-          with zipfile.ZipFile(archive) as z:
-              names = z.namelist()
-              assert len(names) == len(set(names)) and z.testzip() is None
-              manifest = json.loads(z.read(manifest_name))
-              assert set(names) == {prefix + p for p in manifest} | {manifest_name}
-              for relative, digest in manifest.items():
-                  path = pathlib.PurePosixPath(relative)
-                  assert not path.is_absolute() and '..' not in path.parts
-                  assert '.git' not in path.parts
-                  data = z.read(prefix + relative)
-                  assert hashlib.sha256(data).hexdigest() == digest, relative
-                  if relative == '.github/workflows/build.yml':
-                      continue
-                  assert '.github/workflows' not in relative
-                  target = pathlib.Path(relative)
-                  target.parent.mkdir(parents=True, exist_ok=True)
-                  target.write_bytes(data)
-              pathlib.Path('RELEASE-FILES.sha256.json').write_bytes(z.read(manifest_name))
-          archive.unlink()
-          print('Verified all archive entries and restored their original paths.')
-          PY
-      - name: Check manuscript sources and preserved evidence
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends latexmk texlive-latex-extra texlive-fonts-recommended texlive-science lmodern zstd
+      - name: Check sources and evidence
         run: make check
-      - name: Commit the verified publication files
-        shell: bash
+      - name: Build manuscript
+        run: make pdf
+      - name: Install the pinned Lean release
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add --all
-          git commit -m "Import reviewed article, source tree, and verification records"
-          git push origin HEAD:main
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/lean.tar.zst" https://github.com/leanprover/lean4/releases/download/v4.34.1/lean-4.34.1-linux.tar.zst
+          echo "47bf4bbd78f70c2e9670598ab7124d92b6efb7330ff33e5fbb4030f6fd72e4e4  $RUNNER_TEMP/lean.tar.zst" | sha256sum --check
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/lean-4.34.1-linux/bin" >> "$GITHUB_PATH"
+      - name: Check the local formal proofs
+        run: make formal
+      - name: Upload PDF and verification output
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: gersten-counterexamples
+          path: |
+            paper/gersten-counterexamples.pdf
+            build/formal/lean.log
+            build/formal/result.json
+          if-no-files-found: error
+          retention-days: 30
